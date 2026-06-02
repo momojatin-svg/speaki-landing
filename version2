@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Speaki — Just Speak.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>
+:root {
+  --forest: #27500A;
+  --forest-mid: #3B6D11;
+  --green: #639922;
+  --green-light: #EAF3DE;
+  --green-med: #C0DD97;
+  --ember: #D85A30;
+  --ember-light: #FAECE7;
+  --ember-mid: #993C1D;
+  --purple: #534AB7;
+  --purple-light: #EEEDFE;
+  --teal: #0F6E56;
+  --teal-light: #E1F5EE;
+  --amber: #854F0B;
+  --amber-light: #FAEEDA;
+  --charcoal: #2C2C2A;
+  --mid: #5F5E5A;
+  --light: #F1EFE8;
+  --border: #D3D1C7;
+  --white: #FDFCF9;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'DM Sans',sans-serif;background:var(--white);color:var(--charcoal);overflow-x:hidden;}
+
+body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");pointer-events:none;z-index:999;opacity:0.4;}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:18px 48px;background:rgba(253,252,249,0.88);backdrop-filter:blur(14px);border-bottom:0.5px solid transparent;transition:border-color 0.3s;}
+nav.scrolled{border-color:var(--border);}
+.nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
+.nav-mark{width:32px;height:32px;background:var(--forest);border-radius:8px;display:flex;align-items:center;justify-content:center;}
+.nav-mark svg{width:18px;height:18px;}
+.nav-name{font-family:'DM Serif Display',serif;font-size:20px;color:var(--charcoal);letter-spacing:-0.3px;}
+.nav-sub{font-size:10px;color:var(--mid);letter-spacing:0.04em;}
+.nav-links{display:flex;align-items:center;gap:28px;list-style:none;}
+.nav-links a{font-size:13px;color:var(--mid);text-decoration:none;transition:color 0.2s;}
+.nav-links a:hover{color:var(--charcoal);}
+.nav-cta{background:var(--forest) !important;color:#EAF3DE !important;padding:9px 22px;border-radius:100px;font-weight:500 !important;transition:background 0.2s !important;}
+.nav-cta:hover{background:var(--forest-mid) !important;}
+
+/* HERO */
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:flex-end;padding:0 48px 80px;position:relative;overflow:hidden;background:var(--forest);}
+.hero-ring{position:absolute;border-radius:50%;border:0.5px solid rgba(192,221,151,0.12);pointer-events:none;}
+.hero-r1{width:600px;height:600px;top:-100px;right:-100px;}
+.hero-r2{width:950px;height:950px;top:-280px;right:-280px;}
+.hero-r3{width:1300px;height:1300px;top:-450px;right:-450px;}
+.hero-eyebrow{position:relative;z-index:2;font-size:11px;font-weight:500;letter-spacing:1.6px;color:var(--green);text-transform:uppercase;margin-bottom:24px;opacity:0;transform:translateY(16px);animation:fadeUp 0.7s ease forwards 0.3s;}
+.hero-headline{position:relative;z-index:2;font-family:'DM Serif Display',serif;font-size:clamp(64px,9vw,130px);color:var(--green-light);line-height:0.9;letter-spacing:-2px;margin-bottom:40px;opacity:0;transform:translateY(24px);animation:fadeUp 0.8s ease forwards 0.5s;}
+.hero-headline em{font-style:italic;color:var(--green-med);}
+.hero-bottom{position:relative;z-index:2;display:flex;align-items:flex-end;justify-content:space-between;gap:40px;opacity:0;transform:translateY(16px);animation:fadeUp 0.7s ease forwards 0.9s;}
+.hero-sub{font-size:16px;color:var(--green-med);line-height:1.75;max-width:480px;font-weight:300;}
+.hero-sub strong{color:var(--green-light);font-weight:500;}
+.hero-actions{display:flex;align-items:center;gap:16px;flex-shrink:0;}
+.btn-primary{background:var(--green-light);color:var(--forest);padding:16px 36px;border-radius:100px;font-size:15px;font-weight:500;text-decoration:none;display:inline-block;transition:background 0.2s,transform 0.15s;border:none;cursor:pointer;white-space:nowrap;}
+.btn-primary:hover{background:#fff;transform:translateY(-1px);}
+.btn-ghost{color:rgba(192,221,151,0.65);font-size:14px;text-decoration:none;display:inline-flex;align-items:center;gap:6px;transition:color 0.2s;white-space:nowrap;}
+.btn-ghost:hover{color:var(--green-med);}
+.btn-ghost .arr{transition:transform 0.2s;}
+.btn-ghost:hover .arr{transform:translateX(3px);}
+.hero-scroll{position:absolute;bottom:28px;left:50%;transform:translateX(-50%);z-index:2;display:flex;flex-direction:column;align-items:center;gap:5px;opacity:0;animation:fadeIn 1s ease forwards 1.5s;}
+.hero-scroll-line{width:1px;height:36px;background:rgba(192,221,151,0.25);animation:scrollPulse 2.2s ease-in-out infinite;}
+.hero-scroll span{font-size:9px;letter-spacing:1.8px;color:rgba(192,221,151,0.35);text-transform:uppercase;}
+
+/* NOT JUST AI — PRODUCT PILLARS */
+.pillars-section{background:var(--charcoal);padding:100px 48px;}
+.pillars-top{display:flex;align-items:flex-start;justify-content:space-between;gap:40px;margin-bottom:64px;}
+.pillars-headline{font-family:'DM Serif Display',serif;font-size:clamp(36px,5vw,60px);color:var(--green-light);line-height:1.05;letter-spacing:-1px;max-width:520px;}
+.pillars-headline em{font-style:italic;color:var(--green-med);}
+.pillars-intro{max-width:320px;font-size:14px;color:rgba(192,221,151,0.6);line-height:1.75;font-weight:300;padding-top:8px;}
+.pillars-grid{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:2px;}
+.pillar{padding:32px 28px;position:relative;overflow:hidden;opacity:0;transform:translateY(20px);transition:opacity 0.6s ease,transform 0.6s ease;}
+.pillar.visible{opacity:1;transform:translateY(0);}
+.pillar-inner{position:relative;z-index:1;}
+.pillar-icon{width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:20px;flex-shrink:0;}
+.pillar-icon svg{width:22px;height:22px;}
+.pillar-number{font-family:'DM Serif Display',serif;font-size:11px;color:rgba(255,255,255,0.2);letter-spacing:1px;margin-bottom:8px;}
+.pillar-title{font-size:16px;font-weight:500;line-height:1.25;margin-bottom:12px;}
+.pillar-body{font-size:13px;line-height:1.65;font-weight:300;}
+.pillar-tag{display:inline-block;font-size:10px;font-weight:500;padding:3px 10px;border-radius:20px;margin-top:14px;letter-spacing:0.3px;}
+
+.pillar-1{background:rgba(99,153,34,0.12);}
+.pillar-1 .pillar-icon{background:rgba(99,153,34,0.2);}
+.pillar-1 .pillar-title{color:#C0DD97;}
+.pillar-1 .pillar-body{color:rgba(192,221,151,0.55);}
+.pillar-1 .pillar-tag{background:rgba(99,153,34,0.2);color:#97C459;}
+
+.pillar-2{background:rgba(83,74,183,0.12);}
+.pillar-2 .pillar-icon{background:rgba(83,74,183,0.2);}
+.pillar-2 .pillar-title{color:#AFA9EC;}
+.pillar-2 .pillar-body{color:rgba(175,169,236,0.55);}
+.pillar-2 .pillar-tag{background:rgba(83,74,183,0.2);color:#AFA9EC;}
+
+.pillar-3{background:rgba(15,110,86,0.12);}
+.pillar-3 .pillar-icon{background:rgba(15,110,86,0.2);}
+.pillar-3 .pillar-title{color:#9FE1CB;}
+.pillar-3 .pillar-body{color:rgba(159,225,203,0.55);}
+.pillar-3 .pillar-tag{background:rgba(15,110,86,0.2);color:#5DCAA5;}
+
+.pillar-4{background:rgba(215,94,48,0.1);}
+.pillar-4 .pillar-icon{background:rgba(215,94,48,0.2);}
+.pillar-4 .pillar-title{color:#F0997B;}
+.pillar-4 .pillar-body{color:rgba(240,153,123,0.55);}
+.pillar-4 .pillar-tag{background:rgba(215,94,48,0.2);color:#F0997B;}
+
+/* TICKER */
+.ticker-wrap{background:var(--forest-mid);padding:14px 0;overflow:hidden;white-space:nowrap;}
+.ticker-inner{display:inline-flex;animation:ticker 22s linear infinite;}
+.ticker-item{font-family:'DM Serif Display',serif;font-size:15px;font-style:italic;color:var(--green-med);padding:0 36px;}
+.ticker-dot{color:var(--green);padding:0 4px;}
+
+/* STATS */
+.stats-strip{background:var(--green-light);padding:40px 48px;display:flex;align-items:center;gap:0;overflow:hidden;}
+.stat-item{flex:1;display:flex;flex-direction:column;align-items:center;padding:0 32px;}
+.stat-num{font-family:'DM Serif Display',serif;font-size:40px;color:var(--forest);line-height:1;}
+.stat-label{font-size:12px;color:var(--forest-mid);text-align:center;margin-top:4px;line-height:1.4;}
+.stat-divider{width:1px;height:56px;background:var(--green-med);flex-shrink:0;}
+
+/* PAIN */
+.pain-section{background:var(--white);padding:100px 48px;}
+.pain-headline{font-family:'DM Serif Display',serif;font-size:clamp(36px,5vw,64px);color:var(--charcoal);line-height:1.05;letter-spacing:-1px;max-width:680px;margin-bottom:64px;}
+.pain-headline em{font-style:italic;color:var(--mid);}
+.pain-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:2px;}
+.pain-card{background:var(--light);padding:32px;transition:background 0.3s;opacity:0;transform:translateY(20px);}
+.pain-card.visible{opacity:1;transform:translateY(0);transition:opacity 0.5s ease,transform 0.5s ease,background 0.3s;}
+.pain-card:hover{background:var(--green-light);}
+.pain-card:hover .pain-num{color:var(--forest);}
+.pain-card:hover .pain-body{color:var(--forest-mid);}
+.pain-num{font-family:'DM Serif Display',serif;font-size:44px;color:var(--border);line-height:1;margin-bottom:14px;transition:color 0.3s;}
+.pain-title{font-size:15px;font-weight:500;color:var(--charcoal);margin-bottom:8px;line-height:1.3;}
+.pain-body{font-size:13px;color:var(--mid);line-height:1.65;transition:color 0.3s;}
+.pain-pill{display:inline-block;font-size:10px;font-weight:500;padding:2px 9px;border-radius:20px;margin-top:12px;}
+
+/* PRODUCT DEEP DIVE */
+.product-section{background:var(--white);padding:100px 48px;}
+.product-label{font-size:10px;font-weight:500;letter-spacing:1.8px;color:var(--green);text-transform:uppercase;margin-bottom:20px;}
+.product-headline{font-family:'DM Serif Display',serif;font-size:clamp(32px,4.5vw,56px);color:var(--charcoal);letter-spacing:-0.8px;margin-bottom:72px;line-height:1.08;max-width:600px;}
+.product-headline em{font-style:italic;color:var(--forest);}
+
+.product-block{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;margin-bottom:80px;opacity:0;transform:translateY(28px);transition:opacity 0.7s ease,transform 0.7s ease;}
+.product-block.visible{opacity:1;transform:translateY(0);}
+.product-block:last-child{margin-bottom:0;}
+.product-block.reverse{direction:rtl;}
+.product-block.reverse > *{direction:ltr;}
+
+.product-content{}
+.product-pillar-badge{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:500;padding:5px 14px;border-radius:100px;margin-bottom:20px;}
+.product-block-title{font-family:'DM Serif Display',serif;font-size:clamp(26px,3vw,38px);color:var(--charcoal);line-height:1.1;letter-spacing:-0.5px;margin-bottom:16px;}
+.product-block-body{font-size:14px;color:var(--mid);line-height:1.8;margin-bottom:20px;font-weight:300;}
+.product-features{list-style:none;display:flex;flex-direction:column;gap:8px;}
+.product-features li{display:flex;align-items:flex-start;gap:10px;font-size:13px;color:var(--charcoal);line-height:1.5;}
+.product-features li::before{content:'';width:6px;height:6px;border-radius:50%;flex-shrink:0;margin-top:6px;}
+
+.product-visual{border-radius:20px;overflow:hidden;aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;position:relative;}
+
+/* Live sessions visual */
+.live-visual{background:var(--charcoal);}
+.live-inner{padding:28px;width:100%;}
+.live-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;}
+.live-dot{display:flex;align-items:center;gap:6px;font-size:12px;color:#97C459;font-weight:500;}
+.live-dot::before{content:'';width:8px;height:8px;border-radius:50%;background:#97C459;animation:pulse 1.5s ease-in-out infinite;}
+.live-avatars{display:flex;gap:-8px;}
+.live-avatar{width:32px;height:32px;border-radius:50%;border:2px solid var(--charcoal);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:500;margin-left:-8px;}
+.live-avatar:first-child{margin-left:0;}
+.live-session-card{background:rgba(255,255,255,0.06);border:0.5px solid rgba(255,255,255,0.1);border-radius:12px;padding:16px;margin-bottom:10px;}
+.live-session-title{font-size:13px;font-weight:500;color:#EAF3DE;margin-bottom:4px;}
+.live-session-meta{font-size:11px;color:rgba(192,221,151,0.5);}
+.live-session-card.active{background:rgba(99,153,34,0.15);border-color:rgba(99,153,34,0.3);}
+.live-session-card.active .live-session-title{color:#C0DD97;}
+.live-waveform{display:flex;align-items:center;gap:3px;margin-top:16px;height:32px;}
+.wave-bar{width:4px;border-radius:2px;background:rgba(99,153,34,0.4);}
+
+/* AI Coach visual */
+.ai-visual{background:var(--purple-light);}
+.ai-inner{padding:24px;width:100%;}
+.ai-chat{display:flex;flex-direction:column;gap:10px;}
+.ai-msg{padding:11px 14px;border-radius:12px;font-size:12px;line-height:1.55;max-width:85%;}
+.ai-msg.user{background:#EEEDFE;color:#26215C;align-self:flex-end;border-radius:12px 12px 2px 12px;}
+.ai-msg.coach{background:var(--purple);color:#EEEDFE;align-self:flex-start;border-radius:12px 12px 12px 2px;}
+.ai-msg.feedback{background:rgba(83,74,183,0.12);color:#534AB7;font-size:11px;border:0.5px solid rgba(83,74,183,0.2);border-radius:8px;}
+.ai-time{font-size:10px;color:rgba(83,74,183,0.4);text-align:center;margin:4px 0;}
+
+/* Community visual */
+.community-visual{background:var(--teal-light);}
+.community-inner{padding:24px;width:100%;}
+.community-post{background:#fff;border-radius:12px;padding:14px;margin-bottom:10px;border:0.5px solid rgba(15,110,86,0.15);}
+.community-post-header{display:flex;align-items:center;gap:8px;margin-bottom:8px;}
+.community-avatar{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:500;}
+.community-name{font-size:12px;font-weight:500;color:var(--charcoal);}
+.community-flag{font-size:12px;}
+.community-text{font-size:12px;color:var(--mid);line-height:1.5;}
+.community-reactions{display:flex;gap:8px;margin-top:8px;}
+.reaction{font-size:10px;color:var(--mid);background:var(--light);padding:2px 8px;border-radius:20px;}
+
+/* Gamified visual */
+.gamified-visual{background:var(--amber-light);}
+.gamified-inner{padding:24px;width:100%;}
+.streak-row{display:flex;align-items:center;justify-content:space-between;background:#fff;border-radius:12px;padding:14px 16px;margin-bottom:10px;border:0.5px solid rgba(133,79,11,0.1);}
+.streak-label{font-size:12px;color:var(--mid);}
+.streak-val{font-family:'DM Serif Display',serif;font-size:20px;color:var(--amber);line-height:1;}
+.streak-sub{font-size:10px;color:rgba(133,79,11,0.5);}
+.xp-bar-wrap{background:#fff;border-radius:12px;padding:14px 16px;margin-bottom:10px;border:0.5px solid rgba(133,79,11,0.1);}
+.xp-label{display:flex;justify-content:space-between;font-size:11px;color:var(--mid);margin-bottom:8px;}
+.xp-track{height:8px;background:var(--amber-light);border-radius:4px;overflow:hidden;}
+.xp-fill{height:100%;background:var(--amber);border-radius:4px;width:68%;}
+.badge-row{display:flex;gap:8px;flex-wrap:wrap;}
+.badge{background:#fff;border:0.5px solid rgba(133,79,11,0.15);border-radius:8px;padding:8px 12px;font-size:10px;color:var(--amber);font-weight:500;display:flex;align-items:center;gap:4px;}
+.badge-icon{width:16px;height:16px;background:var(--amber-light);border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:9px;}
+
+/* MANIFESTO */
+.manifesto-section{background:var(--forest);padding:120px 48px;position:relative;overflow:hidden;}
+.manifesto-ring{position:absolute;border-radius:50%;border:0.5px solid rgba(192,221,151,0.07);pointer-events:none;}
+.mr1{width:500px;height:500px;bottom:-150px;left:-150px;}
+.mr2{width:850px;height:850px;bottom:-320px;left:-320px;}
+.manifesto-inner{max-width:800px;position:relative;z-index:1;}
+.manifesto-line{font-family:'DM Serif Display',serif;font-size:clamp(26px,4vw,48px);color:var(--green-med);line-height:1.15;letter-spacing:-0.5px;margin-bottom:8px;opacity:0;transform:translateX(-20px);}
+.manifesto-line.visible{animation:slideIn 0.6s ease forwards;}
+.manifesto-line.bold{color:var(--green-light);font-size:clamp(32px,5vw,60px);margin-top:24px;}
+.manifesto-line.final{color:#EAF3DE;font-size:clamp(48px,7.5vw,100px);letter-spacing:-2px;margin-top:16px;}
+
+/* HOW IT WORKS */
+.how-section{background:var(--light);padding:100px 48px;}
+.how-headline{font-family:'DM Serif Display',serif;font-size:clamp(30px,4vw,52px);color:var(--charcoal);letter-spacing:-0.8px;margin-bottom:56px;max-width:480px;line-height:1.1;}
+.how-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:32px;}
+.how-step{opacity:0;transform:translateY(24px);transition:opacity 0.6s ease,transform 0.6s ease;}
+.how-step.visible{opacity:1;transform:translateY(0);}
+.how-num{width:40px;height:40px;border-radius:50%;background:var(--green-light);display:flex;align-items:center;justify-content:center;font-family:'DM Serif Display',serif;font-size:18px;color:var(--forest);margin-bottom:20px;}
+.how-title{font-size:18px;font-weight:500;color:var(--charcoal);margin-bottom:10px;line-height:1.2;}
+.how-body{font-size:14px;color:var(--mid);line-height:1.7;}
+.how-just{font-family:'DM Serif Display',serif;font-size:14px;font-style:italic;color:var(--green);margin-top:12px;}
+
+/* TESTIMONIALS */
+.testimonials-section{background:var(--white);padding:100px 48px;}
+.testimonials-headline{font-family:'DM Serif Display',serif;font-size:clamp(28px,3.5vw,44px);color:var(--charcoal);letter-spacing:-0.6px;margin-bottom:48px;line-height:1.1;}
+.testimonials-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px;}
+.tcard{background:var(--white);border:0.5px solid var(--border);border-radius:16px;padding:28px;opacity:0;transform:translateY(20px);transition:opacity 0.6s ease,transform 0.6s ease;}
+.tcard.visible{opacity:1;transform:translateY(0);}
+.tquote{font-family:'Instrument Serif',serif;font-style:italic;font-size:16px;color:var(--charcoal);line-height:1.65;margin-bottom:20px;}
+.taccent{color:var(--forest);font-style:normal;}
+.tauthor{display:flex;align-items:center;gap:12px;}
+.tavatar{width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:500;}
+.tname{font-size:13px;font-weight:500;color:var(--charcoal);}
+.trole{font-size:12px;color:var(--mid);}
+
+/* JUST VARIATIONS */
+.just-section{background:var(--green-light);padding:80px 48px;}
+.just-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;}
+.just-item{background:var(--white);padding:28px 24px;opacity:0;transform:scale(0.97);transition:opacity 0.4s ease,transform 0.4s ease,background 0.25s;}
+.just-item.visible{opacity:1;transform:scale(1);}
+.just-item:hover{background:var(--forest);}
+.just-item:hover .just-phrase{color:var(--green-light);}
+.just-item:hover .just-desc{color:var(--green-med);}
+.just-phrase{font-family:'DM Serif Display',serif;font-size:22px;color:var(--charcoal);margin-bottom:8px;transition:color 0.25s;}
+.just-desc{font-size:12px;color:var(--mid);line-height:1.55;transition:color 0.25s;}
+
+/* CTA */
+.cta-section{background:var(--white);padding:120px 48px;text-align:center;position:relative;overflow:hidden;}
+.cta-bg-text{position:absolute;font-family:'DM Serif Display',serif;font-size:20vw;color:var(--light);white-space:nowrap;top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none;letter-spacing:-4px;line-height:1;z-index:0;}
+.cta-inner{position:relative;z-index:1;}
+.cta-label{font-size:11px;font-weight:500;letter-spacing:1.8px;color:var(--green);text-transform:uppercase;margin-bottom:20px;}
+.cta-headline{font-family:'DM Serif Display',serif;font-size:clamp(40px,6vw,84px);color:var(--charcoal);line-height:0.95;letter-spacing:-1.5px;margin-bottom:16px;}
+.cta-headline em{font-style:italic;color:var(--forest);}
+.cta-sub{font-size:16px;color:var(--mid);margin-bottom:40px;line-height:1.6;font-weight:300;max-width:520px;margin-left:auto;margin-right:auto;}
+.cta-actions{display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;}
+.btn-dark{background:var(--forest);color:var(--green-light);padding:18px 44px;border-radius:100px;font-size:16px;font-weight:500;text-decoration:none;display:inline-block;transition:background 0.2s,transform 0.15s;border:none;cursor:pointer;}
+.btn-dark:hover{background:var(--forest-mid);transform:translateY(-2px);}
+.cta-note{font-size:13px;color:var(--mid);margin-top:16px;}
+.cta-pillars{display:flex;align-items:center;justify-content:center;gap:24px;margin-top:40px;flex-wrap:wrap;}
+.cta-pillar-badge{display:inline-flex;align-items:center;gap:7px;font-size:12px;padding:7px 16px;border-radius:100px;font-weight:500;}
+
+/* FOOTER */
+footer{background:var(--charcoal);padding:48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:20px;}
+.footer-logo{font-family:'DM Serif Display',serif;font-size:18px;color:var(--green-light);}
+.footer-tagline{font-size:11px;color:rgba(192,221,151,0.4);margin-top:2px;}
+.footer-links{display:flex;gap:28px;list-style:none;flex-wrap:wrap;}
+.footer-links a{font-size:13px;color:rgba(192,221,151,0.4);text-decoration:none;transition:color 0.2s;}
+.footer-links a:hover{color:var(--green-med);}
+.footer-copy{font-size:12px;color:rgba(192,221,151,0.25);}
+
+/* UTIL */
+.section-label{font-size:10px;font-weight:500;letter-spacing:1.8px;color:var(--green);text-transform:uppercase;margin-bottom:20px;}
+
+/* ANIMATIONS */
+@keyframes fadeUp{to{opacity:1;transform:translateY(0);}}
+@keyframes fadeIn{to{opacity:1;}}
+@keyframes scrollPulse{0%,100%{opacity:0.3;transform:scaleY(1);}50%{opacity:0.7;transform:scaleY(0.65);}}
+@keyframes slideIn{to{opacity:1;transform:translateX(0);}}
+@keyframes ticker{0%{transform:translateX(0);}100%{transform:translateX(-50%);}}
+@keyframes pulse{0%,100%{opacity:1;}50%{opacity:0.4;}}
+@keyframes waveAnim{0%,100%{height:8px;}50%{height:28px;}}
+
+@media(max-width:900px){
+  nav{padding:16px 24px;}
+  .nav-links{display:none;}
+  .hero,.manifesto-section,.pain-section,.product-section,.testimonials-section,.cta-section,.just-section,.how-section,.pillars-section{padding:64px 24px;}
+  .hero{padding:0 24px 64px;}
+  .hero-bottom{flex-direction:column;align-items:flex-start;gap:24px;}
+  .pain-grid,.how-grid,.testimonials-grid,.product-block{grid-template-columns:1fr;}
+  .just-grid{grid-template-columns:1fr 1fr;}
+  .pillars-grid{grid-template-columns:1fr 1fr;}
+  .pillars-top{flex-direction:column;}
+  .product-block.reverse{direction:ltr;}
+  .stats-strip{flex-wrap:wrap;padding:24px;gap:20px;}
+  .cta-pillars{flex-direction:column;gap:12px;}
+  footer{flex-direction:column;gap:16px;padding:32px 24px;}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="#" class="nav-logo">
+    <div class="nav-mark">
+      <svg viewBox="0 0 22 22" fill="none">
+        <path d="M4 7 Q4 4 7 4 L15 4 Q18 4 18 7 L18 12 Q18 15 15 15 L13 15 L11 18 L9 15 L7 15 Q4 15 4 12 Z" fill="#97C459" opacity="0.35"/>
+        <path d="M4 7 Q4 4 7 4 L15 4 Q18 4 18 7 L18 12 Q18 15 15 15 L13 15 L11 18 L9 15 L7 15 Q4 15 4 12 Z" fill="none" stroke="#C0DD97" stroke-width="1.5"/>
+        <circle cx="8" cy="9.5" r="1.2" fill="#C0DD97"/><circle cx="11" cy="9.5" r="1.2" fill="#C0DD97"/><circle cx="14" cy="9.5" r="1.2" fill="#C0DD97"/>
+      </svg>
+    </div>
+    <div>
+      <div class="nav-name">Speaki</div>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#product">What's inside</a></li>
+    <li><a href="#how">How it works</a></li>
+    <li><a href="#stories">Stories</a></li>
+    <li><a href="#start" class="nav-cta">Start free</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-ring hero-r1"></div>
+  <div class="hero-ring hero-r2"></div>
+  <div class="hero-ring hero-r3"></div>
+  <p class="hero-eyebrow">AI coach · Live sessions · Real community</p>
+  <h1 class="hero-headline">Just<br/><em>speak.</em></h1>
+  <div class="hero-bottom">
+    <p class="hero-sub">Stop waiting. Stop rehearsing. Stop translating.<br/><strong>Speaki is the complete system</strong> that gets non-native English speakers from knowing the words — to actually saying them.</p>
+    <div class="hero-actions">
+      <a href="#start" class="btn-primary">Start free today</a>
+      <a href="#product" class="btn-ghost">See what's inside <span class="arr">→</span></a>
+    </div>
+  </div>
+  <div class="hero-scroll"><div class="hero-scroll-line"></div><span>scroll</span></div>
+</section>
+
+<!-- TICKER -->
+<div class="ticker-wrap" aria-hidden="true">
+  <div class="ticker-inner">
+    <span class="ticker-item">Just speak.</span><span class="ticker-dot">·</span>
+    <span class="ticker-item">Just start.</span><span class="ticker-dot">·</span>
+    <span class="ticker-item">Just say it.</span><span class="ticker-dot">·</span>
+    <span class="ticker-item">Just ask.</span><span class="ticker-dot">·</span>
+    <span class="ticker-item">Just go.</span><span class="ticker-dot">·</span>
+    <span class="ticker-item">Magsalita ka na lang.</span><span class="ticker-dot">·</span>
+    <span class="ticker-item">Just be you.</span><span class="ticker-dot">·</span>
+    <span class="ticker-item">Just try.</span><span class="ticker-dot">·</span>
+    <span class="ticker-item">Just speak.</span><span class="ticker-dot">·</span>
+    <span class="ticker-item">Just start.</span><span class="ticker-dot">·</span>
+    <span class="ticker-item">Just say it.</span><span class="ticker-dot">·</span>
+    <span class="ticker-item">Just ask.</span><span class="ticker-dot">·</span>
+    <span class="ticker-item">Just go.</span><span class="ticker-dot">·</span>
+    <span class="ticker-item">Magsalita ka na lang.</span><span class="ticker-dot">·</span>
+    <span class="ticker-item">Just be you.</span><span class="ticker-dot">·</span>
+    <span class="ticker-item">Just try.</span><span class="ticker-dot">·</span>
+  </div>
+</div>
+
+<!-- NOT JUST AI — FOUR PILLARS -->
+<section class="pillars-section" id="product">
+  <div class="pillars-top">
+    <h2 class="pillars-headline">Not just an AI.<br/><em>The complete</em><br/>speaking system.</h2>
+    <p class="pillars-intro">Every app teaches English. Speaki gets you speaking it — through four pillars that work together to remove every obstacle between you and your voice.</p>
+  </div>
+  <div class="pillars-grid">
+    <div class="pillar pillar-1" style="transition-delay:0s">
+      <div class="pillar-inner">
+        <div class="pillar-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#97C459" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 18.5a6.5 6.5 0 100-13 6.5 6.5 0 000 13z"/><path d="M12 2v2M12 20v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M2 12h2M20 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+          </svg>
+        </div>
+        <div class="pillar-number">01 / 04</div>
+        <div class="pillar-title">AI coach, 24/7</div>
+        <div class="pillar-body">Speak at midnight. Speak on your lunch break. Your AI coach never sleeps, never judges, and always meets you exactly where you are — in real conversation, not drills.</div>
+        <span class="pillar-tag">Always available</span>
+      </div>
+    </div>
+    <div class="pillar pillar-2" style="transition-delay:0.1s">
+      <div class="pillar-inner">
+        <div class="pillar-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#AFA9EC" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/>
+          </svg>
+        </div>
+        <div class="pillar-number">02 / 04</div>
+        <div class="pillar-title">Live practice sessions</div>
+        <div class="pillar-body">Real humans. Real conversations. Scheduled live sessions with coaches and peers that replicate the exact moments you freeze — meetings, interviews, presentations — until you stop freezing.</div>
+        <span class="pillar-tag">Human connection</span>
+      </div>
+    </div>
+    <div class="pillar pillar-3" style="transition-delay:0.2s">
+      <div class="pillar-inner">
+        <div class="pillar-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#5DCAA5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/>
+          </svg>
+        </div>
+        <div class="pillar-number">03 / 04</div>
+        <div class="pillar-title">Safe, inclusive community</div>
+        <div class="pillar-body">A place where making mistakes is the whole point. A global community of non-native speakers who understand the exact embarrassment, fear, and joy of finding your voice in another language.</div>
+        <span class="pillar-tag">You belong here</span>
+      </div>
+    </div>
+    <div class="pillar pillar-4" style="transition-delay:0.3s">
+      <div class="pillar-inner">
+        <div class="pillar-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#F0997B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+          </svg>
+        </div>
+        <div class="pillar-number">04 / 04</div>
+        <div class="pillar-title">Gamified progress + mindset coaching</div>
+        <div class="pillar-body">Track your streak. Earn your badges. But more than metrics — Speaki rewires the beliefs that keep you quiet. Mindset coaching built into every session, because the block is rarely grammar.</div>
+        <span class="pillar-tag">Progress you can see</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats-strip">
+  <div class="stat-item"><div class="stat-num">1.5B</div><div class="stat-label">non-native English<br/>speakers worldwide</div></div>
+  <div class="stat-divider"></div>
+  <div class="stat-item"><div class="stat-num">70%</div><div class="stat-label">experience imposter<br/>syndrome at work</div></div>
+  <div class="stat-divider"></div>
+  <div class="stat-item"><div class="stat-num">65%</div><div class="stat-label">feel like a different<br/>person in English</div></div>
+  <div class="stat-divider"></div>
+  <div class="stat-item"><div class="stat-num">24/7</div><div class="stat-label">AI coach available<br/>every moment</div></div>
+</div>
+
+<!-- PAIN -->
+<section class="pain-section">
+  <p class="section-label">Why you're here</p>
+  <h2 class="pain-headline">You know what you want to say.<br/>You just <em>don't say it.</em></h2>
+  <div class="pain-grid">
+    <div class="pain-card" style="transition-delay:0s">
+      <div class="pain-num">01</div>
+      <div class="pain-title">You freeze in meetings</div>
+      <div class="pain-body">The idea is there. Fully formed. By the time you're ready — someone else already said it.</div>
+      <span class="pain-pill" style="background:#EAF3DE;color:#27500A;">Live sessions fix this</span>
+    </div>
+    <div class="pain-card" style="transition-delay:0.1s">
+      <div class="pain-num">02</div>
+      <div class="pain-title">You rehearse. Then freeze anyway.</div>
+      <div class="pain-body">Perfect notes. Practiced lines. And yet the moment comes — and nothing comes out.</div>
+      <span class="pain-pill" style="background:#EEEDFE;color:#534AB7;">AI coach fixes this</span>
+    </div>
+    <div class="pain-card" style="transition-delay:0.2s">
+      <div class="pain-num">03</div>
+      <div class="pain-title">Your accent makes you shrink</div>
+      <div class="pain-body">Not because of what anyone said. Because of what you imagine they're thinking.</div>
+      <span class="pain-pill" style="background:#E1F5EE;color:#0F6E56;">Community fixes this</span>
+    </div>
+    <div class="pain-card" style="transition-delay:0.3s">
+      <div class="pain-num">04</div>
+      <div class="pain-title">You're quieter in English</div>
+      <div class="pain-body">The wit. The warmth. The humor. All of it stays behind a wall. English is where you become a different person.</div>
+      <span class="pain-pill" style="background:#FAEEDA;color:#854F0B;">Mindset coaching fixes this</span>
+    </div>
+    <div class="pain-card" style="transition-delay:0.4s">
+      <div class="pain-num">05</div>
+      <div class="pain-title">You've studied for years</div>
+      <div class="pain-body">Grammar. Vocabulary. Courses. Still not there. Because knowledge isn't the problem. Speaking is.</div>
+      <span class="pain-pill" style="background:#EAF3DE;color:#27500A;">AI + Live fixes this</span>
+    </div>
+    <div class="pain-card" style="transition-delay:0.5s">
+      <div class="pain-num">06</div>
+      <div class="pain-title">Your work speaks. You don't.</div>
+      <div class="pain-body">The promotion went to someone else. Your ideas are brilliant. They just never fully land.</div>
+      <span class="pain-pill" style="background:#FAEEDA;color:#854F0B;">Gamified growth fixes this</span>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCT DEEP DIVE -->
+<section class="product-section">
+  <p class="product-label">Inside Speaki</p>
+  <h2 class="product-headline">Four pillars.<br/>One goal: <em>just speak.</em></h2>
+
+  <!-- PILLAR 1: AI COACH -->
+  <div class="product-block" style="transition-delay:0s">
+    <div class="product-content">
+      <div class="product-pillar-badge" style="background:#EAF3DE;color:#27500A;">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#639922" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+        AI coach · 24/7
+      </div>
+      <h3 class="product-block-title">The coach who never sleeps — and never judges.</h3>
+      <p class="product-block-body">Most people don't freeze because they don't know English. They freeze because they've never had a safe space to practice being wrong. Speaki's AI coach gives you that space — at midnight, on your commute, five minutes before a big presentation.</p>
+      <ul class="product-features">
+        <li style="color:#27500A"><span style="width:6px;height:6px;border-radius:50%;background:#639922;flex-shrink:0;margin-top:6px;display:block;"></span>Real conversations from day one — no grammar drills</li>
+        <li style="color:#27500A"><span style="width:6px;height:6px;border-radius:50%;background:#639922;flex-shrink:0;margin-top:6px;display:block;"></span>Instant feedback on clarity, confidence, and flow</li>
+        <li style="color:#27500A"><span style="width:6px;height:6px;border-radius:50%;background:#639922;flex-shrink:0;margin-top:6px;display:block;"></span>Simulates meetings, interviews, and difficult conversations</li>
+        <li style="color:#27500A"><span style="width:6px;height:6px;border-radius:50%;background:#639922;flex-shrink:0;margin-top:6px;display:block;"></span>Available in every timezone, every day</li>
+      </ul>
+    </div>
+    <div class="product-visual ai-visual">
+      <div class="ai-inner">
+        <div class="ai-chat">
+          <div class="ai-time">Today, 11:47 PM</div>
+          <div class="ai-msg user">"I have a big presentation tomorrow and I always freeze when someone asks a question I didn't prepare for."</div>
+          <div class="ai-msg coach">Let's practice that exact moment right now. I'll play your toughest stakeholder. Ready?</div>
+          <div class="ai-msg user">"Okay... just speak, right?"</div>
+          <div class="ai-msg coach">Exactly. Just speak. Here we go — "Why should we prioritize this over everything else on the roadmap?"</div>
+          <div class="ai-msg feedback">✓ Great pause before answering — that's composure, not hesitation. Your opener was clear. Let's try the second follow-up.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PILLAR 2: LIVE SESSIONS -->
+  <div class="product-block reverse" style="transition-delay:0s">
+    <div class="product-content">
+      <div class="product-pillar-badge" style="background:#EEEDFE;color:#534AB7;">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#7F77DD" stroke-width="2" stroke-linecap="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+        Live practice sessions
+      </div>
+      <h3 class="product-block-title">Real humans. Real pressure. Real progress.</h3>
+      <p class="product-block-body">The AI coach builds your foundation. Live sessions build your nerve. Scheduled sessions with coaches and fellow speakers that replicate the exact situations where you go quiet — until going quiet is no longer the default.</p>
+      <ul class="product-features">
+        <li style="color:#3C3489"><span style="width:6px;height:6px;border-radius:50%;background:#7F77DD;flex-shrink:0;margin-top:6px;display:block;"></span>Small groups of non-native speakers — no judgment, only progress</li>
+        <li style="color:#3C3489"><span style="width:6px;height:6px;border-radius:50%;background:#7F77DD;flex-shrink:0;margin-top:6px;display:block;"></span>Scenario-based: job interviews, team meetings, client calls</li>
+        <li style="color:#3C3489"><span style="width:6px;height:6px;border-radius:50%;background:#7F77DD;flex-shrink:0;margin-top:6px;display:block;"></span>Expert coaches who are also non-native speakers themselves</li>
+        <li style="color:#3C3489"><span style="width:6px;height:6px;border-radius:50%;background:#7F77DD;flex-shrink:0;margin-top:6px;display:block;"></span>Sessions available mornings, evenings, and weekends</li>
+      </ul>
+    </div>
+    <div class="product-visual live-visual">
+      <div class="live-inner">
+        <div class="live-header">
+          <div class="live-dot">Live now</div>
+          <div class="live-avatars">
+            <div class="live-avatar" style="background:#534AB7;color:#EEEDFE;">AN</div>
+            <div class="live-avatar" style="background:#0F6E56;color:#E1F5EE;">MR</div>
+            <div class="live-avatar" style="background:#D85A30;color:#FAECE7;">JK</div>
+            <div class="live-avatar" style="background:#854F0B;color:#FAEEDA;">+4</div>
+          </div>
+        </div>
+        <div class="live-session-card active">
+          <div class="live-session-title">Speaking in meetings without freezing</div>
+          <div class="live-session-meta">In progress · 7 members · Coach: Sofia R.</div>
+        </div>
+        <div class="live-session-card">
+          <div class="live-session-title">Job interview simulation — C-suite</div>
+          <div class="live-session-meta">Starting in 12 min · 3 spots left</div>
+        </div>
+        <div class="live-session-card">
+          <div class="live-session-title">Casual English: small talk & humour</div>
+          <div class="live-session-meta">Tonight 8PM · 9 members joined</div>
+        </div>
+        <div class="live-waveform" id="waveform">
+          <div class="wave-bar" style="height:8px;background:rgba(99,153,34,0.3);"></div>
+          <div class="wave-bar" style="height:18px;background:rgba(99,153,34,0.5);"></div>
+          <div class="wave-bar" style="height:26px;background:rgba(99,153,34,0.7);"></div>
+          <div class="wave-bar" style="height:14px;background:rgba(99,153,34,0.4);"></div>
+          <div class="wave-bar" style="height:22px;background:rgba(99,153,34,0.6);"></div>
+          <div class="wave-bar" style="height:10px;background:rgba(99,153,34,0.3);"></div>
+          <div class="wave-bar" style="height:28px;background:rgba(99,153,34,0.8);"></div>
+          <div class="wave-bar" style="height:16px;background:rgba(99,153,34,0.5);"></div>
+          <div class="wave-bar" style="height:8px;background:rgba(99,153,34,0.3);"></div>
+          <div class="wave-bar" style="height:20px;background:rgba(99,153,34,0.6);"></div>
+          <div class="wave-bar" style="height:24px;background:rgba(99,153,34,0.7);"></div>
+          <div class="wave-bar" style="height:12px;background:rgba(99,153,34,0.4);"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PILLAR 3: COMMUNITY -->
+  <div class="product-block" style="transition-delay:0s">
+    <div class="product-content">
+      <div class="product-pillar-badge" style="background:#E1F5EE;color:#0F6E56;">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1D9E75" stroke-width="2" stroke-linecap="round"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+        Safe community
+      </div>
+      <h3 class="product-block-title">Where making mistakes is the whole point.</h3>
+      <p class="product-block-body">Isolation is one of the deepest pains non-native speakers carry. Speaki's community is built for exactly that feeling — a global home for people who understand the embarrassment, the freeze, the accent shame, and the joy of finally just speaking.</p>
+      <ul class="product-features">
+        <li style="color:#085041"><span style="width:6px;height:6px;border-radius:50%;background:#1D9E75;flex-shrink:0;margin-top:6px;display:block;"></span>Filipino, Asian, Latin, and global communities within Speaki</li>
+        <li style="color:#085041"><span style="width:6px;height:6px;border-radius:50%;background:#1D9E75;flex-shrink:0;margin-top:6px;display:block;"></span>Zero tolerance for ridicule — strict safe-space guidelines</li>
+        <li style="color:#085041"><span style="width:6px;height:6px;border-radius:50%;background:#1D9E75;flex-shrink:0;margin-top:6px;display:block;"></span>Celebrate wins, share struggles, find accountability partners</li>
+        <li style="color:#085041"><span style="width:6px;height:6px;border-radius:50%;background:#1D9E75;flex-shrink:0;margin-top:6px;display:block;"></span>Members who become friends, not just classmates</li>
+      </ul>
+    </div>
+    <div class="product-visual community-visual">
+      <div class="community-inner">
+        <div class="community-post">
+          <div class="community-post-header">
+            <div class="community-avatar" style="background:#EAF3DE;color:#27500A;">AT</div>
+            <div class="community-name">Ana T.</div>
+            <div class="community-flag">🇵🇭</div>
+          </div>
+          <div class="community-text">"I finally unmuted in a client call without rehearsing first. I just... spoke. Couldn't have done this without this community."</div>
+          <div class="community-reactions">
+            <span class="reaction">❤ 47</span><span class="reaction">🔥 23</span><span class="reaction">💬 12 replies</span>
+          </div>
+        </div>
+        <div class="community-post">
+          <div class="community-post-header">
+            <div class="community-avatar" style="background:#EEEDFE;color:#534AB7;">JK</div>
+            <div class="community-name">Jin K.</div>
+            <div class="community-flag">🇰🇷</div>
+          </div>
+          <div class="community-text">"Got the promotion. The one I've been passed over for twice. My manager said 'you've grown into your voice.' Just speak. It actually works."</div>
+          <div class="community-reactions">
+            <span class="reaction">🎉 89</span><span class="reaction">💬 34 replies</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PILLAR 4: GAMIFIED + MINDSET -->
+  <div class="product-block reverse" style="transition-delay:0s">
+    <div class="product-content">
+      <div class="product-pillar-badge" style="background:#FAEEDA;color:#854F0B;">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#EF9F27" stroke-width="2" stroke-linecap="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        Gamified dashboard + mindset coaching
+      </div>
+      <h3 class="product-block-title">Progress you can feel. Beliefs you can change.</h3>
+      <p class="product-block-body">Most language apps gamify vocabulary. Speaki gamifies courage. Every session you show up for is a win. Every freeze you push through is a badge. And woven through everything — mindset coaching that rewires the inner voice telling you to stay quiet.</p>
+      <ul class="product-features">
+        <li style="color:#633806"><span style="width:6px;height:6px;border-radius:50%;background:#EF9F27;flex-shrink:0;margin-top:6px;display:block;"></span>Speaking streak tracker — shows up even on hard days</li>
+        <li style="color:#633806"><span style="width:6px;height:6px;border-radius:50%;background:#EF9F27;flex-shrink:0;margin-top:6px;display:block;"></span>Confidence score that grows with every session</li>
+        <li style="color:#633806"><span style="width:6px;height:6px;border-radius:50%;background:#EF9F27;flex-shrink:0;margin-top:6px;display:block;"></span>Mindset reframes built into every session — not a separate module</li>
+        <li style="color:#633806"><span style="width:6px;height:6px;border-radius:50%;background:#EF9F27;flex-shrink:0;margin-top:6px;display:block;"></span>Visual progress that makes the invisible — visible</li>
+      </ul>
+    </div>
+    <div class="product-visual gamified-visual">
+      <div class="gamified-inner">
+        <div class="streak-row">
+          <div><div class="streak-label">Speaking streak</div><div class="streak-sub">Keep going</div></div>
+          <div style="text-align:right"><div class="streak-val">14</div><div class="streak-sub">days</div></div>
+        </div>
+        <div class="xp-bar-wrap">
+          <div class="xp-label"><span>Confidence level</span><span style="color:#854F0B;font-weight:500;">68 / 100</span></div>
+          <div class="xp-track"><div class="xp-fill"></div></div>
+        </div>
+        <div class="badge-row">
+          <div class="badge"><div class="badge-icon">🎤</div>First unmute</div>
+          <div class="badge"><div class="badge-icon">💬</div>Said it anyway</div>
+          <div class="badge"><div class="badge-icon">🔥</div>14-day streak</div>
+          <div class="badge"><div class="badge-icon">⭐</div>No script</div>
+        </div>
+        <div style="background:#fff;border:0.5px solid rgba(133,79,11,0.15);border-radius:10px;padding:12px 14px;margin-top:10px;">
+          <div style="font-size:10px;font-weight:500;color:#854F0B;margin-bottom:5px;letter-spacing:0.5px;">TODAY'S MINDSET REFRAME</div>
+          <div style="font-size:12px;color:#633806;line-height:1.55;font-style:italic;">"Ready is a feeling that only comes after. Not before. Just speak first."</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MANIFESTO -->
+<section class="manifesto-section">
+  <div class="manifesto-ring mr1"></div>
+  <div class="manifesto-ring mr2"></div>
+  <div class="manifesto-inner">
+    <p class="section-label" style="color:var(--green);">What Speaki believes</p>
+    <div class="manifesto-line" data-delay="0">You've been preparing.</div>
+    <div class="manifesto-line" data-delay="120">You've been translating.</div>
+    <div class="manifesto-line" data-delay="240">You've been apologizing.</div>
+    <div class="manifesto-line" data-delay="360">You've been waiting.</div>
+    <div class="manifesto-line bold" data-delay="640">Speaki says: enough of that.</div>
+    <div class="manifesto-line" data-delay="960" style="color:rgba(192,221,151,0.65);font-size:clamp(20px,3vw,34px);margin-top:32px;">Your AI coach is ready.</div>
+    <div class="manifesto-line" data-delay="1060" style="color:rgba(192,221,151,0.65);font-size:clamp(20px,3vw,34px);">Your live sessions are booked.</div>
+    <div class="manifesto-line" data-delay="1160" style="color:rgba(192,221,151,0.65);font-size:clamp(20px,3vw,34px);">Your community is waiting.</div>
+    <div class="manifesto-line" data-delay="1260" style="color:rgba(192,221,151,0.65);font-size:clamp(20px,3vw,34px);">Your progress is already happening.</div>
+    <div class="manifesto-line" data-delay="1560" style="color:rgba(192,221,151,0.45);font-size:clamp(16px,2vw,22px);margin-top:24px;">There's only one thing left.</div>
+    <div class="manifesto-line final" data-delay="1960">Just speak.</div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how-section" id="how">
+  <p class="section-label">How it works</p>
+  <h2 class="how-headline">Not lessons.<br/><em>Speaking.</em></h2>
+  <div class="how-grid">
+    <div class="how-step" style="transition-delay:0s">
+      <div class="how-num">1</div>
+      <div class="how-title">Speak from day one</div>
+      <div class="how-body">Your AI coach is live the moment you sign up. No setup. No placement test. No grammar warmup. Your first session is a real conversation — right now.</div>
+      <div class="how-just">Just start.</div>
+    </div>
+    <div class="how-step" style="transition-delay:0.15s">
+      <div class="how-num">2</div>
+      <div class="how-title">Book a live session this week</div>
+      <div class="how-body">Join a live group session that matches where you are — beginner, intermediate, or professional. Real pressure. Real humans. Real progress that the AI alone can't give you.</div>
+      <div class="how-just">Just say it.</div>
+    </div>
+    <div class="how-step" style="transition-delay:0.3s">
+      <div class="how-num">3</div>
+      <div class="how-title">Let the community catch you</div>
+      <div class="how-body">You're not doing this alone. Share your wins. Sit with your struggles. Let people who understand exactly where you are — hold you accountable and cheer you on.</div>
+      <div class="how-just">Just go.</div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials-section" id="stories">
+  <p class="section-label">Real voices</p>
+  <h2 class="testimonials-headline">What happens when people<br/><em>just speak.</em></h2>
+  <div class="testimonials-grid">
+    <div class="tcard" style="transition-delay:0s">
+      <p class="tquote">"I used to apologize before I spoke. <span class="taccent">'Sorry, my English isn't perfect.'</span> I haven't said that in three months."</p>
+      <div class="tauthor">
+        <div class="tavatar" style="background:#EAF3DE;color:#27500A;">AT</div>
+        <div><div class="tname">Ana T.</div><div class="trole">Operations Manager · Philippines → Dubai</div></div>
+      </div>
+    </div>
+    <div class="tcard" style="transition-delay:0.12s">
+      <p class="tquote">"My manager told me I'd 'grown into my voice.' What she meant is — <span class="taccent">she can finally hear me.</span>"</p>
+      <div class="tauthor">
+        <div class="tavatar" style="background:#E6F1FB;color:#185FA5;">JK</div>
+        <div><div class="tname">Jin K.</div><div class="trole">Product Manager · South Korea → Toronto</div></div>
+      </div>
+    </div>
+    <div class="tcard" style="transition-delay:0.24s">
+      <p class="tquote">"The live sessions changed everything. The AI helped me think — the humans helped me <span class="taccent">actually speak.</span>"</p>
+      <div class="tauthor">
+        <div class="tavatar" style="background:#EEEDFE;color:#534AB7;">PR</div>
+        <div><div class="tname">Priya R.</div><div class="trole">Data Analyst · India → New York</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- JUST VARIATIONS -->
+<section class="just-section">
+  <p class="section-label" style="color:var(--forest-mid);">One word. Every block.</p>
+  <div class="just-grid">
+    <div class="just-item" style="transition-delay:0s"><div class="just-phrase">Just speak.</div><div class="just-desc">The whole thing in two words.</div></div>
+    <div class="just-item" style="transition-delay:0.07s"><div class="just-phrase">Just start.</div><div class="just-desc">For the person waiting for the right moment for years.</div></div>
+    <div class="just-item" style="transition-delay:0.14s"><div class="just-phrase">Just say it.</div><div class="just-desc">For the one who rehearses obsessively — then freezes.</div></div>
+    <div class="just-item" style="transition-delay:0.21s"><div class="just-phrase">Just ask.</div><div class="just-desc">For the professional nodding in meetings, confused.</div></div>
+    <div class="just-item" style="transition-delay:0.28s"><div class="just-phrase">Just try.</div><div class="just-desc">For the beginner paralyzed by the gap to fluent.</div></div>
+    <div class="just-item" style="transition-delay:0.35s"><div class="just-phrase">Just go.</div><div class="just-desc">For the OFW waiting until their English is "good enough."</div></div>
+    <div class="just-item" style="transition-delay:0.42s"><div class="just-phrase">Just be you.</div><div class="just-desc">For the person performing an English version of themselves.</div></div>
+    <div class="just-item" style="transition-delay:0.49s"><div class="just-phrase" style="font-style:italic;font-size:17px;">Magsalita<br/>ka na lang.</div><div class="just-desc">Para sa mga Pilipinong handa na. Just speak, already.</div></div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section" id="start">
+  <div class="cta-bg-text" aria-hidden="true">Just speak.</div>
+  <div class="cta-inner">
+    <p class="cta-label">Your turn</p>
+    <h2 class="cta-headline">You've been<br/>waiting long<br/><em>enough.</em></h2>
+    <p class="cta-sub">AI coach. Live sessions. Real community. Mindset coaching. Everything you need to go from knowing the words — to just speaking them.</p>
+    <div class="cta-actions">
+      <a href="#" class="btn-dark">Start free today</a>
+    </div>
+    <p class="cta-note">Free to start · No credit card required · Cancel anytime</p>
+    <div class="cta-pillars">
+      <span class="cta-pillar-badge" style="background:#EAF3DE;color:#27500A;">AI coach 24/7</span>
+      <span class="cta-pillar-badge" style="background:#EEEDFE;color:#534AB7;">Live practice sessions</span>
+      <span class="cta-pillar-badge" style="background:#E1F5EE;color:#0F6E56;">Safe community</span>
+      <span class="cta-pillar-badge" style="background:#FAEEDA;color:#854F0B;">Gamified + mindset coaching</span>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div>
+    <div class="footer-logo">Speaki</div>
+    <div class="footer-tagline">Just speak.</div>
+  </div>
+  <ul class="footer-links">
+    <li><a href="#">AI Coach</a></li>
+    <li><a href="#">Live Sessions</a></li>
+    <li><a href="#">Community</a></li>
+    <li><a href="#">Pricing</a></li>
+    <li><a href="#">For teams</a></li>
+    <li><a href="#">Contact</a></li>
+  </ul>
+  <div class="footer-copy">© 2025 Speaki. All rights reserved.</div>
+</footer>
+
+<script>
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 40); });
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.pain-card,.how-step,.tcard,.just-item,.pillar,.product-block').forEach(el => observer.observe(el));
+
+const mObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.querySelectorAll('.manifesto-line').forEach(line => {
+        const delay = parseInt(line.dataset.delay || 0);
+        setTimeout(() => line.classList.add('visible'), delay);
+      });
+      mObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.15 });
+const mi = document.querySelector('.manifesto-inner');
+if (mi) mObserver.observe(mi);
+
+const bars = document.querySelectorAll('.wave-bar');
+function animateWave() {
+  bars.forEach((bar, i) => {
+    const h = 8 + Math.random() * 22;
+    bar.style.transition = 'height 0.3s ease';
+    bar.style.height = h + 'px';
+  });
+}
+setInterval(animateWave, 400);
+</script>
+</body>
+</html>
