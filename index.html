@@ -1,283 +1,648 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Speaki | Spoken English App for Live English Classes & Fluency Practice</title>
-  <meta name="description" content="Speaki is a spoken English app for live English classes, conversation practice, AI coaching, and fluency training to help learners improve spoken English with confidence." />
-  <meta name="keywords" content="Spoken English App, English Speaking Practice, Improve Spoken English, English Fluency App, Live English Classes, English Conversation Practice" />
-  <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://speaki.co/" />
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="Speaki | Spoken English App for Live English Classes & Fluency Practice" />
-  <meta property="og:description" content="Speaki is a spoken English app for live English classes, conversation practice, AI coaching, and fluency training to help learners improve spoken English with confidence." />
-  <meta property="og:url" content="https://speaki.co/" />
-  <meta property="og:site_name" content="Speaki" />
- <meta property="og:image" content="https://speaki.co/hero-phones.png" />
-  <meta property="og:image:alt" content="Speaki app screens showing live English speaking practice and live classes" />
-  <meta property="og:locale" content="en_US" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Speaki | Spoken English App for Live English Classes & Fluency Practice" />
-  <meta name="twitter:description" content="Speaki is a spoken English app for live English classes, conversation practice, AI coaching, and fluency training to help learners improve spoken English with confidence." />
-  <meta name=<meta name="twitter:image" content="https://speaki.co/hero-phones.png" />
-  <meta name="twitter:site" content="@speaki" />
-  <meta name="twitter:creator" content="@speaki" />
-  <link rel="alternate" hreflang="en" href="https://speaki.co/" />
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Speaki",
-    "url": "https://speaki.co/",
-    "logo": "https://speaki.co/hero-phones.png",
-    "sameAs": [
-      "https://www.facebook.com/",
-      "https://www.instagram.com/",
-      "https://www.youtube.com/"
-    ],
-    "contactPoint": [
-      {
-        "@type": "ContactPoint",
-        "email": "hello@speaki.co",
-        "contactType": "customer support",
-        "availableLanguage": "English"
-      }
-    ]
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Speaki | Speak English With Confidence + Mindset Coaching</title>
+<meta name="description" content="Speaki is a spoken English learning platform for non-native English speakers. Live classes, mindset coaching, AI coach, and real community to help you speak with confidence.">
+<meta name="keywords" content="Spoken English, English Speaking Practice, Mindset Coaching, AI English Coach, Live English Classes, Non-native English Speakers">
+<meta property="og:title" content="Speaki | Speak English With Confidence">
+<meta property="og:description" content="From knowing the words — to actually saying them. English communication + mindset coaching for non-native speakers.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://speaki.co/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700;9..144,900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --green:#2ECC71;
+    --green-deep:#1FA85B;
+    --green-dark:#0E5C33;
+    --ink:#0B1F17;
+    --ink-soft:#33473E;
+    --cream:#FBF8F1;
+    --cream-2:#F2EEE2;
+    --navy:#161A2B;
+    --navy-2:#1E2440;
+    --gold:#FFC93C;
+    --coral:#FF6B5E;
+    --blurple:#5865F2;
+    --white:#ffffff;
+    --radius:24px;
+    --shadow:0 20px 45px -20px rgba(11,31,23,.45);
+    --shadow-hard:6px 6px 0 var(--ink);
   }
-  </script>
-  <link rel="stylesheet" href="styles.css" />
-  <script defer src="script.js"></script>
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Plus Jakarta Sans',sans-serif;
+    background:var(--cream);
+    color:var(--ink);
+    line-height:1.6;
+    overflow-x:hidden;
+  }
+  h1,h2,h3,h4{font-family:'Fraunces',serif;line-height:1.05;letter-spacing:-.02em}
+  a{text-decoration:none;color:inherit}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+  section{position:relative}
+
+  /* ===== NAV ===== */
+  header.nav{
+    position:sticky;top:0;z-index:50;
+    background:rgba(251,248,241,.82);
+    backdrop-filter:blur(14px);
+    border-bottom:2px solid rgba(11,31,23,.07);
+  }
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;padding:14px 24px;max-width:1180px;margin:0 auto}
+  .logo{display:flex;align-items:center;gap:10px;font-family:'Fraunces',serif;font-weight:900;font-size:1.55rem;color:var(--ink)}
+  .logo .dot{
+    width:34px;height:34px;border-radius:50% 50% 50% 6px;
+    background:var(--green);display:grid;place-items:center;color:#fff;font-size:1rem;
+    box-shadow:3px 3px 0 var(--ink);
+  }
+  .nav-links{display:flex;gap:30px;align-items:center}
+  .nav-links a{font-weight:600;font-size:.95rem;color:var(--ink-soft);transition:color .2s}
+  .nav-links a:hover{color:var(--green-deep)}
+  .nav-cta{
+    background:var(--ink);color:#fff;padding:11px 22px;border-radius:40px;font-weight:700;font-size:.92rem;
+    box-shadow:3px 3px 0 var(--green);transition:transform .15s, box-shadow .15s;
+  }
+  .nav-cta:hover{transform:translate(-2px,-2px);box-shadow:5px 5px 0 var(--green)}
+  .burger{display:none;flex-direction:column;gap:5px;background:none;border:0;cursor:pointer;padding:8px}
+  .burger span{width:26px;height:3px;background:var(--ink);border-radius:3px}
+
+  /* ===== HERO ===== */
+  .hero{padding:70px 0 90px;overflow:hidden}
+  .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:50px;align-items:center}
+  .pill{
+    display:inline-flex;align-items:center;gap:8px;background:#fff;border:2px solid var(--ink);
+    padding:7px 16px;border-radius:40px;font-weight:700;font-size:.82rem;box-shadow:3px 3px 0 var(--gold);
+    margin-bottom:22px;
+  }
+  .pill .live{width:9px;height:9px;border-radius:50%;background:var(--coral);box-shadow:0 0 0 0 rgba(255,107,94,.7);animation:pulse 1.6s infinite}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(255,107,94,.6)}70%{box-shadow:0 0 0 9px rgba(255,107,94,0)}100%{box-shadow:0 0 0 0 rgba(255,107,94,0)}}
+  .hero h1{font-size:clamp(2.7rem,6vw,4.4rem);font-weight:900;margin-bottom:22px}
+  .hero h1 .hl{position:relative;color:var(--green-deep);white-space:nowrap}
+  .hero h1 .hl svg{position:absolute;left:0;bottom:-10px;width:100%;height:14px}
+  .hero p.lead{font-size:1.15rem;color:var(--ink-soft);max-width:520px;margin-bottom:32px}
+  .hero-ctas{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:34px}
+  .btn{
+    display:inline-flex;align-items:center;gap:9px;font-weight:800;font-size:1rem;
+    padding:15px 28px;border-radius:50px;cursor:pointer;border:2px solid var(--ink);transition:transform .15s,box-shadow .15s;
+  }
+  .btn-primary{background:var(--green);color:#fff;box-shadow:var(--shadow-hard)}
+  .btn-primary:hover{transform:translate(-3px,-3px);box-shadow:9px 9px 0 var(--ink)}
+  .btn-ghost{background:#fff;color:var(--ink);box-shadow:4px 4px 0 var(--ink)}
+  .btn-ghost:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--ink)}
+  .avatars{display:flex;align-items:center;gap:14px}
+  .avatars .stack{display:flex}
+  .avatars .stack span{
+    width:42px;height:42px;border-radius:50%;border:3px solid var(--cream);margin-left:-12px;
+    display:grid;place-items:center;color:#fff;font-weight:800;font-size:.85rem;
+  }
+  .avatars .stack span:first-child{margin-left:0}
+  .avatars small{font-weight:600;color:var(--ink-soft);max-width:190px;font-size:.85rem;line-height:1.3}
+
+  /* hero visual */
+  .hero-visual{position:relative;display:grid;place-items:center}
+  .phone{
+    width:280px;background:var(--navy);border-radius:42px;padding:14px;box-shadow:var(--shadow);
+    border:3px solid var(--ink);position:relative;z-index:2;
+  }
+  .phone-screen{background:linear-gradient(160deg,#1E2440,#0E5C33);border-radius:30px;overflow:hidden;padding:20px 16px;color:#fff;min-height:480px}
+  .ph-top{display:flex;justify-content:space-between;align-items:center;font-size:.7rem;opacity:.7;margin-bottom:18px}
+  .ph-card{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.15);border-radius:18px;padding:14px;margin-bottom:12px;backdrop-filter:blur(4px)}
+  .ph-card .row{display:flex;align-items:center;gap:10px}
+  .ph-card .ic{width:38px;height:38px;border-radius:12px;display:grid;place-items:center;font-size:1.1rem}
+  .ph-card h5{font-family:'Plus Jakarta Sans';font-weight:800;font-size:.9rem;margin-bottom:2px}
+  .ph-card p{font-size:.72rem;opacity:.75;line-height:1.3}
+  .ph-live{background:linear-gradient(120deg,var(--green),var(--green-deep));border:0}
+  .ph-live p{opacity:.95}
+  .wave{display:flex;gap:3px;align-items:flex-end;height:26px;margin-top:8px}
+  .wave i{width:4px;background:#fff;border-radius:3px;opacity:.85;animation:eq 1s infinite ease-in-out}
+  .wave i:nth-child(2){animation-delay:.1s}.wave i:nth-child(3){animation-delay:.2s}.wave i:nth-child(4){animation-delay:.3s}.wave i:nth-child(5){animation-delay:.15s}.wave i:nth-child(6){animation-delay:.25s}
+  @keyframes eq{0%,100%{height:6px}50%{height:24px}}
+  .float-badge{
+    position:absolute;background:#fff;border:2px solid var(--ink);border-radius:16px;padding:10px 14px;
+    font-weight:800;font-size:.8rem;box-shadow:4px 4px 0 var(--ink);z-index:3;display:flex;align-items:center;gap:8px;
+  }
+  .fb-1{top:30px;left:-10px;box-shadow:4px 4px 0 var(--gold);animation:floaty 4s ease-in-out infinite}
+  .fb-2{bottom:60px;right:-20px;box-shadow:4px 4px 0 var(--blurple);animation:floaty 5s ease-in-out infinite .5s}
+  @keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+  .blob{position:absolute;border-radius:50%;filter:blur(8px);z-index:0}
+
+  /* ===== WHY YOU'RE HERE ===== */
+  .why{background:var(--navy);color:#fff;padding:90px 0;border-radius:48px;margin:0 14px;overflow:hidden}
+  .why .eyebrow{color:var(--gold)}
+  .eyebrow{text-transform:uppercase;letter-spacing:.18em;font-weight:800;font-size:.78rem;color:var(--green-deep);margin-bottom:14px;display:block}
+  .why h2{font-size:clamp(2rem,4.5vw,3.2rem);font-weight:900;margin-bottom:14px;color:#fff}
+  .why .sub{color:rgba(255,255,255,.7);max-width:560px;margin-bottom:42px;font-size:1.05rem}
+  .why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:46px}
+  .why-card{
+    background:var(--navy-2);border:1px solid rgba(255,255,255,.09);border-radius:18px;padding:20px 22px;
+    font-weight:600;font-size:1rem;display:flex;align-items:flex-start;gap:12px;transition:transform .2s,border-color .2s;
+  }
+  .why-card:hover{transform:translateY(-4px);border-color:var(--green)}
+  .why-card .x{color:var(--coral);font-size:1.2rem;line-height:1.2;flex-shrink:0}
+  .why-turn{text-align:center;border-top:1px solid rgba(255,255,255,.12);padding-top:42px}
+  .why-turn .strike{color:rgba(255,255,255,.55);font-weight:700;font-size:1.1rem;margin-bottom:10px}
+  .why-turn .strike span{text-decoration:line-through;text-decoration-color:var(--coral);margin:0 6px}
+  .why-turn h3{font-size:clamp(1.5rem,3vw,2.3rem);font-weight:700;color:#fff;max-width:780px;margin:0 auto 28px}
+  .why-turn h3 em{color:var(--green);font-style:normal}
+
+  /* ===== SECTION TITLES ===== */
+  .sec-head{text-align:center;max-width:680px;margin:0 auto 50px}
+  .sec-head h2{font-size:clamp(2rem,4.5vw,3rem);font-weight:900;margin-bottom:14px}
+  .sec-head p{color:var(--ink-soft);font-size:1.08rem}
+  .pad{padding:90px 0}
+
+  /* ===== SYSTEM / FEATURES ===== */
+  .feat-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+  .feat{
+    background:#fff;border:2px solid var(--ink);border-radius:var(--radius);padding:30px;
+    box-shadow:6px 6px 0 var(--ink);transition:transform .18s,box-shadow .18s;position:relative;overflow:hidden;
+  }
+  .feat:hover{transform:translate(-3px,-3px);box-shadow:9px 9px 0 var(--ink)}
+  .feat .badge{position:absolute;top:18px;right:18px;background:var(--gold);border:2px solid var(--ink);border-radius:30px;font-size:.68rem;font-weight:800;padding:4px 10px}
+  .feat .ico{width:58px;height:58px;border-radius:18px;display:grid;place-items:center;font-size:1.6rem;margin-bottom:18px;border:2px solid var(--ink)}
+  .feat h3{font-size:1.4rem;font-weight:700;margin-bottom:8px}
+  .feat p{color:var(--ink-soft)}
+  .c-green{background:var(--green)}.c-gold{background:var(--gold)}.c-blurple{background:var(--blurple);color:#fff}.c-coral{background:var(--coral)}
+
+  /* ===== FOR WHO ===== */
+  .who-bg{background:var(--cream-2)}
+  .who-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .who-card{background:#fff;border-radius:20px;padding:26px;border:2px solid rgba(11,31,23,.1);transition:transform .18s,border-color .18s}
+  .who-card:hover{transform:translateY(-5px);border-color:var(--green)}
+  .who-card .e{font-size:2rem;margin-bottom:12px;display:block}
+  .who-card h3{font-size:1.2rem;font-weight:700;margin-bottom:6px}
+  .who-card p{color:var(--ink-soft);font-size:.93rem}
+
+  /* ===== FORMS (LIVE + WAITLIST) ===== */
+  .offers{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+  .offer{border-radius:28px;padding:42px 38px;border:2px solid var(--ink);position:relative;overflow:hidden}
+  .offer-live{background:linear-gradient(150deg,var(--green),var(--green-deep));color:#fff;box-shadow:8px 8px 0 var(--ink)}
+  .offer-wait{background:var(--navy);color:#fff;box-shadow:8px 8px 0 var(--green)}
+  .offer .tag{display:inline-flex;align-items:center;gap:7px;background:rgba(255,255,255,.2);border:1px solid rgba(255,255,255,.35);padding:6px 13px;border-radius:30px;font-weight:700;font-size:.78rem;margin-bottom:18px}
+  .offer h3{font-size:1.85rem;font-weight:800;margin-bottom:10px;color:#fff}
+  .offer p{opacity:.9;margin-bottom:24px}
+  .offer ul{list-style:none;margin-bottom:26px;display:flex;flex-direction:column;gap:10px}
+  .offer li{display:flex;gap:10px;align-items:center;font-weight:600;font-size:.95rem}
+  .offer li .ck{width:22px;height:22px;border-radius:50%;background:rgba(255,255,255,.25);display:grid;place-items:center;font-size:.7rem;flex-shrink:0}
+  .offer-btn{display:inline-flex;align-items:center;gap:10px;width:100%;justify-content:center;padding:16px;border-radius:50px;font-weight:800;font-size:1.05rem;border:2px solid var(--ink);cursor:pointer;transition:transform .15s}
+  .offer-live .offer-btn{background:#fff;color:var(--green-deep)}
+  .offer-wait .offer-btn{background:var(--gold);color:var(--ink)}
+  .offer-btn:hover{transform:scale(1.03)}
+  .offer .free{position:absolute;top:24px;right:-38px;background:var(--gold);color:var(--ink);font-weight:800;font-size:.8rem;padding:6px 44px;transform:rotate(45deg);border-top:2px solid var(--ink);border-bottom:2px solid var(--ink)}
+  .offer-form{display:flex;flex-direction:column;gap:12px}
+  .offer-input{font-family:inherit;font-size:1rem;padding:14px 16px;border-radius:14px;border:2px solid var(--ink);background:rgba(255,255,255,.95);color:var(--ink)}
+  .offer-input:focus{outline:none;box-shadow:3px 3px 0 var(--gold)}
+  .offer-msg{font-weight:700;font-size:.9rem;padding:10px 14px;border-radius:12px;margin:0}
+  .offer-msg.success{background:rgba(255,255,255,.95);color:var(--green-deep)}
+  .offer-msg.error{background:#fff;color:var(--coral)}
+  .cform .offer-msg.success{background:#E8F8EF;color:var(--green-deep)}
+  .cform .offer-msg.error{background:#FFEDEB;color:var(--coral)}
+
+  /* ===== ABOUT ===== */
+  .about-bg{background:var(--navy);color:#fff;border-radius:48px;margin:0 14px;padding:90px 0;overflow:hidden}
+  .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}
+  .about-bg h2{color:#fff;font-size:clamp(2rem,4.5vw,3rem);font-weight:900;margin-bottom:20px}
+  .about-bg p{color:rgba(255,255,255,.78);font-size:1.08rem;margin-bottom:18px}
+  .mission{background:var(--navy-2);border:1px solid rgba(255,255,255,.12);border-left:4px solid var(--green);border-radius:16px;padding:22px;margin-top:24px}
+  .mission strong{color:var(--gold)}
+  .about-tags{display:flex;flex-direction:column;gap:14px}
+  .about-tag{background:var(--navy-2);border:1px solid rgba(255,255,255,.1);border-radius:18px;padding:20px;display:flex;gap:14px;align-items:center}
+  .about-tag .e{font-size:1.6rem}
+  .about-tag h4{font-family:'Plus Jakarta Sans';font-weight:800;font-size:1rem;color:#fff;margin-bottom:2px}
+  .about-tag p{margin:0;font-size:.86rem}
+
+  /* ===== CONTACT ===== */
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
+  form.cform{display:flex;flex-direction:column;gap:16px}
+  .cform label{font-weight:700;font-size:.9rem;margin-bottom:-8px}
+  .cform input,.cform textarea{
+    font-family:inherit;font-size:1rem;padding:14px 16px;border-radius:14px;border:2px solid var(--ink);background:#fff;
+  }
+  .cform input:focus,.cform textarea:focus{outline:none;box-shadow:3px 3px 0 var(--green)}
+  .cform textarea{resize:vertical;min-height:120px}
+  .cform button{background:var(--ink);color:#fff;border:2px solid var(--ink);padding:15px;border-radius:50px;font-weight:800;font-size:1rem;cursor:pointer;box-shadow:4px 4px 0 var(--green);transition:transform .15s}
+  .cform button:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--green)}
+  .contact-alts{display:flex;flex-direction:column;gap:16px}
+  .alt{display:flex;align-items:center;gap:16px;background:#fff;border:2px solid var(--ink);border-radius:18px;padding:18px 20px;box-shadow:5px 5px 0 var(--ink);transition:transform .15s,box-shadow .15s}
+  .alt:hover{transform:translate(-3px,-3px);box-shadow:8px 8px 0 var(--ink)}
+  .alt .ic{width:50px;height:50px;border-radius:14px;display:grid;place-items:center;font-size:1.4rem;flex-shrink:0;border:2px solid var(--ink)}
+  .alt h4{font-family:'Plus Jakarta Sans';font-weight:800;font-size:1.05rem;margin-bottom:2px}
+  .alt p{color:var(--ink-soft);font-size:.88rem}
+  .alt .wa{background:#25D366}.alt .fb{background:#0084FF;color:#fff}.alt .em{background:var(--gold)}
+
+  /* ===== FOOTER ===== */
+  footer{background:var(--ink);color:rgba(255,255,255,.7);padding:60px 0 30px;margin-top:30px}
+  .foot-grid{display:flex;justify-content:space-between;flex-wrap:wrap;gap:30px;margin-bottom:40px}
+  footer .logo{color:#fff}
+  footer .logo .dot{box-shadow:3px 3px 0 var(--green-deep)}
+  .foot-col h5{color:#fff;font-family:'Plus Jakarta Sans';font-weight:800;margin-bottom:14px;font-size:.95rem}
+  .foot-col a{display:block;color:rgba(255,255,255,.65);margin-bottom:9px;font-size:.9rem;transition:color .2s}
+  .foot-col a:hover{color:var(--green)}
+  .socials{display:flex;gap:12px;margin-top:6px}
+  .socials a{width:42px;height:42px;border-radius:12px;display:grid;place-items:center;background:var(--navy-2);font-weight:800;transition:transform .15s,background .2s;border:1px solid rgba(255,255,255,.1)}
+  .socials a:hover{transform:translateY(-4px);background:var(--green)}
+  .foot-bottom{border-top:1px solid rgba(255,255,255,.12);padding-top:24px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:.85rem}
+
+  /* ===== RESPONSIVE ===== */
+  @media(max-width:900px){
+    .nav-links{display:none}
+    .burger{display:flex}
+    .hero-grid{grid-template-columns:1fr;gap:60px}
+    .hero-visual{order:-1}
+    .why-grid{grid-template-columns:1fr 1fr}
+    .feat-grid,.offers,.about-grid,.contact-grid{grid-template-columns:1fr}
+    .who-grid{grid-template-columns:1fr 1fr}
+  }
+  @media(max-width:560px){
+    .why-grid,.who-grid{grid-template-columns:1fr}
+    .why,.about-bg{margin:0 8px;border-radius:32px}
+    .hero h1 .hl{white-space:normal}
+  }
+  .nav-mobile{display:none;flex-direction:column;gap:4px;padding:0 24px 16px}
+  .nav-mobile a{padding:12px;font-weight:700;border-bottom:1px solid rgba(11,31,23,.08)}
+  .nav-mobile.open{display:flex}
+</style>
 </head>
 <body>
-  <div class="container">
-    <header class="site-header">
-      <div class="header-inner">
-        <div class="brand">SPEAK<span>i</span></div>
-        <button class="mobile-menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-        <nav class="main-nav" aria-label="Primary navigation">
-          <ul>
-            <li><a href="#features">Features</a></li>
-            <li><a href="#how-it-works">How It Works</a></li>
-            <li><a href="#for-who">For Who?</a></li>
-            <li><a href="#about">About Us</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-        </nav>
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSc2-Bq9JzHPeoszkP4CINXCt0SnXgl94jUjY_izXN4UdQOhDA/viewform" target="_blank" rel="noopener noreferrer" class="pill-button">🚀 In Development</a>
-      </div>
-    </header>
 
-    <main>
-      <section class="hero-section">
-        <div class="hero-copy">
-          <div class="hero-badge">🚀 Launching Soon</div>
-          <h1 class="hero-title">
-            Speak English<br />
-            <span class="gradient-text">With Confidence.</span>
-          </h1>
-          <p class="hero-description">
-            Practice speaking English through live classes, guided conversations, AI coaching, and a community of learners designed to help you improve every day.
-          </p>
-          <div class="hero-actions">
-            <!-- TODO: Replace Google Form with direct API submission -->
-            <a href="#waitlist" class="button primary">Join The Beta</a>
-            <a href="#features" class="button secondary">Explore Features</a>
-          </div>
-          <div class="hero-proof">
-            <div class="avatar-stack">
-              <div class="avatar">MJ</div>
-              <div class="avatar">LE</div>
-              <div class="avatar">AS</div>
-              <div class="avatar">TO</div>
-            </div>
-            <p>Be among the first learners to get <span>early access</span>.</p>
-          </div>
-        </div>
-
-        <div class="hero-visual">
-          <div class="hero-phones-container">
-            <img
-              src="hero-phones.png"
-              alt="Speaki English fluency app screens showing live English speaking practice and live classes"
-              class="hero-phones"
-            />
-          </div>
-        </div>
-      </section>
-
-      <section class="feature-strip page-section" id="features">
-        <div class="feature-panel">
-          <div class="feature-card">
-            <div class="feature-icon">🎥</div>
-            <div class="feature-content">
-              <h4>Live Classes</h4>
-              <p>Learn from expert trainers in interactive live sessions.</p>
-            </div>
-          </div>
-          <div class="feature-card">
-            <div class="feature-icon">👥</div>
-            <div class="feature-content">
-              <h4>Speaking Practice</h4>
-              <p>Connect with learners and practice real conversations.</p>
-            </div>
-          </div>
-          <div class="feature-card">
-            <div class="feature-icon">🤖</div>
-            <div class="feature-content">
-              <h4>AI Speaking Coach</h4>
-              <p>Get instant feedback and personalized speaking tips.</p>
-            </div>
-          </div>
-          <div class="feature-card">
-            <div class="feature-icon">📈</div>
-            <div class="feature-content">
-              <h4>Progress Tracking</h4>
-              <p>Track your speaking time, vocabulary and milestones.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="how-panel page-section" id="how-it-works">
-        <div class="section-header">
-          <p class="section-label">How It Works</p>
-          <h2 class="section-title">Three simple steps to build your English fluency</h2>
-        </div>
-        <div class="step-grid">
-          <article class="step-card">
-            <div class="step-icon">1</div>
-            <h3>Join Speaki</h3>
-            <p>Create your account, select your level, and begin your journey with the right learning tools.</p>
-          </article>
-          <article class="step-card">
-            <div class="step-icon">2</div>
-            <h3>Practice Daily</h3>
-            <p>Use live classes, partner sessions, and AI coaching to practice speaking every day.</p>
-          </article>
-          <article class="step-card">
-            <div class="step-icon">3</div>
-            <h3>Improve Your Fluency</h3>
-            <p>Track progress, build confidence, and gain real conversational skills step by step.</p>
-          </article>
-        </div>
-      </section>
-
-      <section class="who-panel page-section" id="for-who">
-        <div class="section-header">
-          <p class="section-label">For Who?</p>
-          <h2 class="section-title">A learning platform built for every English learner</h2>
-        </div>
-        <div class="who-grid">
-          <article class="who-card">
-            <div class="who-icon">🎓</div>
-            <h3>Students</h3>
-            <p>Improve grades, participate in class, and feel confident speaking English at school.</p>
-          </article>
-          <article class="who-card">
-            <div class="who-icon">💼</div>
-            <h3>Working Professionals</h3>
-            <p>Speak confidently in meetings, presentations, and professional conversations.</p>
-          </article>
-          <article class="who-card">
-            <div class="who-icon">💼</div>
-            <h3>Job Seekers</h3>
-            <p>Prepare for interviews, networking, and career opportunities with stronger communication.</p>
-          </article>
-          <article class="who-card">
-            <div class="who-icon">📞</div>
-            <h3>BPO / Call Center Aspirants</h3>
-            <p>Build clear pronunciation and customer-facing English skills for the service industry.</p>
-          </article>
-          <article class="who-card">
-            <div class="who-icon">🌍</div>
-            <h3>English Learners</h3>
-            <p>Practice real conversations, grow vocabulary, and become more fluent in everyday speech.</p>
-          </article>
-          <article class="who-card">
-            <div class="who-icon">✨</div>
-            <h3>Anyone Wanting More Confidence</h3>
-            <p>Gain the speaking practice and support needed to feel sure of yourself in English.</p>
-          </article>
-        </div>
-      </section>
-
-      <section class="about-panel page-section" id="about">
-        <div class="section-header">
-          <p class="section-label">About Us</p>
-          <h2 class="section-title">About Speaki</h2>
-        </div>
-        <div class="about-content">
-          <div class="about-copy">
-            <p>Speaki is a spoken English learning platform designed to help learners build confidence through live classes, guided practice, AI coaching, and real conversations.</p>
-            <p><strong>Mission:</strong> To help people communicate confidently in English and unlock better opportunities.</p>
-          </div>
-          <div class="about-card">
-            <h3>Our promise</h3>
-            <p>We provide structured speaking practice, community support, and technology that makes learning English more natural, engaging, and results-driven.</p>
-          </div>
-        </div>
-      </section>
-
-      <section class="contact-panel page-section" id="contact">
-        <div class="section-header">
-          <p class="section-label">Contact</p>
-          <h2 class="section-title">Get in touch with Speaki</h2>
-        </div>
-        <div class="contact-grid">
-          <article class="contact-card">
-            <h3>Email</h3>
-            <a href="mailto:hello@speaki.co">hello@speaki.co</a>
-          </article>
-          <article class="contact-card">
-            <h3>Website</h3>
-            <a href="https://speaki.co" target="_blank" rel="noreferrer">speaki.co</a>
-          </article>
-          <article class="contact-card">
-            <h3>Follow Us</h3>
-            <div class="social-links-row">
-              <a href="#" aria-label="Facebook">f</a>
-              <a href="#" aria-label="Instagram">i</a>
-              <a href="#" aria-label="YouTube">y</a>
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <!-- TODO: Replace Google Form with direct API submission -->
-      <section class="waitlist-panel" id="waitlist">
-        <div class="waitlist-form-wrapper">
-          <div class="waitlist-grid">
-            <div class="waitlist-copy">
-              <div class="icon-circle">🚀</div>
-              <div>
-                <h2>We're Building Something Great</h2>
-                <p>Speaki is currently in active development. Join our waitlist and be the first to know when we launch.</p>
-              </div>
-            </div>
-            <div class="waitlist-input">
-              <label class="sr-only" for="waitlist-email">Email address</label>
-              <input id="waitlist-email" type="email" placeholder="Enter your email address" />
-            </div>
-            <div class="waitlist-action">
-              <button type="button" id="waitlist-submit" class="button primary">Get Early Access</button>
-            </div>
-          </div>
-          <p class="privacy-note">We respect your privacy. No spam, ever.</p>
-          <p id="form-message" class="form-message" style="display: none;"></p>
-        </div>
-        <!-- Hidden iframe for form submission -->
-        <iframe name="hidden_iframe" id="hidden_iframe" style="display: none;"></iframe>
-      </section>
-    </main>
-
-    <footer class="site-footer">
-      <p>© 2026 Speaki. All rights reserved.</p>
-      <p class="footer-domain">speaki.co</p>
-    </footer>
+<!-- NAV -->
+<header class="nav">
+  <div class="nav-inner">
+    <a href="#" class="logo"><span class="dot">🗣️</span>Speaki</a>
+    <nav class="nav-links">
+      <a href="#why">Why You're Here</a>
+      <a href="#system">The System</a>
+      <a href="#who">For Who</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a href="#start" class="nav-cta">Start Free →</a>
+    <button class="burger" onclick="document.getElementById('mob').classList.toggle('open')">
+      <span></span><span></span><span></span>
+    </button>
   </div>
+  <div class="nav-mobile" id="mob">
+    <a href="#why">Why You're Here</a>
+    <a href="#system">The System</a>
+    <a href="#who">For Who</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+    <a href="#start">Start Free →</a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="blob" style="width:280px;height:280px;background:rgba(46,204,113,.18);top:40px;right:5%"></div>
+  <div class="blob" style="width:200px;height:200px;background:rgba(255,201,60,.22);bottom:0;left:8%"></div>
+  <div class="wrap hero-grid">
+    <div>
+      <span class="pill"><span class="live"></span>LIVE sessions with real people</span>
+      <h1>Speak English with
+        <span class="hl">confidence.
+          <svg viewBox="0 0 200 14" preserveAspectRatio="none"><path d="M2 9 Q50 2 100 7 T198 5" stroke="#FFC93C" stroke-width="6" fill="none" stroke-linecap="round"/></svg>
+        </span>
+      </h1>
+      <p class="lead">English communication <strong>+ mindset coaching</strong> for non-native speakers. The complete system that gets you from knowing the words — to actually saying them.</p>
+      <div class="hero-ctas">
+        <a href="#start" class="btn btn-primary">Start Free 🚀</a>
+        <a href="#system" class="btn btn-ghost">See the system</a>
+      </div>
+      <div class="avatars">
+        <div class="stack">
+          <span style="background:#2ECC71">MJ</span>
+          <span style="background:#5865F2">LE</span>
+          <span style="background:#FF6B5E">AS</span>
+          <span style="background:#FFC93C;color:#0B1F17">TO</span>
+        </div>
+        <small>Join learners building real speaking confidence — together.</small>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="float-badge fb-1">🔥 7-day streak</div>
+      <div class="float-badge fb-2">🤖 AI coach · 24/7</div>
+      <div class="phone">
+        <div class="phone-screen">
+          <div class="ph-top"><span>9:41</span><span>Speaki</span></div>
+          <div class="ph-card ph-live">
+            <div class="row">
+              <div class="ic" style="background:rgba(255,255,255,.25)">🎥</div>
+              <div><h5>Live Session — Now</h5><p>Speak English + Identity Shift</p></div>
+            </div>
+            <div class="wave"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+          </div>
+          <div class="ph-card">
+            <div class="row">
+              <div class="ic" style="background:rgba(88,101,242,.4)">🧠</div>
+              <div><h5>Mindset Coaching</h5><p>Stop rehearsing. Just speak.</p></div>
+            </div>
+          </div>
+          <div class="ph-card">
+            <div class="row">
+              <div class="ic" style="background:rgba(255,201,60,.35)">👥</div>
+              <div><h5>Your Community</h5><p>Safe, inclusive, no judgment</p></div>
+            </div>
+          </div>
+          <div class="ph-card">
+            <div class="row">
+              <div class="ic" style="background:rgba(46,204,113,.4)">📈</div>
+              <div><h5>Progress</h5><p>Gamified · launching soon</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY YOU'RE HERE -->
+<section class="why" id="why">
+  <div class="wrap">
+    <span class="eyebrow">Why you're here</span>
+    <h2>It's not your vocabulary.<br>It's everything around it.</h2>
+    <p class="sub">You know what you want to say. You just don't say it. Sound familiar?</p>
+    <div class="why-grid">
+      <div class="why-card"><span class="x">✕</span>You're scared to make mistakes.</div>
+      <div class="why-card"><span class="x">✕</span>You're scared of being judged.</div>
+      <div class="why-card"><span class="x">✕</span>You're embarrassed of your accent.</div>
+      <div class="why-card"><span class="x">✕</span>You freeze in meetings.</div>
+      <div class="why-card"><span class="x">✕</span>You rehearse. Then freeze anyway.</div>
+      <div class="why-card"><span class="x">✕</span>You're quieter in English.</div>
+      <div class="why-card"><span class="x">✕</span>You've studied for years.</div>
+      <div class="why-card"><span class="x">✕</span>Your work speaks. You don't.</div>
+      <div class="why-card"><span class="x">✕</span>You know the words. You stay silent.</div>
+    </div>
+    <div class="why-turn">
+      <p class="strike">Stop <span>waiting</span> Stop <span>rehearsing</span> Stop <span>translating</span></p>
+      <h3>Speaki is the complete system that gets you from <em>knowing the words</em> — to actually <em>saying them.</em></h3>
+      <a href="#start" class="btn btn-primary">Start Free</a>
+    </div>
+  </div>
+</section>
+
+<!-- THE SYSTEM -->
+<section class="pad" id="system">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Not just an AI</span>
+      <h2>The complete Speaking System</h2>
+      <p>Designed for different kinds of learners — combining people, practice, mindset and technology.</p>
+    </div>
+    <div class="feat-grid">
+      <div class="feat">
+        <div class="ico c-green">🎥</div>
+        <h3>Live Practice Sessions</h3>
+        <p>Real classes with real people. Speak out loud, get coached, and break the silence in a space built for it.</p>
+      </div>
+      <div class="feat">
+        <div class="ico c-blurple">🧠</div>
+        <h3>Mindset Coaching</h3>
+        <p>The part most apps skip. Rewire the fear, the freezing, and the self-doubt — not just the grammar.</p>
+      </div>
+      <div class="feat">
+        <div class="ico c-coral">👥</div>
+        <h3>Safe, Inclusive Community</h3>
+        <p>A real community where mistakes are welcome and nobody's judging your accent. You belong here.</p>
+      </div>
+      <div class="feat">
+        <span class="badge">Launching soon</span>
+        <div class="ico c-gold">🤖</div>
+        <h3>AI Coach, 24/7</h3>
+        <p>Practice anytime, anywhere. Instant feedback and personalized speaking tips whenever you need them.</p>
+      </div>
+      <div class="feat" style="grid-column:1/-1;background:var(--navy);color:#fff;border-color:var(--ink)">
+        <span class="badge">Launching soon</span>
+        <div class="ico c-green">🎮</div>
+        <h3 style="color:#fff">Gamified Progress</h3>
+        <p style="color:rgba(255,255,255,.78)">Streaks, milestones, and momentum that make daily speaking practice something you actually look forward to.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOR WHO -->
+<section class="pad who-bg" id="who">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">For who</span>
+      <h2>Built for every non-native speaker</h2>
+      <p>If your work speaks but you don't — Speaki was designed for you.</p>
+    </div>
+    <div class="who-grid">
+      <div class="who-card"><span class="e">💼</span><h3>Working Professionals</h3><p>Speak up confidently in meetings, presentations, and 1:1s without freezing.</p></div>
+      <div class="who-card"><span class="e">🎓</span><h3>Students</h3><p>Participate in class and present without the fear of being judged.</p></div>
+      <div class="who-card"><span class="e">🤝</span><h3>Job Seekers</h3><p>Walk into interviews and networking ready to say what you mean.</p></div>
+      <div class="who-card"><span class="e">📞</span><h3>BPO / Call Center Aspirants</h3><p>Build clear, confident, customer-facing English for the service industry.</p></div>
+      <div class="who-card"><span class="e">🌍</span><h3>Everyday Learners</h3><p>Grow vocabulary into real conversations you actually have out loud.</p></div>
+      <div class="who-card"><span class="e">✨</span><h3>Anyone Wanting Confidence</h3><p>You've studied for years. Now it's time to be heard.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- OFFERS / FORMS -->
+<section class="pad" id="start">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Get started</span>
+      <h2>Two ways to begin today</h2>
+      <p>Jump into a live session for free, or lock in early access to the AI coach.</p>
+    </div>
+    <div class="offers">
+      <div class="offer offer-live">
+        <span class="free">FREE</span>
+        <span class="tag">🎥 Live + In person</span>
+        <h3>Join a Live Session — Free</h3>
+        <p>Speak English + experience the Identity Shift. Real practice, real people, zero cost.</p>
+        <ul>
+          <li><span class="ck">✓</span> Speak out loud with real humans</li>
+          <li><span class="ck">✓</span> Mindset & identity-shift coaching</li>
+          <li><span class="ck">✓</span> A safe, no-judgment room</li>
+        </ul>
+        <form class="offer-form" data-formtype="Live Session">
+          <input class="offer-input" type="text" name="name" placeholder="Your name" required>
+          <input class="offer-input" type="email" name="email" placeholder="you@email.com" required>
+          <button type="submit" class="offer-btn">Reserve my free spot →</button>
+          <p class="offer-msg" style="display:none"></p>
+        </form>
+      </div>
+
+      <div class="offer offer-wait">
+        <span class="tag">🤖 Early access</span>
+        <h3>AI Coach Waitlist</h3>
+        <p>Sign up for our 24/7 AI coach and get first access when it launches.</p>
+        <ul>
+          <li><span class="ck">✓</span> Practice anytime, 24/7</li>
+          <li><span class="ck">✓</span> First access before everyone</li>
+          <li><span class="ck">✓</span> Founding-member perks</li>
+        </ul>
+        <form class="offer-form" data-formtype="AI Coach Waitlist">
+          <input class="offer-input" type="text" name="name" placeholder="Your name" required>
+          <input class="offer-input" type="email" name="email" placeholder="you@email.com" required>
+          <button type="submit" class="offer-btn">Join the waitlist →</button>
+          <p class="offer-msg" style="display:none"></p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about-bg" id="about">
+  <div class="wrap about-grid">
+    <div>
+      <span class="eyebrow" style="color:var(--gold)">About us</span>
+      <h2>This is Speaki.</h2>
+      <p>Speaki is a spoken English learning platform for non-native English speakers — designed to help learners build confidence through live classes, guided practice, mindset coaching, AI coaching, and real conversations.</p>
+      <div class="mission">
+        <strong>Our mission:</strong> To help YOU communicate efficiently and confidently in English — so you can unlock better opportunities.
+      </div>
+    </div>
+    <div class="about-tags">
+      <div class="about-tag"><span class="e">🗣️</span><div><h4>Communication + Mindset</h4><p>Not just words — the confidence to use them.</p></div></div>
+      <div class="about-tag"><span class="e">🎯</span><div><h4>Designed for every learner</h4><p>Different people learn differently. So do we.</p></div></div>
+      <div class="about-tag"><span class="e">💚</span><div><h4>Real people, real community</h4><p>Live sessions and a space where you belong.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="pad" id="contact">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Contact</span>
+      <h2>Let's talk</h2>
+      <p>Questions before you start? Reach out however feels easiest.</p>
+    </div>
+    <div class="contact-grid">
+      <form class="cform offer-form" data-formtype="Contact">
+        <label for="cn">Name</label>
+        <input id="cn" name="name" type="text" placeholder="Your name" required>
+        <label for="ce">Email</label>
+        <input id="ce" name="email" type="email" placeholder="you@email.com" required>
+        <label for="cm">Message</label>
+        <textarea id="cm" name="message" placeholder="Tell us what's on your mind..." required></textarea>
+        <button type="submit">Send message →</button>
+        <p class="offer-msg" style="display:none"></p>
+      </form>
+      <div class="contact-alts">
+        <a class="alt" href="https://wa.me/YOUR_NUMBER" target="_blank" rel="noopener">
+          <div class="ic wa">💬</div>
+          <div><h4>Chat on WhatsApp</h4><p>Quick replies, right on your phone.</p></div>
+        </a>
+        <a class="alt" href="https://m.me/YOUR_PAGE" target="_blank" rel="noopener">
+          <div class="ic fb">💬</div>
+          <div><h4>Message us on Facebook</h4><p>Reach us via Messenger anytime.</p></div>
+        </a>
+        <a class="alt" href="mailto:hello@speaki.co">
+          <div class="ic em">✉️</div>
+          <div><h4>Email us</h4><p>hello@speaki.co</p></div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div style="max-width:280px">
+        <a href="#" class="logo"><span class="dot">🗣️</span>Speaki</a>
+        <p style="margin-top:14px;font-size:.9rem">English communication + mindset coaching for non-native speakers. From knowing the words — to saying them.</p>
+        <div class="socials">
+          <a href="https://instagram.com/YOUR_HANDLE" target="_blank" rel="noopener" title="Instagram">IG</a>
+          <a href="https://facebook.com/YOUR_PAGE" target="_blank" rel="noopener" title="Facebook">FB</a>
+          <a href="https://tiktok.com/@YOUR_HANDLE" target="_blank" rel="noopener" title="TikTok">TT</a>
+        </div>
+      </div>
+      <div class="foot-col">
+        <h5>Explore</h5>
+        <a href="#why">Why You're Here</a>
+        <a href="#system">The System</a>
+        <a href="#who">For Who</a>
+        <a href="#about">About Us</a>
+      </div>
+      <div class="foot-col">
+        <h5>Get Started</h5>
+        <a href="#start">Join a Live Session</a>
+        <a href="#start">AI Coach Waitlist</a>
+        <a href="#contact">Contact Us</a>
+      </div>
+      <div class="foot-col">
+        <h5>Reach Us</h5>
+        <a href="https://wa.me/YOUR_NUMBER" target="_blank" rel="noopener">WhatsApp</a>
+        <a href="https://m.me/YOUR_PAGE" target="_blank" rel="noopener">FB Messenger</a>
+        <a href="mailto:hello@speaki.co">hello@speaki.co</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Speaki. All rights reserved.</span>
+      <span>Speak English with confidence. 💚</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* ===== FORM SUBMISSION → GOOGLE APPS SCRIPT (stores to your sheet) ===== */
+// Paste your Apps Script Web App URL between the quotes below:
+const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzHAtpNlxJXO-BidbMlirX9IZfM1UOaqp26SnKrunaqHU44Ti-uaqXBulHPL5-w0t6fmQ/exec';
+
+const validEmail = (e) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e);
+
+document.querySelectorAll('.offer-form').forEach((form) => {
+  const msg = form.querySelector('.offer-msg');
+  const btn = form.querySelector('button[type="submit"]');
+  const formType = form.dataset.formtype || 'Form';
+
+  const show = (text, type) => {
+    if (!msg) return;
+    msg.textContent = text;
+    msg.className = 'offer-msg ' + type;
+    msg.style.display = 'block';
+  };
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const email = (form.querySelector('[name="email"]') || {}).value?.trim() || '';
+    const name = (form.querySelector('[name="name"]') || {}).value?.trim() || '';
+    const message = (form.querySelector('[name="message"]') || {}).value?.trim() || '';
+
+    if (!email || !validEmail(email)) {
+      show('Please enter a valid email address.', 'error');
+      return;
+    }
+
+    const original = btn.textContent;
+    btn.disabled = true;
+    btn.textContent = 'Sending...';
+
+    try {
+      const data = new FormData();
+      data.append('formType', formType);
+      data.append('name', name);
+      data.append('email', email);
+      data.append('message', message);
+
+      await fetch(APPS_SCRIPT_URL, { method: 'POST', mode: 'no-cors', body: data });
+
+      form.reset();
+      show("Thanks! We've got your details — we'll be in touch. 💚", 'success');
+      setTimeout(() => { if (msg) msg.style.display = 'none'; }, 6000);
+    } catch (err) {
+      console.error('[Speaki] Submission error', err);
+      show('Unable to reach the server. Please check your connection and try again.', 'error');
+    } finally {
+      btn.disabled = false;
+      btn.textContent = original;
+    }
+  });
+});
+</script>
 </body>
 </html>
