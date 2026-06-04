@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
+
 Sitemap: https://speaki.co/sitemap.xml
-Host: speaki.co
