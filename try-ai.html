@@ -188,14 +188,18 @@
       gPhone=document.getElementById('g-phone'), gGoal=document.getElementById('g-goal'),
       gSubmit=document.getElementById('g-submit'), gErr=document.getElementById('g-err');
   function validEmail(e){return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e);}
+  function validPhone(p){
+    var digits=p.replace(/[^\d]/g,'');
+    return /^[+]?[\d\s\-()]+$/.test(p) && digits.length>=7 && digits.length<=15;
+  }
   function unlockDemo(){ gate.style.display='none'; demoWrap.classList.add('unlocked'); }
 
   gSubmit.addEventListener('click',function(){
     gErr.style.display='none';
     var name=gName.value.trim(), email=gEmail.value.trim(), phone=gPhone.value.trim(), goal=gGoal.value;
     if(!name){gErr.textContent='Please enter your name.';gErr.style.display='block';return;}
-    if(!email||!validEmail(email)){gErr.textContent='Please enter a valid email.';gErr.style.display='block';return;}
-    if(!phone){gErr.textContent='Please enter your phone or WhatsApp number.';gErr.style.display='block';return;}
+    if(!email||!validEmail(email)){gErr.textContent='Please enter a valid email address.';gErr.style.display='block';return;}
+    if(!validPhone(phone)){gErr.textContent='Please enter a valid phone number (7\u201315 digits, numbers only).';gErr.style.display='block';return;}
     if(!goal){gErr.textContent='Please choose your main goal.';gErr.style.display='block';return;}
 
     gSubmit.disabled=true; gSubmit.textContent='Unlocking\u2026';
@@ -203,10 +207,12 @@
     data.append('formType','AI Demo Lead');
     data.append('name',name);
     data.append('email',email);
-    data.append('message','Phone: '+phone+' | Goal: '+goal+' | Added to AI waitlist');
+    data.append('phone',phone);
+    data.append('goal',goal);
+    data.append('message','Added to AI waitlist via demo');
     fetch(APPS_SCRIPT_URL,{method:'POST',mode:'no-cors',body:data})
       .then(function(){ unlockDemo(); })
-      .catch(function(){ unlockDemo(); }) // unlock anyway so user isn't blocked
+      .catch(function(){ unlockDemo(); })
       .finally(function(){ gSubmit.disabled=false; gSubmit.textContent='Unlock the free coach \u2192'; });
   });
   // ---------------------------
