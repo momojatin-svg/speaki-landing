@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Try the Speaki Coach Free | Practice a Mock English Interview</title>
+<meta name="description" content="Try Speaki's interview coach free. Answer a mock job interview question and get instant, encouraging feedback on your confidence, clarity, filler words, and how to say it better.">
+<meta name="keywords" content="mock interview practice English, English interview feedback, practice English interview online, English speaking coach free, interview confidence English">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.speaki.co/try-ai.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Speaki">
+<meta property="og:title" content="Try the Speaki Coach Free — Mock Interview Practice">
+<meta property="og:description" content="Answer a mock interview question and get instant feedback on confidence and clarity.">
+<meta property="og:url" content="https://www.speaki.co/try-ai.html">
+<meta property="og:image" content="https://www.speaki.co/favicon-512.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Try the Speaki Coach Free">
+<meta name="twitter:image" content="https://www.speaki.co/favicon-512.png">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="shortcut icon" href="/favicon.ico">
+<meta name="theme-color" content="#2ECC71">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700;9..144,900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="content.css">
+<style>
+  .demo{background:#fff;border:2px solid var(--ink);border-radius:var(--radius);padding:30px;box-shadow:var(--shadow-hard);margin:20px 0 40px}
+  .qbar{display:flex;align-items:flex-start;gap:12px;background:var(--navy);color:#fff;border-radius:16px;padding:18px 20px;margin-bottom:18px}
+  .qbar .ic{font-size:1.4rem;flex-shrink:0}
+  .qbar .qlabel{font-size:.72rem;text-transform:uppercase;letter-spacing:.14em;opacity:.65;margin-bottom:4px;font-weight:700}
+  .qbar .qtext{font-family:'Fraunces',serif;font-size:1.25rem;font-weight:600;line-height:1.3}
+  .newq{background:none;border:0;color:var(--green);font-weight:700;cursor:pointer;font-size:.82rem;margin-top:8px;padding:0}
+  .newq:hover{text-decoration:underline}
+  textarea.ans{width:100%;font-family:inherit;font-size:1.05rem;padding:16px;border-radius:14px;border:2px solid var(--ink);min-height:120px;resize:vertical}
+  textarea.ans:focus{outline:none;box-shadow:3px 3px 0 var(--green)}
+  .demo-actions{display:flex;gap:12px;align-items:center;margin-top:14px;flex-wrap:wrap}
+  .demo-btn{background:var(--green);color:#fff;border:2px solid var(--ink);padding:14px 26px;border-radius:50px;font-weight:800;font-size:1rem;cursor:pointer;box-shadow:4px 4px 0 var(--ink);transition:transform .15s}
+  .demo-btn:hover{transform:translate(-2px,-2px)}
+  .demo-btn:disabled{opacity:.6;cursor:not-allowed;transform:none}
+  .hint{color:var(--ink-soft);font-size:.85rem}
+  .result{margin-top:24px;display:none}
+  .result.show{display:block;animation:fade .4s ease}
+  @keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+  .score-ring{display:flex;align-items:center;gap:18px;background:var(--cream-2);border-radius:16px;padding:18px 22px;margin-bottom:16px}
+  .score-num{font-family:'Fraunces',serif;font-size:2.8rem;font-weight:900;color:var(--green-deep);line-height:1}
+  .score-num small{font-size:1rem;color:var(--ink-soft)}
+  .fb-row{display:flex;gap:12px;align-items:flex-start;padding:14px 0;border-bottom:1px solid rgba(11,31,23,.1)}
+  .fb-row:last-child{border-bottom:0}
+  .fb-row .e{font-size:1.3rem;flex-shrink:0}
+  .fb-row h4{font-family:'Plus Jakarta Sans';font-weight:800;font-size:.95rem;margin-bottom:2px}
+  .fb-row p{margin:0;color:var(--ink-soft);font-size:.98rem}
+  .err{color:var(--coral);font-weight:700;margin-top:12px;display:none}
+  .metrics{display:flex;gap:10px;flex-wrap:wrap;margin:4px 0 0}
+  .chip{background:var(--cream-2);border:1px solid rgba(11,31,23,.12);border-radius:30px;padding:5px 12px;font-size:.8rem;font-weight:700;color:var(--ink-soft)}
+</style>
+</head>
+<body>
+<header class="nav">
+  <div class="nav-inner">
+    <a href="/" class="logo"><span class="dot">&#128483;&#65039;</span>Speaki</a>
+    <a href="/#start" class="nav-cta">Start Free &#8594;</a>
+  </div>
+</header>
+
+<div class="page-hero">
+  <div class="wrap">
+    <span class="eyebrow">Try the coach</span>
+    <h1>Practice a mock interview &mdash; get instant feedback</h1>
+    <p class="lead">A free glimpse of how Speaki coaches you. Answer the interview question below the way you'd say it out loud, and get instant, encouraging feedback on your confidence and clarity.</p>
+  </div>
+</div>
+
+<article>
+  <div class="wrap">
+    <div class="demo">
+      <div class="qbar">
+        <span class="ic">&#127908;</span>
+        <div>
+          <div class="qlabel">Interview question</div>
+          <div class="qtext" id="question">Tell me about yourself.</div>
+          <button class="newq" id="newq">&#8635; Give me another question</button>
+        </div>
+      </div>
+
+      <label for="answer" style="font-weight:700;display:block;margin-bottom:8px">Your answer</label>
+      <textarea class="ans" id="answer" placeholder="Type your answer the way you'd say it out loud..."></textarea>
+
+      <div class="demo-actions">
+        <button class="demo-btn" id="submit">Get feedback &#8594;</button>
+        <span class="hint">Free &middot; instant &middot; your answer isn't saved</span>
+      </div>
+      <p class="err" id="error"></p>
+
+      <div class="result" id="result">
+        <div class="score-ring">
+          <div class="score-num" id="score">&mdash;<small>/100</small></div>
+          <div>
+            <h4 style="font-family:'Fraunces',serif;margin-bottom:4px">Confidence &amp; clarity</h4>
+            <div class="metrics" id="metrics"></div>
+          </div>
+        </div>
+        <div class="fb-row"><span class="e">&#9989;</span><div><h4>What worked</h4><p id="strength"></p></div></div>
+        <div class="fb-row"><span class="e">&#127919;</span><div><h4>One thing to try</h4><p id="improve"></p></div></div>
+        <div class="fb-row"><span class="e">&#128172;</span><div><h4>A confident way to open</h4><p id="rewrite"></p></div></div>
+        <div class="fb-row"><span class="e">&#128154;</span><div><h4>From your coach</h4><p id="encouragement"></p></div></div>
+      </div>
+    </div>
+
+    <div class="cta-band">
+      <h2>This is just a glimpse</h2>
+      <p>The full Speaki AI coach is launching soon &mdash; practise anytime, 24/7, with live sessions and mindset coaching alongside it. Join the waitlist for first access.</p>
+      <a href="/#start" class="btn">Join the waitlist &#128640;</a>
+    </div>
+
+    <p style="text-align:center;color:var(--ink-soft)">Related: <a href="/english-for-job-interviews-philippines.html">Interview English guide</a> &middot; <a href="/overcome-english-speaking-anxiety.html">Stop freezing</a> &middot; <a href="/faq.html">FAQ</a></p>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap-wide">
+    <a href="/" class="logo"><span class="dot">&#128483;&#65039;</span>Speaki</a>
+    <div class="foot-links"><a href="/">Home</a><a href="/about.html">About</a><a href="/faq.html">FAQ</a><a href="/#start">Start Free</a></div>
+    <div class="foot-bottom">&copy; 2026 Speaki. English communication + mindset coaching for non-native speakers.</div>
+  </div>
+</footer>
+
+<script>
+  const QUESTIONS=["Tell me about yourself.","Why do you want to work here?","What are your greatest strengths?","Tell me about a challenge you overcame.","Why should we hire you?","Where do you see yourself in five years?","Describe a time you worked in a team.","What motivates you at work?"];
+  const OPENERS=["What excites me about this is","A good example of that would be","The way I see it,","One thing I'm proud of is","I'd describe myself as someone who"];
+  const FILLERS=["um","uh","like","you know","basically","actually","so","kind of","sort of","i mean","just"];
+  const HEDGES=["maybe","i think","i guess","probably","sort of","kind of","a little","i'm not sure","perhaps"];
+
+  const qEl=document.getElementById('question'),newqBtn=document.getElementById('newq');
+  const ansEl=document.getElementById('answer'),submitBtn=document.getElementById('submit');
+  const errEl=document.getElementById('error'),result=document.getElementById('result');
+
+  newqBtn.addEventListener('click',function(){
+    var next=qEl.textContent;
+    while(next===qEl.textContent) next=QUESTIONS[Math.floor(Math.random()*QUESTIONS.length)];
+    qEl.textContent=next; result.classList.remove('show'); errEl.style.display='none';
+  });
+
+  function analyze(text){
+    var lower=' '+text.toLowerCase()+' ';
+    var words=(text.trim().match(/\b[\w']+\b/g)||[]);
+    var wc=words.length;
+    var sentences=(text.match(/[.!?]+/g)||[]).length||1;
+    var avgLen=wc/sentences;
+    var fillerCount=0,fillersFound=[];
+    FILLERS.forEach(function(f){var m=lower.split(' '+f+' ').length-1; if(m>0){fillerCount+=m; fillersFound.push(f);}});
+    var hedgeCount=0;
+    HEDGES.forEach(function(h){hedgeCount+=lower.split(h).length-1;});
+    var hasExample=/(for example|for instance|once|when i|i remember|in my (last|previous)|at my)/i.test(text);
+    var uniq=new Set(words.map(function(w){return w.toLowerCase();})).size;
+    var variety=wc?uniq/wc:0;
+    var score=60;
+    if(wc>=40) score+=12; else if(wc>=20) score+=6; else score-=8;
+    if(avgLen>=8&&avgLen<=22) score+=8; else score-=4;
+    score-=Math.min(fillerCount*4,20);
+    score-=Math.min(hedgeCount*3,12);
+    if(hasExample) score+=10;
+    if(variety>=0.6) score+=6;
+    score=Math.max(28,Math.min(96,Math.round(score)));
+    var strength;
+    if(hasExample) strength="You backed up your answer with a concrete example \u2014 that's exactly what makes an answer memorable.";
+    else if(wc>=40) strength="You gave a full, developed answer instead of a one-liner \u2014 that shows confidence.";
+    else if(fillerCount===0) strength="Your answer was clean and direct, with no filler words slowing it down.";
+    else strength="You showed up and put your thoughts into words \u2014 that's the hardest first step, and you did it.";
+    var improve;
+    if(fillerCount>=2) improve='Try trimming filler words like "'+fillersFound.slice(0,2).join('", "')+'". A short pause sounds more confident than filling the gap.';
+    else if(hedgeCount>=2) improve='Watch the hedging ("I think", "maybe", "I guess"). State your point directly \u2014 you have permission to sound sure.';
+    else if(!hasExample) improve="Add one specific example or short story. Concrete beats general, and it's easier to say with confidence.";
+    else if(wc<20) improve="Try expanding a little \u2014 give one more sentence of detail so your answer feels complete.";
+    else if(avgLen>22) improve="Some sentences run long. Breaking them up makes you easier to follow and easier to breathe between.";
+    else improve="Keep practising out loud \u2014 the more you say answers aloud, the more automatic the confidence becomes.";
+    var opener=OPENERS[Math.floor(Math.random()*OPENERS.length)];
+    var rewrite='"'+opener+' \u2026 " \u2014 start with a confident phrase like this, then let your real answer follow naturally.';
+    var encs=["You're closer than you think. Keep going. \uD83D\uDC9A","Every answer you practise makes the real one easier.","That took courage to try \u2014 and it shows.","Confidence is a habit. You're building it right now."];
+    var encouragement=encs[Math.floor(Math.random()*encs.length)];
+    var metrics=[wc+" words",fillerCount+" filler"+(fillerCount===1?'':'s'),hasExample?'has example \u2713':'no example yet'];
+    return {score:score,strength:strength,improve:improve,rewrite:rewrite,encouragement:encouragement,metrics:metrics};
+  }
+
+  submitBtn.addEventListener('click',function(){
+    var answer=ansEl.value.trim();
+    errEl.style.display='none'; result.classList.remove('show');
+    if(answer.split(/\s+/).filter(Boolean).length<3){errEl.textContent='Please type a few words first \u2014 give the question a real try!';errEl.style.display='block';return;}
+    submitBtn.disabled=true; submitBtn.textContent='Reading\u2026';
+    setTimeout(function(){
+      var r=analyze(answer);
+      document.getElementById('score').innerHTML=r.score+'<small>/100</small>';
+      document.getElementById('strength').textContent=r.strength;
+      document.getElementById('improve').textContent=r.improve;
+      document.getElementById('rewrite').textContent=r.rewrite;
+      document.getElementById('encouragement').textContent=r.encouragement;
+      document.getElementById('metrics').innerHTML=r.metrics.map(function(m){return '<span class="chip">'+m+'</span>';}).join('');
+      result.classList.add('show');
+      submitBtn.disabled=false; submitBtn.textContent='Get feedback \u2192';
+      result.scrollIntoView({behavior:'smooth',block:'nearest'});
+    },650);
+  });
+</script>
+</body>
+</html>
