@@ -7,12 +7,12 @@
 <meta name="description" content="Try Speaki's interview coach free. Answer a mock job interview question and get instant, encouraging feedback on your confidence, clarity, filler words, and how to say it better.">
 <meta name="keywords" content="mock interview practice English, English interview feedback, practice English interview online, English speaking coach free, interview confidence English">
 <meta name="robots" content="index, follow">
-<link rel="canonical" href="https://www.speaki.co/try-ai.html">
+<link rel="canonical" href="https://www.speaki.co/try-ai">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Speaki">
 <meta property="og:title" content="Try the Speaki Coach Free — Mock Interview Practice">
 <meta property="og:description" content="Answer a mock interview question and get instant feedback on confidence and clarity.">
-<meta property="og:url" content="https://www.speaki.co/try-ai.html">
+<meta property="og:url" content="https://www.speaki.co/try-ai">
 <meta property="og:image" content="https://www.speaki.co/favicon-512.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Try the Speaki Coach Free">
@@ -54,6 +54,22 @@
   .err{color:var(--coral);font-weight:700;margin-top:12px;display:none}
   .metrics{display:flex;gap:10px;flex-wrap:wrap;margin:4px 0 0}
   .chip{background:var(--cream-2);border:1px solid rgba(11,31,23,.12);border-radius:30px;padding:5px 12px;font-size:.8rem;font-weight:700;color:var(--ink-soft)}
+  /* lead gate */
+  .gate{background:#fff;border:2px solid var(--ink);border-radius:var(--radius);padding:32px;box-shadow:var(--shadow-hard);margin:20px 0 40px}
+  .gate h3{font-size:1.5rem;font-weight:800;margin-bottom:6px}
+  .gate p.g-sub{color:var(--ink-soft);margin-bottom:22px}
+  .gate .field{display:flex;flex-direction:column;gap:6px;margin-bottom:14px}
+  .gate label{font-weight:700;font-size:.9rem}
+  .gate input,.gate select{font-family:inherit;font-size:1rem;padding:13px 15px;border-radius:13px;border:2px solid var(--ink);background:#fff}
+  .gate input:focus,.gate select:focus{outline:none;box-shadow:3px 3px 0 var(--green)}
+  .gate .g-btn{width:100%;background:var(--green);color:#fff;border:2px solid var(--ink);padding:15px;border-radius:50px;font-weight:800;font-size:1.05rem;cursor:pointer;box-shadow:4px 4px 0 var(--ink);transition:transform .15s;margin-top:6px}
+  .gate .g-btn:hover{transform:translate(-2px,-2px)}
+  .gate .g-btn:disabled{opacity:.6;cursor:not-allowed;transform:none}
+  .gate .g-note{text-align:center;font-size:.82rem;color:var(--ink-soft);margin-top:12px}
+  .gate .g-err{color:var(--coral);font-weight:700;margin-top:10px;display:none}
+  .gate .lock{display:inline-flex;align-items:center;gap:8px;background:var(--gold);border:2px solid var(--ink);border-radius:30px;padding:5px 14px;font-weight:800;font-size:.78rem;margin-bottom:16px}
+  #demoWrap{display:none}
+  #demoWrap.unlocked{display:block;animation:fade .4s ease}
 </style>
 </head>
 <body>
@@ -74,6 +90,41 @@
 
 <article>
   <div class="wrap">
+    <div class="gate" id="gate">
+      <span class="lock">&#128274; Free access</span>
+      <h3>Enter your details to try the coach free</h3>
+      <p class="g-sub">Get instant feedback on your speaking &mdash; and we'll add you to early access for the full AI coach.</p>
+      <div class="field">
+        <label for="g-name">Name</label>
+        <input id="g-name" type="text" placeholder="Your name" required>
+      </div>
+      <div class="field">
+        <label for="g-email">Email</label>
+        <input id="g-email" type="email" placeholder="you@email.com" required>
+      </div>
+      <div class="field">
+        <label for="g-phone">Phone / WhatsApp</label>
+        <input id="g-phone" type="tel" placeholder="e.g. +63 9XX XXX XXXX" required>
+      </div>
+      <div class="field">
+        <label for="g-goal">What's your main goal?</label>
+        <select id="g-goal" required>
+          <option value="">Choose one&hellip;</option>
+          <option>Job interviews</option>
+          <option>BPO / call center</option>
+          <option>Speaking confidently at work</option>
+          <option>Overcoming shyness / fear</option>
+          <option>Studies / fresh graduate</option>
+          <option>Working abroad / OFW</option>
+          <option>General English confidence</option>
+        </select>
+      </div>
+      <button class="g-btn" id="g-submit">Unlock the free coach &#8594;</button>
+      <p class="g-err" id="g-err"></p>
+      <p class="g-note">Free &middot; takes 10 seconds &middot; no spam, ever.</p>
+    </div>
+
+    <div id="demoWrap">
     <div class="demo">
       <div class="qbar">
         <span class="ic">&#127908;</span>
@@ -85,11 +136,13 @@
       </div>
 
       <label for="answer" style="font-weight:700;display:block;margin-bottom:8px">Your answer</label>
+      <button type="button" id="micBtn" style="display:none;align-items:center;gap:8px;background:var(--coral);color:#fff;border:2px solid var(--ink);padding:10px 18px;border-radius:50px;font-weight:800;font-size:.92rem;cursor:pointer;box-shadow:3px 3px 0 var(--ink);margin-bottom:10px">&#127908; Tap to speak your answer</button>
+      <span id="micStatus" style="display:none;font-size:.85rem;color:var(--coral);font-weight:700;margin-left:8px">&#9679; Listening&hellip; speak now</span>
       <textarea class="ans" id="answer" placeholder="Type your answer the way you'd say it out loud..."></textarea>
 
       <div class="demo-actions">
         <button class="demo-btn" id="submit">Get feedback &#8594;</button>
-        <span class="hint">Free &middot; instant &middot; your answer isn't saved</span>
+        <span class="hint">Free &middot; speak or type &middot; your answer isn't saved</span>
       </div>
       <p class="err" id="error"></p>
 
@@ -107,6 +160,7 @@
         <div class="fb-row"><span class="e">&#128154;</span><div><h4>From your coach</h4><p id="encouragement"></p></div></div>
       </div>
     </div>
+    </div><!-- /#demoWrap -->
 
     <div class="cta-band">
       <h2>This is just a glimpse</h2>
@@ -114,19 +168,49 @@
       <a href="/#start" class="btn">Join the waitlist &#128640;</a>
     </div>
 
-    <p style="text-align:center;color:var(--ink-soft)">Related: <a href="/english-for-job-interviews-philippines.html">Interview English guide</a> &middot; <a href="/overcome-english-speaking-anxiety.html">Stop freezing</a> &middot; <a href="/faq.html">FAQ</a></p>
+    <p style="text-align:center;color:var(--ink-soft)">Related: <a href="/english-for-job-interviews-philippines">Interview English guide</a> &middot; <a href="/overcome-english-speaking-anxiety">Stop freezing</a> &middot; <a href="/faq">FAQ</a></p>
   </div>
 </article>
 
 <footer>
   <div class="wrap-wide">
     <a href="/" class="logo"><span class="dot">&#128483;&#65039;</span>Speaki</a>
-    <div class="foot-links"><a href="/">Home</a><a href="/about.html">About</a><a href="/faq.html">FAQ</a><a href="/#start">Start Free</a></div>
+    <div class="foot-links"><a href="/">Home</a><a href="/about">About</a><a href="/faq">FAQ</a><a href="/#start">Start Free</a></div>
     <div class="foot-bottom">&copy; 2026 Speaki. English communication + mindset coaching for non-native speakers.</div>
   </div>
 </footer>
 
 <script>
+  // ---- Lead-capture gate ----
+  const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzHAtpNlxJXO-BidbMlirX9IZfM1UOaqp26SnKrunaqHU44Ti-uaqXBulHPL5-w0t6fmQ/exec';
+  var gate=document.getElementById('gate'), demoWrap=document.getElementById('demoWrap');
+  var gName=document.getElementById('g-name'), gEmail=document.getElementById('g-email'),
+      gPhone=document.getElementById('g-phone'), gGoal=document.getElementById('g-goal'),
+      gSubmit=document.getElementById('g-submit'), gErr=document.getElementById('g-err');
+  function validEmail(e){return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e);}
+  function unlockDemo(){ gate.style.display='none'; demoWrap.classList.add('unlocked'); }
+
+  gSubmit.addEventListener('click',function(){
+    gErr.style.display='none';
+    var name=gName.value.trim(), email=gEmail.value.trim(), phone=gPhone.value.trim(), goal=gGoal.value;
+    if(!name){gErr.textContent='Please enter your name.';gErr.style.display='block';return;}
+    if(!email||!validEmail(email)){gErr.textContent='Please enter a valid email.';gErr.style.display='block';return;}
+    if(!phone){gErr.textContent='Please enter your phone or WhatsApp number.';gErr.style.display='block';return;}
+    if(!goal){gErr.textContent='Please choose your main goal.';gErr.style.display='block';return;}
+
+    gSubmit.disabled=true; gSubmit.textContent='Unlocking\u2026';
+    var data=new FormData();
+    data.append('formType','AI Demo Lead');
+    data.append('name',name);
+    data.append('email',email);
+    data.append('message','Phone: '+phone+' | Goal: '+goal+' | Added to AI waitlist');
+    fetch(APPS_SCRIPT_URL,{method:'POST',mode:'no-cors',body:data})
+      .then(function(){ unlockDemo(); })
+      .catch(function(){ unlockDemo(); }) // unlock anyway so user isn't blocked
+      .finally(function(){ gSubmit.disabled=false; gSubmit.textContent='Unlock the free coach \u2192'; });
+  });
+  // ---------------------------
+
   const QUESTIONS=["Tell me about yourself.","Why do you want to work here?","What are your greatest strengths?","Tell me about a challenge you overcame.","Why should we hire you?","Where do you see yourself in five years?","Describe a time you worked in a team.","What motivates you at work?"];
   const OPENERS=["What excites me about this is","A good example of that would be","The way I see it,","One thing I'm proud of is","I'd describe myself as someone who"];
   const FILLERS=["um","uh","like","you know","basically","actually","so","kind of","sort of","i mean","just"];
@@ -135,6 +219,32 @@
   const qEl=document.getElementById('question'),newqBtn=document.getElementById('newq');
   const ansEl=document.getElementById('answer'),submitBtn=document.getElementById('submit');
   const errEl=document.getElementById('error'),result=document.getElementById('result');
+
+  // ---- Voice input (free, browser-based; falls back to typing) ----
+  var SR = window.SpeechRecognition || window.webkitSpeechRecognition;
+  var micBtn=document.getElementById('micBtn'), micStatus=document.getElementById('micStatus');
+  if(SR){
+    micBtn.style.display='inline-flex';
+    var recog=new SR();
+    recog.lang='en-US'; recog.interimResults=true; recog.continuous=true;
+    var listening=false, baseText='';
+    micBtn.addEventListener('click',function(){
+      if(listening){ recog.stop(); return; }
+      baseText = ansEl.value ? ansEl.value.trim()+' ' : '';
+      try{ recog.start(); }catch(e){}
+    });
+    recog.onstart=function(){ listening=true; micBtn.innerHTML='&#9632; Stop'; micStatus.style.display='inline'; };
+    recog.onend=function(){ listening=false; micBtn.innerHTML='&#127908; Tap to speak your answer'; micStatus.style.display='none'; };
+    recog.onerror=function(ev){ listening=false; micStatus.style.display='none'; micBtn.innerHTML='&#127908; Tap to speak your answer';
+      if(ev.error==='not-allowed'||ev.error==='service-not-allowed'){ errEl.textContent='Microphone access was blocked. You can allow it in your browser, or just type your answer.'; errEl.style.display='block'; }
+    };
+    recog.onresult=function(ev){
+      var txt='';
+      for(var i=0;i<ev.results.length;i++){ txt+=ev.results[i][0].transcript; }
+      ansEl.value=baseText+txt;
+    };
+  }
+  // ---------------------------------------------------------------
 
   newqBtn.addEventListener('click',function(){
     var next=qEl.textContent;
