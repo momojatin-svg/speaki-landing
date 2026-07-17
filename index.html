@@ -317,26 +317,28 @@
   <div class="nav-inner">
     <a href="#" class="logo"><span class="dot">🗣️</span>Speaki</a>
     <nav class="nav-links">
-      <a href="#why">Why You're Here</a>
-      <a href="#system">The System</a>
-      <a href="#who">For Who</a>
+      <a href="#" data-scroll="why">Why You're Here</a>
+      <a href="#" data-scroll="system">The System</a>
+      <a href="#" data-scroll="who">For Who</a>
       <a href="/about.html">About</a>
       <a href="/faq.html">FAQ</a>
-      <a href="#contact">Contact</a>
+      <a href="#" data-scroll="contact">Contact</a>
+      <a href="https://courses.speaki.co/login">Login</a>
     </nav>
-    <a href="#start" class="nav-cta">Start Free →</a>
+    <a href="https://courses.speaki.co" class="nav-cta">Start Free →</a>
     <button class="burger" onclick="document.getElementById('mob').classList.toggle('open')">
       <span></span><span></span><span></span>
     </button>
   </div>
   <div class="nav-mobile" id="mob">
-    <a href="#why">Why You're Here</a>
-    <a href="#system">The System</a>
-    <a href="#who">For Who</a>
+    <a href="#" data-scroll="why">Why You're Here</a>
+    <a href="#" data-scroll="system">The System</a>
+    <a href="#" data-scroll="who">For Who</a>
     <a href="/about.html">About</a>
     <a href="/faq.html">FAQ</a>
-    <a href="#contact">Contact</a>
-    <a href="#start">Start Free →</a>
+    <a href="#" data-scroll="contact">Contact</a>
+    <a href="https://courses.speaki.co/login">Login</a>
+    <a href="https://courses.speaki.co">Start Free →</a>
   </div>
 </header>
 
@@ -354,8 +356,8 @@
       </h1>
       <p class="lead">English communication <strong>+ mindset coaching</strong> for non-native speakers. The complete system that gets you from knowing the words — to actually saying them.</p>
       <div class="hero-ctas">
-        <a href="#start" class="btn btn-primary">Start Free 🚀</a>
-        <a href="#system" class="btn btn-ghost">See the system</a>
+        <a href="https://courses.speaki.co" class="btn btn-primary">Start Free 🚀</a>
+        <a href="#" data-scroll="system" class="btn btn-ghost">See the system</a>
       </div>
       <div class="avatars">
         <div class="stack">
@@ -425,7 +427,7 @@
     <div class="why-turn">
       <p class="strike">Stop <span>waiting</span> Stop <span>rehearsing</span> Stop <span>translating</span></p>
       <h3>Speaki is the complete system that gets you from <em>knowing the words</em> — to actually <em>saying them.</em></h3>
-      <a href="#start" class="btn btn-primary">Start Free</a>
+      <a href="https://courses.speaki.co" class="btn btn-primary">Start Free</a>
     </div>
   </div>
 </section>
@@ -632,9 +634,9 @@
         <h5>Explore</h5>
         <a href="/about.html">About Us</a>
         <a href="/faq.html">FAQ</a>
-        <a href="#start">Join a Live Session</a>
+        <a href="https://courses.speaki.co">Join a Live Session</a>
         <a href="#start">AI Coach Waitlist</a>
-        <a href="#contact">Contact Us</a>
+        <a href="#" data-scroll="contact">Contact Us</a>
       </div>
       <div class="foot-col">
         <h5>Guides</h5>
@@ -725,6 +727,20 @@ document.querySelectorAll('.offer-form').forEach((form) => {
     }
   });
 });
+
+// Smooth scroll without changing URL
+document.querySelectorAll('[data-scroll]').forEach(link=>{
+  link.addEventListener('click',e=>{
+    e.preventDefault();
+    const id=link.dataset.scroll;
+    const target=document.getElementById(id);
+    if(target){
+      target.scrollIntoView({behavior:'smooth',block:'start'});
+      history.replaceState(null,'',window.location.pathname);
+    }
+  });
+});
+
 </script>
 </body>
 </html>
