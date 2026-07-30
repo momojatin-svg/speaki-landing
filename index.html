@@ -319,39 +319,76 @@
   .tperson h5{font-family:'Plus Jakarta Sans';font-weight:800;font-size:.95rem;margin:0}
   .tperson span{font-size:.82rem;color:var(--ink-soft)}
   #team-speaki .wrap > div:first-of-type+div{grid-template-columns:1fr!important}
-  @media(max-width:900px){
-    .tgrid{grid-template-columns:1fr}
-  }
-  @media(max-width:900px){
-    .nav-links{display:none}
-    .burger{display:flex}
-    .hero-grid{grid-template-columns:1fr;gap:60px}
-    .hero-visual{order:-1}
-    .why-grid{grid-template-columns:1fr 1fr}
-    .feat-grid,.offers,.about-grid,.contact-grid{grid-template-columns:1fr}
-    .who-grid{grid-template-columns:1fr 1fr}
-    .try-grid{grid-template-columns:1fr!important;gap:28px!important}
-  }
-  @media(max-width:768px){.hero{padding:50px 0 60px}.nav-inner{padding:12px 16px}.hero-ctas .btn{width:100%;justify-content:center}.phone{width:min(280px,92vw)}.foot-grid{flex-direction:column}.contact-grid,.offers,.feat-grid,.about-grid{gap:24px}}
-  @media(max-width:560px){
-    .why-grid,.who-grid{grid-template-columns:1fr}
-    .why,.about-bg{margin:0 8px;border-radius:32px}
-    .hero h1 .hl{white-space:normal}
-  }
+  /* ===== NAV MOBILE ===== */
   .nav-mobile{display:none;flex-direction:column;gap:4px;padding:0 24px 16px}
   .nav-mobile a{padding:12px;font-weight:700;border-bottom:1px solid rgba(11,31,23,.08)}
   .nav-mobile.open{display:flex}
-.team-grid{display:grid!important;grid-template-columns:repeat(3,1fr)!important;gap:24px!important;margin-bottom:44px!important}
-.team-card{background:#fff;border:2px solid var(--ink);border-radius:24px;overflow:hidden;box-shadow:6px 6px 0 var(--ink);transition:transform .18s,box-shadow .18s}
-.team-card:hover{transform:translate(-3px,-3px);box-shadow:9px 9px 0 var(--ink)}
-.team-card-img{height:300px;overflow:hidden;border-bottom:2px solid var(--ink)}
-.team-card-img img{width:100%;height:100%;object-fit:cover;object-position:center 20%;display:block}
-.team-card-body{padding:22px}
-.team-card-badge{border-radius:20px;padding:4px 12px;font-size:.72rem;font-weight:800;display:inline-block;margin-bottom:10px;border:1px solid rgba(11,31,23,.15)}
-.team-card h3{font-family:'Fraunces',serif;font-size:1.3rem;font-weight:700;margin-bottom:6px;color:var(--ink)}
-.team-card p{color:var(--ink-soft);font-size:.9rem;line-height:1.6;margin:0}
-.team-ctas{text-align:center;display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
-@media(max-width:860px){.team-grid{grid-template-columns:1fr!important}}
+
+  /* ===== TEAM CARDS ===== */
+  .team-grid{display:grid!important;grid-template-columns:repeat(3,1fr)!important;gap:24px!important;margin-bottom:44px!important}
+  .team-card{background:#fff;border:2px solid var(--ink);border-radius:24px;overflow:hidden;box-shadow:6px 6px 0 var(--ink);transition:transform .18s,box-shadow .18s}
+  .team-card:hover{transform:translate(-3px,-3px);box-shadow:9px 9px 0 var(--ink)}
+  .team-card-img{height:300px;overflow:hidden;border-bottom:2px solid var(--ink)}
+  .team-card-img img{width:100%;height:100%;object-fit:cover;object-position:center 20%;display:block}
+  .team-card-body{padding:22px}
+  .team-card-badge{border-radius:20px;padding:4px 12px;font-size:.72rem;font-weight:800;display:inline-block;margin-bottom:10px;border:1px solid rgba(11,31,23,.15)}
+  .team-card h3{font-family:'Fraunces',serif;font-size:1.3rem;font-weight:700;margin-bottom:6px;color:var(--ink)}
+  .team-card p{color:var(--ink-soft);font-size:.9rem;line-height:1.6;margin:0}
+  .team-ctas{text-align:center;display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+
+  /* ===== TABLET 900px ===== */
+  @media(max-width:900px){
+    .nav-links{display:none}
+    .burger{display:flex}
+    .hero-grid{grid-template-columns:1fr;gap:40px}
+    .hero-visual{order:-1}
+    .why-grid{grid-template-columns:1fr}
+    .feat-grid,.about-grid,.contact-grid{grid-template-columns:1fr}
+    .who-grid{grid-template-columns:1fr 1fr}
+    .tgrid{grid-template-columns:1fr}
+    .try-grid{grid-template-columns:1fr!important;gap:28px!important}
+    .team-grid{grid-template-columns:1fr!important}
+    /* tables stack on mobile */
+    table[style*="border-spacing"] tr,
+    table[style*="border-spacing"]{display:block!important;width:100%!important}
+    table[style*="border-spacing"] td{display:block!important;width:100%!important;margin-bottom:20px!important;box-sizing:border-box!important}
+    /* for-you two column */
+    #for-you .wrap > div{grid-template-columns:1fr!important}
+    /* hero buttons */
+    .hero-ctas{flex-direction:column;gap:12px}
+    .hero-ctas .btn{width:100%;justify-content:center;text-align:center}
+  }
+
+  /* ===== MOBILE 560px ===== */
+  @media(max-width:560px){
+    .wrap{padding:0 16px}
+    .nav-inner{padding:12px 16px}
+    .hero{padding:40px 0 50px}
+    .hero h1{font-size:2.4rem}
+    .hero h1 .hl{white-space:normal}
+    .hero p.lead{font-size:1rem}
+    .phone{width:min(260px,88vw)}
+    .who-grid{grid-template-columns:1fr}
+    .who-card img{height:160px}
+    .why,.about-bg{margin:0 8px;border-radius:28px}
+    .feat-grid{gap:14px}
+    .feat{padding:22px}
+    .offer{padding:28px 22px}
+    .offers{max-width:100%}
+    .offer-live .free{display:none}
+    .foot-grid{flex-direction:column}
+    .foot-col{min-width:0}
+    .cta-band{padding:40px 20px;margin:0 8px}
+    .about-grid{grid-template-columns:1fr!important}
+    #for-you .wrap > div > div{grid-template-columns:1fr!important}
+    .team-ctas{flex-direction:column;align-items:center}
+    .team-ctas a,.team-ctas button{width:100%;justify-content:center}
+    .tcard{margin-bottom:14px}
+    section.pad{padding:50px 0}
+    h2{font-size:1.8rem!important}
+    /* mission values wrap */
+    .mission-values{flex-direction:column;align-items:center}
+  }
 </style>
 </head>
 <body>
@@ -858,11 +895,11 @@
         <p class="offer-msg" style="display:none"></p>
       </form>
       <div class="contact-alts">
-        <a class="alt" href="https://wa.me/+63 947 890 6823" target="_blank" rel="noopener">
+        <a class="alt" href="https://wa.me/YOUR_NUMBER" target="_blank" rel="noopener">
           <div class="ic wa">💬</div>
           <div><h4>Chat on WhatsApp</h4><p>Quick replies, right on your phone.</p></div>
         </a>
-        <a class="alt" href="https://www.facebook.com/speakiofficial" target="_blank" rel="noopener">
+        <a class="alt" href="https://m.me/YOUR_PAGE" target="_blank" rel="noopener">
           <div class="ic fb">💬</div>
           <div><h4>Message us on Facebook</h4><p>Reach us via Messenger anytime.</p></div>
         </a>
@@ -883,14 +920,14 @@
       <a href="/" class="logo">
     <img src="/logo.png" alt="Speaki" style="width:40px;height:40px;">
     <span class="footer-logo">
-    Speak<span style="color:#2ECC71">i</span><span style="color:#2ECC71">.co</span>
-</span>
+        Speak<span style="color:#2ECC71">i</span><span style="color:#2ECC71">.co</span>
+    </span>
 </a>
         <p style="margin-top:14px;font-size:.9rem">English communication + mindset coaching for non-native speakers. From knowing the words — to saying them.</p>
         <div class="socials">
           <a href="https://www.instagram.com/speakiofficial/" target="_blank" rel="noopener" title="Instagram">IG</a>
           <a href="https://www.facebook.com/speakiofficial" target="_blank" rel="noopener" title="Facebook">FB</a>
-          <a href="https://tiktok.com/speakiofficial" target="_blank" rel="noopener" title="TikTok">TT</a>
+          <a href="https://tiktok.com/@YOUR_HANDLE" target="_blank" rel="noopener" title="TikTok">TT</a>
         </div>
       </div>
       <div class="foot-col">
