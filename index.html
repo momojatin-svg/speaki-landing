@@ -234,7 +234,7 @@
   .who-card p{color:var(--ink-soft);font-size:.93rem}
 
   /* ===== FORMS (LIVE + WAITLIST) ===== */
-  .offers{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+  .offers{display:grid;grid-template-columns:1fr;gap:24px;max-width:700px;margin:0 auto}
   .offer{border-radius:28px;padding:42px 38px;border:2px solid var(--ink);position:relative;overflow:hidden}
   .offer-live{background:linear-gradient(150deg,var(--green),var(--green-deep));color:#fff;box-shadow:8px 8px 0 var(--ink)}
   .offer-wait{background:var(--navy);color:#fff;box-shadow:8px 8px 0 var(--green)}
@@ -306,7 +306,6 @@
   /* ===== RESPONSIVE ===== */
   /* ===== PHOTO STYLES ===== */
   img[data-photo]:not([src]){display:none}
-  .hero-photo{position:absolute;bottom:-10px;left:-30px;width:200px;height:250px;border-radius:24px;object-fit:cover;border:3px solid var(--ink);box-shadow:6px 6px 0 var(--gold);z-index:1}
   .who-card img{width:100%;height:150px;object-fit:cover;border-radius:14px;margin-bottom:14px;border:2px solid var(--ink)}
   .offer-photo{width:100%;height:200px;object-fit:cover;border-radius:18px;margin-bottom:20px;border:2px solid var(--ink)}
   .about-photo{width:100%;height:auto;border-radius:24px;object-fit:cover;border:3px solid var(--ink);box-shadow:6px 6px 0 var(--green)}
@@ -321,7 +320,6 @@
   .tperson span{font-size:.82rem;color:var(--ink-soft)}
   @media(max-width:900px){
     .tgrid{grid-template-columns:1fr}
-    .hero-photo{display:none}
   }
   @media(max-width:900px){
     .nav-links{display:none}
@@ -350,15 +348,13 @@
 <header class="nav">
   <div class="nav-inner">
     <a href="/" class="logo">
-<img src="/logo.png" alt="Speaki" style="width:40px;height:40px">
-<strong class="logo-text">Speaki<span class="logo-co">.co</span></strong>
+<img src="/logo.png" alt="Speaki" style="width:40px;height:40px;border-radius:10px" onerror="this.style.display='none'">
+<strong class="logo-text">Speak<span style="color:#2ECC71">i</span><span class="logo-co">.co</span></strong>
 </a>
     <nav class="nav-links">
-      <a href="#" data-scroll="why">Why You're Here</a>
-      <a href="#" data-scroll="system">The System</a>
-      <a href="#" data-scroll="who">For Who</a>
+      <a href="#" data-scroll="who">Who It's For</a>
+      <a href="#" data-scroll="system">The Speaki Formula</a>
       <a href="/about.html">About</a>
-      <a href="/faq">FAQ</a>
       <a href="#" data-scroll="contact">Contact</a>
       <a href="https://courses.speaki.co">Login</a>
     </nav>
@@ -368,11 +364,9 @@
     </button>
   </div>
   <div class="nav-mobile" id="mob">
-    <a href="#" data-scroll="why">Why You're Here</a>
-    <a href="#" data-scroll="system">The System</a>
-    <a href="#" data-scroll="who">For Who</a>
+    <a href="#" data-scroll="who">Who It's For</a>
+    <a href="#" data-scroll="system">The Speaki Formula</a>
     <a href="/about.html">About</a>
-    <a href="/faq">FAQ</a>
     <a href="#" data-scroll="contact">Contact</a>
     <a href="https://courses.speaki.co">Login</a>
     <a href="https://courses.speaki.co">Start Free →</a>
@@ -385,16 +379,16 @@
   <div class="blob" style="width:200px;height:200px;background:rgba(255,201,60,.22);bottom:0;left:8%"></div>
   <div class="wrap hero-grid">
     <div>
-      <span class="pill"><span class="live"></span>LIVE sessions with real people</span>
-      <h1>Speak English with
-        <span class="hl">confidence.
+      <span class="pill"><span class="live"></span>English Communication + Mindset Coaching</span>
+      <h1>Speak English with<br>
+        <span class="hl">Confidence &amp; Clarity
           <svg viewBox="0 0 200 14" preserveAspectRatio="none"><path d="M2 9 Q50 2 100 7 T198 5" stroke="#FFC93C" stroke-width="6" fill="none" stroke-linecap="round"/></svg>
-        </span>
+        </span><br>Every Day
       </h1>
-      <p class="lead">English communication <strong>+ mindset coaching</strong> for non-native speakers. The complete system that gets you from knowing the words — to actually saying them.</p>
+      <p class="lead">Be part of the most holistic, transformational <strong>English Communication + Mindset Coaching Platform</strong> for non-native speakers.</p>
       <div class="hero-ctas">
-        <a href="https://courses.speaki.co" class="btn btn-primary">Start Free 🚀</a>
-        <a href="#" data-scroll="system" class="btn btn-ghost">See the system</a>
+        <a href="https://courses.speaki.co" class="btn btn-primary">Become a member — Php999/mo</a>
+        <a href="https://courses.speaki.co" class="btn btn-ghost">Explore for FREE →</a>
       </div>
       <div class="avatars">
         <div class="stack">
@@ -408,8 +402,6 @@
     </div>
 
     <div class="hero-visual">
-      <!-- PHOTO 1: warm, smiling Filipino person (learner/coach), portrait ~200x250. File: photo-hero.jpg -->
-      <img class="hero-photo" src="photo-hero.jpg" onerror="this.style.display='none'" alt="A confident Filipino English learner smiling">
       <div class="float-badge fb-1">🔥 7-day streak</div>
       <div class="float-badge fb-2">🤖 AI coach · 24/7</div>
       <div class="phone">
@@ -446,37 +438,12 @@
   </div>
 </section>
 
-<!-- WHY YOU'RE HERE -->
-<section class="why" id="why">
-  <div class="wrap">
-    <span class="eyebrow">Why you're here</span>
-    <h2>It's not your vocabulary.<br>It's everything around it.</h2>
-    <p class="sub">You know what you want to say. You just don't say it. Sound familiar?</p>
-    <div class="why-grid">
-      <div class="why-card"><span class="x">✕</span>You're scared to make mistakes.</div>
-      <div class="why-card"><span class="x">✕</span>You're scared of being judged.</div>
-      <div class="why-card"><span class="x">✕</span>You're embarrassed of your accent.</div>
-      <div class="why-card"><span class="x">✕</span>You freeze in meetings.</div>
-      <div class="why-card"><span class="x">✕</span>You rehearse. Then freeze anyway.</div>
-      <div class="why-card"><span class="x">✕</span>You're quieter in English.</div>
-      <div class="why-card"><span class="x">✕</span>You've studied for years.</div>
-      <div class="why-card"><span class="x">✕</span>Your work speaks. You don't.</div>
-      <div class="why-card"><span class="x">✕</span>You know the words. You stay silent.</div>
-    </div>
-    <div class="why-turn">
-      <p class="strike">Stop <span>waiting</span> Stop <span>rehearsing</span> Stop <span>translating</span></p>
-      <h3>Speaki is the complete system that gets you from <em>knowing the words</em> — to actually <em>saying them.</em></h3>
-      <a href="https://courses.speaki.co" class="btn btn-primary">Start Free</a>
-    </div>
-  </div>
-</section>
-
 <!-- THE SYSTEM -->
 <section class="pad" id="system">
   <div class="wrap">
     <div class="sec-head">
-      <span class="eyebrow">Not just an AI</span>
-      <h2>The complete Speaking System</h2>
+      <span class="eyebrow">The Speaki Formula</span>
+      <h2>The Speaki Formula</h2>
       <p>Designed for different kinds of learners — combining people, practice, mindset and technology.</p>
     </div>
     <div class="feat-grid">
@@ -537,8 +504,8 @@
 <section class="pad who-bg" id="who">
   <div class="wrap">
     <div class="sec-head">
-      <span class="eyebrow">For who</span>
-      <h2>Built for every non-native speaker</h2>
+      <span class="eyebrow">Who It's For</span>
+      <h2>Who It's For</h2>
       <p>If your work speaks but you don't — Speaki was designed for you.</p>
     </div>
     <div class="who-grid">
@@ -547,7 +514,7 @@
       <div class="who-card"><img src="who-2.jpg" onerror="this.style.display='none'" alt="Filipino student presenting in class"><span class="e">🎓</span><h3>Students</h3><p>Participate in class and present without the fear of being judged.</p></div>
       <div class="who-card"><img src="who-3.jpg" onerror="this.style.display='none'" alt="Filipino job seeker at an interview"><span class="e">🤝</span><h3>Job Seekers</h3><p>Walk into interviews and networking ready to say what you mean.</p></div>
       <div class="who-card"><img src="who-4.jpg" onerror="this.style.display='none'" alt="Filipino call center agent with headset"><span class="e">📞</span><h3>BPO / Call Center Aspirants</h3><p>Build clear, confident, customer-facing English for the service industry.</p></div>
-      <div class="who-card"><img src="who-5.jpg" onerror="this.style.display='none'" alt="Filipino everyday English learner in conversation"><span class="e">🌍</span><h3>Everyday Learners</h3><p>Grow vocabulary into real conversations you actually have out loud.</p></div>
+      <div class="who-card"><img src="who-5.jpg" onerror="this.style.display='none'" alt="Filipino everyday English learner in conversation"><span class="e">🌍</span><h3>Everyday Learners</h3><p>Go beyond memorizing words — start using them in real conversations.</p></div>
       <div class="who-card"><img src="who-6.jpg" onerror="this.style.display='none'" alt="Confident Filipino adult smiling"><span class="e">✨</span><h3>Anyone Wanting Confidence</h3><p>You've studied for years. Now it's time to be heard.</p></div>
     </div>
   </div>
@@ -557,9 +524,9 @@
 <section class="pad" id="get-started">
   <div class="wrap">
     <div class="sec-head">
-      <span class="eyebrow">Get started</span>
-      <h2>Two ways to begin today</h2>
-      <p>Jump into a live session for free, or lock in early access to the AI coach.</p>
+      <span class="eyebrow">Get started — it's free</span>
+      <h2>Join a Live Session — Free</h2>
+      <p>Speak English + experience the Identity Shift. Real practice, real people, zero cost.</p>
     </div>
     <div class="offers">
       <div class="offer offer-live">
@@ -583,22 +550,7 @@
         </form>
       </div>
 
-      <div class="offer offer-wait">
-        <span class="tag">🤖 Early access</span>
-        <h3>AI Coach Waitlist</h3>
-        <p>Sign up for our 24/7 AI coach and get first access when it launches.</p>
-        <ul>
-          <li><span class="ck">✓</span> Practice anytime, 24/7</li>
-          <li><span class="ck">✓</span> First access before everyone</li>
-          <li><span class="ck">✓</span> Founding-member perks</li>
-        </ul>
-        <form class="offer-form" data-formtype="AI Coach Waitlist">
-          <input class="offer-input" type="text" name="name" placeholder="Your name" required>
-          <input class="offer-input" type="email" name="email" placeholder="you@email.com" required>
-          <button type="submit" class="offer-btn">Join the waitlist →</button>
-          <p class="offer-msg" style="display:none"></p>
-        </form>
-      </div>
+
     </div>
   </div>
 </section>
@@ -646,23 +598,103 @@
 <section class="about-bg" id="about">
   <div class="wrap about-grid">
     <div>
-      <span class="eyebrow" style="color:var(--gold)">About us</span>
-      <h2>This is Speaki.</h2>
-      <p>Speaki is a spoken English learning platform for non-native English speakers — designed to help learners build confidence through live classes, guided practice, mindset coaching, AI coaching, and real conversations.</p>
+      <span class="eyebrow" style="color:var(--gold)">Our Story</span>
+      <h2>I lost my voice.</h2>
+      <p>Years ago, I had a traumatizing experience of being embarrassed while speaking in front of others. That moment made me retreat into my own little corner — and slowly, quietly, I stopped speaking up. I had so much to say but I had learned to believe my voice wasn't worth the risk.</p>
+      <p>What changed? First, I said yes to working on my own personal growth. Second, I adjusted my circle. I surrounded myself with people who were passionate about their own growth and just as passionate about mine. I found my safe spaces. And from there, I practiced. Imperfectly. But consistently.</p>
+      <p>In the past 4 years, I have helped thousands of students find their own voice and get jobs, promotions, and improve the way they communicate in English — both at work and in their personal lives. I believe that when you work on your communication skills, all aspects of your life elevate.</p>
+      <p>That journey is why I'm now working with Kathy and Priyam.</p>
       <div class="mission">
-        <strong>Our mission:</strong> To help YOU communicate efficiently and confidently in English — so you can unlock better opportunities.
+        <strong>Together, we built Speaki</strong> around some truths that non-native English speakers everywhere know all too well: the people who speak English with confidence get paid more, get promoted faster, and get taken more seriously.
       </div>
+      <blockquote style="border-left:4px solid var(--green);padding:16px 20px;margin:24px 0;font-style:italic;color:rgba(255,255,255,.85);background:rgba(255,255,255,.06);border-radius:0 14px 14px 0">
+        "Your accent is not a flaw. Your voice deserves to be heard. Just speak. We'll be cheering you on."<br>
+        <strong style="color:var(--gold)">— Rochelle, Kathy, and Priyam</strong>
+      </blockquote>
+      <a href="https://courses.speaki.co" class="btn" style="background:var(--green);color:#fff;border:2px solid var(--ink);padding:14px 28px;border-radius:50px;font-weight:800;box-shadow:5px 5px 0 rgba(255,255,255,.2);display:inline-block;margin-top:8px">Begin Your Journey →</a>
     </div>
     <div class="about-tags">
-      <!-- PHOTO 9: warm team/coach or group of Filipino learners, ~500x400. File: photo-about.jpg -->
-      <img class="about-photo" src="photo-about.jpg" onerror="this.style.display='none'" alt="The Speaki community of Filipino English learners" style="margin-bottom:18px">
-      <div class="about-tag"><span class="e">🗣️</span><div><h4>Communication + Mindset</h4><p>Not just words — the confidence to use them.</p></div></div>
-      <div class="about-tag"><span class="e">🎯</span><div><h4>Designed for every learner</h4><p>Different people learn differently. So do we.</p></div></div>
-      <div class="about-tag"><span class="e">💚</span><div><h4>Real people, real community</h4><p>Live sessions and a space where you belong.</p></div></div>
+      <p style="color:rgba(255,255,255,.7);font-size:.88rem;text-transform:uppercase;letter-spacing:.12em;font-weight:700;margin-bottom:16px">Meet the team</p>
+
+      <!-- Team photo — full width, names overlaid below -->
+      <div style="position:relative;border-radius:24px;overflow:hidden;border:3px solid rgba(255,255,255,.2);box-shadow:8px 8px 0 rgba(255,255,255,.1);margin-bottom:20px">
+        <img src="Team.png" alt="Rochelle, Kathy and Priyam — the Speaki team" style="width:100%;display:block;object-fit:cover;max-height:340px" onerror="this.style.display='none'">
+        <!-- Name labels overlaid at the bottom -->
+        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;background:rgba(11,31,23,.75);backdrop-filter:blur(6px)">
+          <div style="padding:12px;text-align:center;border-right:1px solid rgba(255,255,255,.12)">
+            <strong style="color:#fff;font-size:.92rem;display:block">Priyam</strong>
+            <span style="color:var(--gold);font-size:.72rem;font-weight:700">Technical Lead</span>
+          </div>
+          <div style="padding:12px;text-align:center;border-right:1px solid rgba(255,255,255,.12)">
+            <strong style="color:#fff;font-size:.92rem;display:block">Rochelle</strong>
+            <span style="color:var(--gold);font-size:.72rem;font-weight:700">Head Coach</span>
+          </div>
+          <div style="padding:12px;text-align:center">
+            <strong style="color:#fff;font-size:.92rem;display:block">Kathy</strong>
+            <span style="color:var(--gold);font-size:.72rem;font-weight:700">Communication Trainer</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bio cards below photo -->
+      <div class="about-tag" style="flex-direction:column;align-items:flex-start">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px">
+          <div style="width:10px;height:10px;border-radius:50%;background:var(--green);flex-shrink:0"></div>
+          <h4 style="margin:0">Rochelle <span style="font-size:.75rem;opacity:.65;font-weight:600">· Co-founder · Head Coach</span></h4>
+        </div>
+        <p style="margin:0;font-size:.86rem">The voice behind Speaki's heart. Rochelle spent years helping thousands of non-native speakers find their confidence and their voice.</p>
+      </div>
+      <div class="about-tag" style="flex-direction:column;align-items:flex-start">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px">
+          <div style="width:10px;height:10px;border-radius:50%;background:var(--gold);flex-shrink:0"></div>
+          <h4 style="margin:0">Kathy <span style="font-size:.75rem;opacity:.65;font-weight:600">· Co-founder · Communication Trainer</span></h4>
+        </div>
+        <p style="margin:0;font-size:.86rem">Kathy spent her career as a communication trainer helping learners cross the gap between knowing what to say and having the confidence to say it out loud.</p>
+      </div>
+      <div class="about-tag" style="flex-direction:column;align-items:flex-start">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px">
+          <div style="width:10px;height:10px;border-radius:50%;background:#5865F2;flex-shrink:0"></div>
+          <h4 style="margin:0">Priyam <span style="font-size:.75rem;opacity:.65;font-weight:600">· Co-founder · Technical Lead</span></h4>
+        </div>
+        <p style="margin:0;font-size:.86rem">Priyam is the team's technical lead and the person responsible for bringing the Speaki vision to life through technology.</p>
+      </div>
     </div>
   </div>
 </section>
 
+<!-- THIS IS FOR YOU IF -->
+<section class="pad" id="for-you" style="background:var(--cream-2)">
+  <div class="wrap">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start">
+      <div>
+        <span class="eyebrow">This is for you, if:</span>
+        <h2 style="font-size:clamp(1.8rem,3.5vw,2.4rem);font-weight:900;margin-bottom:24px">You might be exactly who we built this for.</h2>
+        <ul style="list-style:none;display:flex;flex-direction:column;gap:14px">
+          <li style="display:flex;gap:12px;align-items:flex-start"><span style="width:24px;height:24px;border-radius:50%;background:var(--coral);display:grid;place-items:center;color:#fff;font-size:.75rem;font-weight:800;flex-shrink:0">✓</span><span style="color:var(--ink-soft)">You've studied English for years but still freeze when speaking</span></li>
+          <li style="display:flex;gap:12px;align-items:flex-start"><span style="width:24px;height:24px;border-radius:50%;background:var(--coral);display:grid;place-items:center;color:#fff;font-size:.75rem;font-weight:800;flex-shrink:0">✓</span><span style="color:var(--ink-soft)">You're embarrassed or afraid of being judged for your accent</span></li>
+          <li style="display:flex;gap:12px;align-items:flex-start"><span style="width:24px;height:24px;border-radius:50%;background:var(--coral);display:grid;place-items:center;color:#fff;font-size:.75rem;font-weight:800;flex-shrink:0">✓</span><span style="color:var(--ink-soft)">You can't communicate your skills well in English</span></li>
+          <li style="display:flex;gap:12px;align-items:flex-start"><span style="width:24px;height:24px;border-radius:50%;background:var(--coral);display:grid;place-items:center;color:#fff;font-size:.75rem;font-weight:800;flex-shrink:0">✓</span><span style="color:var(--ink-soft)">You need a promotion but can't express yourself confidently</span></li>
+          <li style="display:flex;gap:12px;align-items:flex-start"><span style="width:24px;height:24px;border-radius:50%;background:var(--coral);display:grid;place-items:center;color:#fff;font-size:.75rem;font-weight:800;flex-shrink:0">✓</span><span style="color:var(--ink-soft)">You always fail the interview despite being qualified</span></li>
+          <li style="display:flex;gap:12px;align-items:flex-start"><span style="width:24px;height:24px;border-radius:50%;background:var(--coral);display:grid;place-items:center;color:#fff;font-size:.75rem;font-weight:800;flex-shrink:0">✓</span><span style="color:var(--ink-soft)">You have so many ideas but can't express them in English</span></li>
+          <li style="display:flex;gap:12px;align-items:flex-start"><span style="width:24px;height:24px;border-radius:50%;background:var(--coral);display:grid;place-items:center;color:#fff;font-size:.75rem;font-weight:800;flex-shrink:0">✓</span><span style="color:var(--ink-soft)">You feel frustrated for not being understood or heard</span></li>
+        </ul>
+      </div>
+      <div>
+        <span class="eyebrow">What you get:</span>
+        <h2 style="font-size:clamp(1.8rem,3.5vw,2.4rem);font-weight:900;margin-bottom:24px">Everything you need to go from silent to spoken.</h2>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+          <div style="background:#fff;border:2px solid var(--ink);border-radius:18px;padding:16px 18px;box-shadow:4px 4px 0 var(--ink);display:flex;gap:12px;align-items:flex-start"><span style="font-size:1.3rem">🎥</span><div><h4 style="font-weight:800;margin-bottom:2px;font-size:.95rem">LIVE Practice Sessions</h4><p style="color:var(--ink-soft);font-size:.85rem;margin:0">Real speaking practice with real people in a safe space.</p></div></div>
+          <div style="background:#fff;border:2px solid var(--ink);border-radius:18px;padding:16px 18px;box-shadow:4px 4px 0 var(--ink);display:flex;gap:12px;align-items:flex-start"><span style="font-size:1.3rem">🧠</span><div><h4 style="font-weight:800;margin-bottom:2px;font-size:.95rem">Mindset Coaching</h4><p style="color:var(--ink-soft);font-size:.85rem;margin:0">Rewire the fear and freezing — not just the grammar.</p></div></div>
+          <div style="background:#fff;border:2px solid var(--ink);border-radius:18px;padding:16px 18px;box-shadow:4px 4px 0 var(--ink);display:flex;gap:12px;align-items:flex-start"><span style="font-size:1.3rem">👥</span><div><h4 style="font-weight:800;margin-bottom:2px;font-size:.95rem">Safe Community</h4><p style="color:var(--ink-soft);font-size:.85rem;margin:0">No judgment, no accent shaming — just growth.</p></div></div>
+          <div style="background:#fff;border:2px solid var(--ink);border-radius:18px;padding:16px 18px;box-shadow:4px 4px 0 var(--ink);display:flex;gap:12px;align-items:flex-start"><span style="font-size:1.3rem">🎓</span><div><h4 style="font-weight:800;margin-bottom:2px;font-size:.95rem">Focused Masterclasses</h4><p style="color:var(--ink-soft);font-size:.85rem;margin:0">Deep-dive sessions on the topics that matter most.</p></div></div>
+          <div style="background:#fff;border:2px solid var(--ink);border-radius:18px;padding:16px 18px;box-shadow:4px 4px 0 var(--ink);display:flex;gap:12px;align-items:flex-start;grid-column:1/-1"><span style="font-size:1.3rem">🤖</span><div><h4 style="font-weight:800;margin-bottom:2px;font-size:.95rem">AI Coach <span style="background:var(--gold);border-radius:20px;padding:2px 8px;font-size:.72rem">Launching soon</span></h4><p style="color:var(--ink-soft);font-size:.85rem;margin:0">Practise anytime, 24/7, with instant personalised feedback.</p></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
 <!-- CONTACT -->
 <section class="pad" id="contact">
   <div class="wrap">
@@ -830,5 +862,66 @@ document.querySelectorAll('[data-scroll]').forEach(link=>{
 });
 
 </script>
+
+<!-- FREE MASTERCLASS POPUP -->
+<div id="masterclass-overlay" style="display:none;position:fixed;inset:0;background:rgba(11,31,23,.7);z-index:1000;align-items:center;justify-content:center;padding:20px">
+  <div style="background:#fff;border:3px solid #0B1F17;border-radius:28px;padding:40px;max-width:480px;width:100%;position:relative;box-shadow:8px 8px 0 #0B1F17">
+    <button onclick="closeMasterclass()" style="position:absolute;top:16px;right:16px;background:none;border:0;font-size:1.5rem;cursor:pointer;color:#0B1F17;line-height:1">×</button>
+    <span style="display:inline-block;background:#FFC93C;border:2px solid #0B1F17;border-radius:30px;padding:5px 14px;font-size:.78rem;font-weight:800;margin-bottom:16px">🎓 FREE Masterclass</span>
+    <h2 style="font-family:'Fraunces',serif;font-size:1.8rem;font-weight:900;color:#0B1F17;margin-bottom:12px;line-height:1.1">Speak English with Confidence &amp; Clarity</h2>
+    <p style="color:#33473E;margin-bottom:24px;font-size:1rem;line-height:1.6">Join our free masterclass and discover how to stop freezing, overcome your accent fear, and start speaking English with confidence — starting today.</p>
+    <button onclick="joinMasterclass()" style="display:block;width:100%;text-align:center;background:#2ECC71;color:#fff;border:2px solid #0B1F17;padding:15px 28px;border-radius:50px;font-weight:800;font-size:1.05rem;box-shadow:5px 5px 0 #0B1F17;cursor:pointer;margin-bottom:12px">Join the Free Masterclass →</button>
+    <button onclick="closeMasterclass()" style="display:block;width:100%;background:none;border:0;color:#33473E;font-size:.88rem;cursor:pointer;text-decoration:underline">No thanks, maybe later</button>
+  </div>
+</div>
+
+<script>
+// Show popup after 3 seconds for new visitors
+(function(){
+  if(!sessionStorage.getItem('mcSeen')){
+    setTimeout(function(){
+      var el = document.getElementById('masterclass-overlay');
+      if(el){ el.style.display='flex'; }
+      sessionStorage.setItem('mcSeen','1');
+    }, 3000);
+  }
+})();
+
+function closeMasterclass(){
+  var el = document.getElementById('masterclass-overlay');
+  if(el){ el.style.display='none'; }
+}
+
+function joinMasterclass(){
+  closeMasterclass();
+  // Scroll to the Live Session form
+  var section = document.getElementById('get-started');
+  if(section){
+    section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    // Highlight the live session offer card
+    var liveForm = section.querySelector('.offer-live');
+    if(liveForm){
+      liveForm.style.transition = 'box-shadow .3s, transform .3s';
+      liveForm.style.boxShadow = '0 0 0 4px #FFC93C, 8px 8px 0 #0B1F17';
+      liveForm.style.transform = 'scale(1.02)';
+      setTimeout(function(){
+        liveForm.style.boxShadow = '';
+        liveForm.style.transform = '';
+      }, 2500);
+    }
+    // Focus name field inside live session form
+    setTimeout(function(){
+      var nameInput = section.querySelector('.offer-live input[name="name"]');
+      if(nameInput) nameInput.focus();
+    }, 700);
+  }
+}
+
+// Close on overlay click
+document.getElementById('masterclass-overlay').addEventListener('click', function(e){
+  if(e.target === this) closeMasterclass();
+});
+</script>
+
 </body>
 </html>
