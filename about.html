@@ -146,6 +146,38 @@ footer .logo{color:#fff}
   .mission-values{gap:12px}
   .cta-inner{padding:40px 24px}
 }
+
+/* ===== MOBILE RESPONSIVE ===== */
+@media(max-width:900px){
+  .nav-links{display:none!important}
+  .burger{display:flex!important}
+  .about-hero h1{font-size:clamp(2.5rem,8vw,4rem)!important}
+  .mission-band{margin:0 8px 50px!important;padding:44px 20px!important;border-radius:24px!important}
+  .mission-values{flex-wrap:wrap!important;gap:12px!important}
+  .mv{min-width:140px!important}
+  .member,.member.reverse{grid-template-columns:1fr!important;gap:36px!important}
+  .member.reverse .member-photo,.member.reverse .member-info{order:unset!important}
+  .member-photo img{max-width:320px!important;margin:0 auto!important;display:block!important}
+  .member-info .number{font-size:3rem!important}
+  .team-photo-caption{gap:16px!important;flex-wrap:wrap!important}
+  .story-inner .big-quote{padding:20px!important;font-size:1.2rem!important}
+  .cta-inner{padding:40px 20px!important}
+  .foot-inner{flex-direction:column!important;gap:24px!important}
+}
+@media(max-width:560px){
+  .wrap{padding:0 16px!important}
+  .nav-inner{padding:12px 16px!important}
+  .about-hero{padding:50px 0 36px!important}
+  .about-hero h1{font-size:2.4rem!important}
+  .about-hero p.lead{font-size:1rem!important}
+  .team-photo-inner img{max-height:280px!important}
+  .member-info h3{font-size:2rem!important}
+  .story-section{padding:50px 0!important}
+  .btn{display:block!important;text-align:center!important;width:100%!important}
+  .cta-inner .btn{margin:8px 0!important}
+  .about-cta{padding:50px 0!important}
+}
+
 </style>
 </head>
 <body>

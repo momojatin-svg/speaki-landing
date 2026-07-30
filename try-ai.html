@@ -70,13 +70,37 @@
   .gate .lock{display:inline-flex;align-items:center;gap:8px;background:var(--gold);border:2px solid var(--ink);border-radius:30px;padding:5px 14px;font-weight:800;font-size:.78rem;margin-bottom:16px}
   #demoWrap{display:none}
   #demoWrap.unlocked{display:block;animation:fade .4s ease}
+
+/* ===== MOBILE RESPONSIVE ===== */
+@media(max-width:768px){
+  .wrap{padding:0 16px!important}
+  .nav-inner{padding:12px 16px!important}
+  .nav-links{display:none!important}
+  .nav-cta{font-size:.82rem!important;padding:9px 16px!important}
+  .page-hero{padding:40px 0 28px!important}
+  .page-hero h1{font-size:clamp(1.8rem,7vw,2.8rem)!important}
+  .demo{padding:20px!important}
+  .demo-btn{width:100%!important;justify-content:center!important}
+  .demo-actions{flex-direction:column!important}
+  .cta-band{padding:36px 20px!important;margin:40px 0!important}
+  .cta-band h2{font-size:1.6rem!important}
+  .btn{width:100%!important;text-align:center!important;justify-content:center!important}
+  .score-ring{flex-direction:column!important;gap:10px!important}
+  footer{padding:36px 0 20px!important}
+}
+@media(max-width:480px){
+  .page-hero h1{font-size:1.7rem!important}
+  .offer-input{font-size:.95rem!important;padding:12px!important}
+  .g-btn{font-size:.95rem!important;padding:13px!important}
+}
+
 </style>
 </head>
 <body>
 <header class="nav">
   <div class="nav-inner">
     <a href="/" class="logo"><span class="dot">&#128483;&#65039;</span>Speaki</a>
-    <a href="/#start" class="nav-cta">Start Free &#8594;</a>
+    <a href="https://courses.speaki.co" class="nav-cta">Start Free &#8594;</a>
   </div>
 </header>
 
@@ -165,7 +189,7 @@
     <div class="cta-band">
       <h2>This is just a glimpse</h2>
       <p>The full Speaki AI coach is launching soon &mdash; practise anytime, 24/7, with live sessions and mindset coaching alongside it. Join the waitlist for first access.</p>
-      <a href="/#start" class="btn">Join the waitlist &#128640;</a>
+      <a href="/#get-started" class="btn">Join the waitlist &#128640;</a>
     </div>
 
     <p style="text-align:center;color:var(--ink-soft)">Related: <a href="/english-for-job-interviews-philippines">Interview English guide</a> &middot; <a href="/overcome-english-speaking-anxiety">Stop freezing</a> &middot; <a href="/faq">FAQ</a></p>
@@ -175,7 +199,7 @@
 <footer>
   <div class="wrap-wide">
     <a href="/" class="logo"><span class="dot">&#128483;&#65039;</span>Speaki</a>
-    <div class="foot-links"><a href="/">Home</a><a href="/about">About</a><a href="/faq">FAQ</a><a href="/#start">Start Free</a></div>
+    <div class="foot-links"><a href="/">Home</a><a href="/about">About</a><a href="/faq">FAQ</a><a href="https://courses.speaki.co">Start Free</a></div>
     <div class="foot-bottom">&copy; 2026 Speaki. English communication + mindset coaching for non-native speakers.</div>
   </div>
 </footer>

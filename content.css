@@ -72,3 +72,34 @@ footer .logo .dot{box-shadow:3px 3px 0 var(--green-deep)}
 .foot-bottom{border-top:1px solid rgba(255,255,255,.12);padding-top:22px;margin-top:22px;font-size:.85rem}
 
 @media(max-width:640px){.grid{grid-template-columns:1fr}}
+
+/* ===== MOBILE RESPONSIVE (content pages) ===== */
+@media(max-width:768px){
+  .wrap{padding:0 16px!important}
+  .wrap-wide{padding:0 16px!important}
+  .nav-inner{padding:12px 16px!important}
+  .nav-links{display:none!important}
+  .page-hero{padding:40px 0 28px!important}
+  .page-hero h1{font-size:clamp(1.8rem,7vw,2.8rem)!important}
+  .page-hero p.lead{font-size:1rem!important}
+  article{padding:16px 0 50px!important}
+  article h2{font-size:1.5rem!important}
+  .grid{grid-template-columns:1fr!important;gap:14px!important}
+  .callout{padding:18px!important}
+  .cta-band{padding:36px 20px!important;margin:36px 0!important;border-radius:22px!important}
+  .cta-band h2{font-size:1.6rem!important}
+  .btn{display:block!important;text-align:center!important;width:100%!important}
+  .tgrid{grid-template-columns:1fr!important}
+  .tcard{margin-bottom:14px!important}
+  .foot-links{flex-wrap:wrap!important;gap:12px!important}
+  footer{padding:36px 0 20px!important}
+  details.faq-item{margin-bottom:10px!important}
+  .faq-q{font-size:1rem!important;padding:16px 18px!important}
+  .faq-a{padding:0 18px 18px!important}
+}
+@media(max-width:480px){
+  .page-hero h1{font-size:1.7rem!important}
+  .eyebrow{font-size:.72rem!important}
+  article h3{font-size:1.15rem!important}
+  .nav-cta{font-size:.8rem!important;padding:8px 14px!important}
+}
