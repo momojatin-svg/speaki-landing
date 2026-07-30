@@ -234,8 +234,8 @@
   .who-card p{color:var(--ink-soft);font-size:.93rem}
 
   /* ===== FORMS (LIVE + WAITLIST) ===== */
-  .offers{display:grid;grid-template-columns:1fr;gap:24px;max-width:700px;margin:0 auto}
-  .offer{border-radius:28px;padding:42px 38px;border:2px solid var(--ink);position:relative;overflow:hidden}
+  .offers{display:block;max-width:780px;margin:0 auto}
+  .offer{border-radius:28px;padding:42px 38px;border:2px solid var(--ink);position:relative;overflow:hidden;display:block;width:100%;box-sizing:border-box}
   .offer-live{background:linear-gradient(150deg,var(--green),var(--green-deep));color:#fff;box-shadow:8px 8px 0 var(--ink)}
   .offer-wait{background:var(--navy);color:#fff;box-shadow:8px 8px 0 var(--green)}
   .offer .tag{display:inline-flex;align-items:center;gap:7px;background:rgba(255,255,255,.2);border:1px solid rgba(255,255,255,.35);padding:6px 13px;border-radius:30px;font-weight:700;font-size:.78rem;margin-bottom:18px}
@@ -307,7 +307,7 @@
   /* ===== PHOTO STYLES ===== */
   img[data-photo]:not([src]){display:none}
   .who-card img{width:100%;height:180px;object-fit:cover;object-position:center center;border-radius:14px;margin-bottom:14px;border:2px solid var(--ink);display:block}
-  .offer-photo{width:100%;height:200px;object-fit:cover;border-radius:18px;margin-bottom:20px;border:2px solid var(--ink)}
+  .offer-photo{width:100%;height:auto;object-fit:contain;border-radius:18px;margin-bottom:20px;border:2px solid var(--ink);display:block}
   .about-photo{width:100%;height:auto;border-radius:24px;object-fit:cover;border:3px solid var(--ink);box-shadow:6px 6px 0 var(--green)}
   /* testimonials */
   .testimonials{padding:90px 0}
@@ -700,12 +700,12 @@
             <span style="color:var(--gold);font-size:.72rem;font-weight:700">Technical Lead</span>
           </div>
           <div style="padding:12px;text-align:center;border-right:1px solid rgba(255,255,255,.12)">
-            <strong style="color:#fff;font-size:.92rem;display:block">Rochelle</strong>
-            <span style="color:var(--gold);font-size:.72rem;font-weight:700">Head Coach</span>
-          </div>
-          <div style="padding:12px;text-align:center">
             <strong style="color:#fff;font-size:.92rem;display:block">Kathy</strong>
             <span style="color:var(--gold);font-size:.72rem;font-weight:700">Communication Trainer</span>
+          </div>
+          <div style="padding:12px;text-align:center">
+            <strong style="color:#fff;font-size:.92rem;display:block">Rochelle</strong>
+            <span style="color:var(--gold);font-size:.72rem;font-weight:700">Head Coach</span>
           </div>
         </div>
       </div>
