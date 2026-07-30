@@ -318,6 +318,7 @@
   .tperson img{width:52px;height:52px;border-radius:50%;object-fit:cover;border:2px solid var(--ink)}
   .tperson h5{font-family:'Plus Jakarta Sans';font-weight:800;font-size:.95rem;margin:0}
   .tperson span{font-size:.82rem;color:var(--ink-soft)}
+  #team-speaki .wrap > div:first-of-type+div{grid-template-columns:1fr!important}
   @media(max-width:900px){
     .tgrid{grid-template-columns:1fr}
   }
@@ -327,6 +328,7 @@
     .hero-grid{grid-template-columns:1fr;gap:60px}
     .hero-visual{order:-1}
     .why-grid{grid-template-columns:1fr 1fr}
+    #team-speaki [style*="grid-template-columns:repeat(3"]{grid-template-columns:1fr!important}
     .feat-grid,.offers,.about-grid,.contact-grid{grid-template-columns:1fr}
     .who-grid{grid-template-columns:1fr 1fr}
     .try-grid{grid-template-columns:1fr!important;gap:28px!important}
@@ -354,7 +356,7 @@
     <nav class="nav-links">
       <a href="#" data-scroll="who">Who It's For</a>
       <a href="#" data-scroll="system">The Speaki Formula</a>
-      <a href="/about.html">About</a>
+      <a href="/about">About</a>
       <a href="#" data-scroll="contact">Contact</a>
       <a href="https://courses.speaki.co">Login</a>
     </nav>
@@ -366,7 +368,7 @@
   <div class="nav-mobile" id="mob">
     <a href="#" data-scroll="who">Who It's For</a>
     <a href="#" data-scroll="system">The Speaki Formula</a>
-    <a href="/about.html">About</a>
+    <a href="/about">About</a>
     <a href="#" data-scroll="contact">Contact</a>
     <a href="https://courses.speaki.co">Login</a>
     <a href="https://courses.speaki.co">Start Free →</a>
@@ -437,6 +439,65 @@
     </div>
   </div>
 </section>
+
+<!-- TEAM SPEAKI -->
+<section class="pad" id="team-speaki" style="background:var(--cream-2)">
+  <div class="wrap">
+    <div class="sec-head" style="text-align:center;margin-bottom:44px">
+      <span class="eyebrow">The people behind Speaki</span>
+      <h2 style="font-size:clamp(2rem,4vw,3rem);font-weight:900;margin-bottom:12px">Team Speaki</h2>
+      <p style="color:var(--ink-soft);font-size:1.05rem;max-width:560px;margin:0 auto">Three co-founders united by one belief — that every non-native English speaker deserves a safe space to find their voice, without fear of judgment.</p>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-bottom:44px">
+
+      <!-- Rochelle -->
+      <div style="background:#fff;border:2px solid var(--ink);border-radius:24px;overflow:hidden;box-shadow:6px 6px 0 var(--ink);transition:transform .18s,box-shadow .18s" onmouseover="this.style.transform='translate(-3px,-3px)';this.style.boxShadow='9px 9px 0 var(--ink)'" onmouseout="this.style.transform='';this.style.boxShadow='6px 6px 0 var(--ink)'">
+        <div style="height:280px;overflow:hidden;border-bottom:2px solid var(--ink)">
+          <img src="rochelle.png" alt="Rochelle de Leon — Co-founder, Speaki" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block" onerror="this.parentElement.style.background='var(--green)';this.style.display='none'">
+        </div>
+        <div style="padding:22px">
+          <span style="background:var(--green);color:#fff;border-radius:20px;padding:4px 12px;font-size:.72rem;font-weight:800;display:inline-block;margin-bottom:10px">Communication Mentor</span>
+          <h3 style="font-family:'Fraunces',serif;font-size:1.3rem;font-weight:700;margin-bottom:6px">Rochelle de Leon</h3>
+          <p style="color:var(--ink-soft);font-size:.9rem;line-height:1.6">Born in the Philippines, a global citizen, and a firm believer that your voice deserves to be heard — shaky hands and imperfect grammar included.</p>
+        </div>
+      </div>
+
+      <!-- Katherine -->
+      <div style="background:#fff;border:2px solid var(--ink);border-radius:24px;overflow:hidden;box-shadow:6px 6px 0 var(--ink);transition:transform .18s,box-shadow .18s" onmouseover="this.style.transform='translate(-3px,-3px)';this.style.boxShadow='9px 9px 0 var(--ink)'" onmouseout="this.style.transform='';this.style.boxShadow='6px 6px 0 var(--ink)'">
+        <div style="height:280px;overflow:hidden;border-bottom:2px solid var(--ink)">
+          <img src="kathrine.png" alt="Katherine — Co-founder, Speaki" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block" onerror="this.parentElement.style.background='var(--gold)';this.style.display='none'">
+        </div>
+        <div style="padding:22px">
+          <span style="background:var(--gold);color:var(--ink);border-radius:20px;padding:4px 12px;font-size:.72rem;font-weight:800;display:inline-block;margin-bottom:10px">Communication Trainer</span>
+          <h3 style="font-family:'Fraunces',serif;font-size:1.3rem;font-weight:700;margin-bottom:6px">Katherine</h3>
+          <p style="color:var(--ink-soft);font-size:.9rem;line-height:1.6">A communication and training professional dedicated to helping others grow through consistent practice and a commitment to learning.</p>
+        </div>
+      </div>
+
+      <!-- Priyam -->
+      <div style="background:#fff;border:2px solid var(--ink);border-radius:24px;overflow:hidden;box-shadow:6px 6px 0 var(--ink);transition:transform .18s,box-shadow .18s" onmouseover="this.style.transform='translate(-3px,-3px)';this.style.boxShadow='9px 9px 0 var(--ink)'" onmouseout="this.style.transform='';this.style.boxShadow='6px 6px 0 var(--ink)'">
+        <div style="height:280px;overflow:hidden;border-bottom:2px solid var(--ink)">
+          <img src="priyam.png" alt="Priyam — Co-founder, Speaki" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block" onerror="this.parentElement.style.background='#5865F2';this.style.display='none'">
+        </div>
+        <div style="padding:22px">
+          <span style="background:#5865F2;color:#fff;border-radius:20px;padding:4px 12px;font-size:.72rem;font-weight:800;display:inline-block;margin-bottom:10px">Product & Technology</span>
+          <h3 style="font-family:'Fraunces',serif;font-size:1.3rem;font-weight:700;margin-bottom:6px">Priyam</h3>
+          <p style="color:var(--ink-soft);font-size:.9rem;line-height:1.6">Born in India, a non-native English speaker who knows exactly what it feels like to hesitate before speaking — and how to overcome it.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- CTA row -->
+    <div style="text-align:center;display:flex;gap:16px;justify-content:center;flex-wrap:wrap">
+      <button onclick="joinMasterclass()" style="background:var(--green);color:#fff;border:2px solid var(--ink);padding:15px 30px;border-radius:50px;font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:1.05rem;box-shadow:6px 6px 0 var(--ink);cursor:pointer;transition:transform .15s" onmouseover="this.style.transform='translate(-2px,-2px)'" onmouseout="this.style.transform=''">Join Free Masterclass 🎓</button>
+      <a href="/about" style="background:#fff;color:var(--ink);border:2px solid var(--ink);padding:15px 30px;border-radius:50px;font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:1.05rem;box-shadow:4px 4px 0 var(--ink);display:inline-flex;align-items:center;gap:8px;transition:transform .15s" onmouseover="this.style.transform='translate(-2px,-2px)'" onmouseout="this.style.transform=''">Meet the full team →</a>
+    </div>
+
+  </div>
+</section>
+
 
 <!-- THE SYSTEM -->
 <section class="pad" id="system">
@@ -612,6 +673,7 @@
         <strong style="color:var(--gold)">— Rochelle, Kathy, and Priyam</strong>
       </blockquote>
       <a href="https://courses.speaki.co" class="btn" style="background:var(--green);color:#fff;border:2px solid var(--ink);padding:14px 28px;border-radius:50px;font-weight:800;box-shadow:5px 5px 0 rgba(255,255,255,.2);display:inline-block;margin-top:8px">Begin Your Journey →</a>
+      <a href="/about" style="display:inline-block;margin-top:12px;color:rgba(255,255,255,.75);font-weight:700;font-size:.92rem;text-decoration:underline">Meet the full team →</a>
     </div>
     <div class="about-tags">
       <p style="color:rgba(255,255,255,.7);font-size:.88rem;text-transform:uppercase;letter-spacing:.12em;font-weight:700;margin-bottom:16px">Meet the team</p>
@@ -626,12 +688,12 @@
             <span style="color:var(--gold);font-size:.72rem;font-weight:700">Technical Lead</span>
           </div>
           <div style="padding:12px;text-align:center;border-right:1px solid rgba(255,255,255,.12)">
-            <strong style="color:#fff;font-size:.92rem;display:block">Kathy</strong>
-            <span style="color:var(--gold);font-size:.72rem;font-weight:700">Communication Trainer</span>
-          </div>
-          <div style="padding:12px;text-align:center">
             <strong style="color:#fff;font-size:.92rem;display:block">Rochelle</strong>
             <span style="color:var(--gold);font-size:.72rem;font-weight:700">Head Coach</span>
+          </div>
+          <div style="padding:12px;text-align:center">
+            <strong style="color:#fff;font-size:.92rem;display:block">Kathy</strong>
+            <span style="color:var(--gold);font-size:.72rem;font-weight:700">Communication Trainer</span>
           </div>
         </div>
       </div>
