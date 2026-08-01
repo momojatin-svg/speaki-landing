@@ -1,4 +1,17 @@
 {
   "cleanUrls": true,
-  "trailingSlash": false
+  "trailingSlash": false,
+  "routes": [
+    { "src": "/about", "dest": "/about.html" },
+    { "src": "/faq", "dest": "/faq.html" },
+    { "src": "/try-ai", "dest": "/try-ai.html" },
+    { "src": "/overcome-english-speaking-anxiety", "dest": "/overcome-english-speaking-anxiety.html" },
+    { "src": "/overcome-shyness-speaking-english", "dest": "/overcome-shyness-speaking-english.html" },
+    { "src": "/english-for-bpo-call-center-philippines", "dest": "/english-for-bpo-call-center-philippines.html" },
+    { "src": "/english-for-job-interviews-philippines", "dest": "/english-for-job-interviews-philippines.html" },
+    { "src": "/english-for-professionals-philippines", "dest": "/english-for-professionals-philippines.html" },
+    { "src": "/english-for-students-fresh-graduates-philippines", "dest": "/english-for-students-fresh-graduates-philippines.html" },
+    { "src": "/english-for-ofw-working-abroad", "dest": "/english-for-ofw-working-abroad.html" },
+    { "src": "/(.*)", "dest": "/index.html" }
+  ]
 }
