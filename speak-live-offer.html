@@ -299,13 +299,14 @@ a{text-decoration:none;color:inherit}
 
 <script>
 // Countdown to midnight
+<script>
 function updateCountdown(){
   var now = new Date();
   var midnight = new Date(now);
 
-  // Countdown ends tomorrow at 12:00 AM
+  // Ends tomorrow night at 12:00 AM
   midnight.setDate(midnight.getDate() + 1);
-  midnight.setHours(24,0,0,0);
+  midnight.setHours(24, 0, 0, 0);
 
   var diff = midnight - now;
 
@@ -316,23 +317,18 @@ function updateCountdown(){
     return;
   }
 
-  var hours = Math.floor(diff / (1000 * 60 * 60));
-  var minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-  var seconds = Math.floor((diff % (1000 * 60)) / 1000);
+  var h = Math.floor(diff / 3600000);
+  var m = Math.floor((diff % 3600000) / 60000);
+  var s = Math.floor((diff % 60000) / 1000);
 
-  document.getElementById('cd-h').textContent = String(hours).padStart(2,'0');
-  document.getElementById('cd-m').textContent = String(minutes).padStart(2,'0');
-  document.getElementById('cd-s').textContent = String(seconds).padStart(2,'0');
+  document.getElementById('cd-h').textContent = String(h).padStart(2, '0');
+  document.getElementById('cd-m').textContent = String(m).padStart(2, '0');
+  document.getElementById('cd-s').textContent = String(s).padStart(2, '0');
 }
-  var h = Math.floor(diff/3600000);
-  var m = Math.floor((diff%3600000)/60000);
-  var s = Math.floor((diff%60000)/1000);
-  document.getElementById('cd-h').textContent = String(h).padStart(2,'0');
-  document.getElementById('cd-m').textContent = String(m).padStart(2,'0');
-  document.getElementById('cd-s').textContent = String(s).padStart(2,'0');
-}
+
 updateCountdown();
 setInterval(updateCountdown, 1000);
+</script>
 
 // QR tab switching
 function showQR(tab, btn){
