@@ -316,7 +316,7 @@ function updateCountdown() {
 
   // Deadline = next-next midnight in Philippines time
   // Example: Aug 17 today → Aug 19 at 12:00 AM
-  var deadline = Date.UTC(year, month - 1, day + 2, 0, 0, 0);
+  var deadline = Date.UTC(year, month - 1, day + 1, 0, 0, 0);
 
   // Philippines is UTC+8
   deadline -= 8 * 60 * 60 * 1000;
