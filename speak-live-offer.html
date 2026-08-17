@@ -298,17 +298,26 @@ a{text-decoration:none;color:inherit}
 </div>
 
 <script>
-// Countdown to midnight
-<script>
 function updateCountdown(){
   var now = new Date();
-  var midnight = new Date(now);
 
-  // Ends tomorrow night at 12:00 AM
-  midnight.setDate(midnight.getDate() + 1);
-  midnight.setHours(24, 0, 0, 0);
+  // Fixed deadline: tomorrow midnight Philippines time
+  var deadline = new Date(
+    new Date().toLocaleDateString('en-US', {
+      timeZone: 'Asia/Manila'
+    }) + ' 00:00:00'
+  );
 
-  var diff = midnight - now;
+  // Move to the next midnight in Philippines time
+  deadline.setDate(deadline.getDate() + 2);
+
+  var phNow = new Date(
+    now.toLocaleString('en-US', {
+      timeZone: 'Asia/Manila'
+    })
+  );
+
+  var diff = deadline - phNow;
 
   if(diff <= 0){
     document.getElementById('cd-h').textContent = '00';
