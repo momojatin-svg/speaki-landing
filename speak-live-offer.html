@@ -298,28 +298,32 @@ a{text-decoration:none;color:inherit}
 </div>
 
 <script>
-function updateCountdown(){
+function updateCountdown() {
   var now = new Date();
 
-  // Fixed deadline: tomorrow midnight Philippines time
-  var deadline = new Date(
-    new Date().toLocaleDateString('en-US', {
-      timeZone: 'Asia/Manila'
-    }) + ' 00:00:00'
-  );
+  // Get today's date in Philippines time
+  var phDate = new Intl.DateTimeFormat('en-CA', {
+    timeZone: 'Asia/Manila',
+    year: 'numeric',
+    month: '2-digit',
+    day: '2-digit'
+  }).format(now);
 
-  // Move to the next midnight in Philippines time
-  deadline.setDate(deadline.getDate() + 2);
+  var parts = phDate.split('-');
+  var year = Number(parts[0]);
+  var month = Number(parts[1]);
+  var day = Number(parts[2]);
 
-  var phNow = new Date(
-    now.toLocaleString('en-US', {
-      timeZone: 'Asia/Manila'
-    })
-  );
+  // Deadline = next-next midnight in Philippines time
+  // Example: Aug 17 today → Aug 19 at 12:00 AM
+  var deadline = Date.UTC(year, month - 1, day + 2, 0, 0, 0);
 
-  var diff = deadline - phNow;
+  // Philippines is UTC+8
+  deadline -= 8 * 60 * 60 * 1000;
 
-  if(diff <= 0){
+  var diff = deadline - now.getTime();
+
+  if (diff <= 0) {
     document.getElementById('cd-h').textContent = '00';
     document.getElementById('cd-m').textContent = '00';
     document.getElementById('cd-s').textContent = '00';
