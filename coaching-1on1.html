@@ -84,55 +84,32 @@ header{background:rgba(251,248,241,.95);border-bottom:2px solid rgba(11,31,23,.0
 .inst-book-btn{display:block;width:100%;text-align:center;padding:14px;border-radius:50px;font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:1rem;border:2px solid var(--ink);cursor:pointer;transition:transform .15s,box-shadow .15s}
 
 /* BOOKING MODAL */
-.modal-overlay{display:none;position:fixed;inset:0;background:rgba(11,31,23,.8);z-index:1000;align-items:center;justify-content:center;padding:20px}
+.modal-overlay{display:none;position:fixed;inset:0;background:rgba(11,31,23,.75);z-index:1000;align-items:center;justify-content:center;padding:20px;backdrop-filter:blur(4px)}
 .modal-overlay.open{display:flex}
-.modal{background:var(--cream);border:3px solid var(--ink);border-radius:28px;padding:40px;max-width:560px;width:100%;position:relative;box-shadow:10px 10px 0 var(--ink)}
-.modal-close{position:absolute;top:16px;right:16px;background:none;border:0;font-size:1.6rem;cursor:pointer;color:var(--ink);line-height:1}
-.modal h2{font-size:1.8rem;font-weight:900;margin-bottom:8px}
-.modal-sub{color:var(--ink-soft);font-size:.95rem;margin-bottom:28px}
-.modal-options{display:flex;flex-direction:column;gap:14px;margin-bottom:24px}
-.modal-option{background:#fff;border:2px solid var(--ink);border-radius:18px;padding:20px;cursor:pointer;transition:all .18s;display:flex;gap:14px;align-items:flex-start}
-.modal-option:hover{border-color:var(--green);box-shadow:4px 4px 0 var(--green);transform:translate(-2px,-2px)}
-.modal-option.selected{border-color:var(--green);background:rgba(46,204,113,.06);box-shadow:4px 4px 0 var(--green)}
-.modal-option-icon{font-size:1.6rem;flex-shrink:0}
-.modal-option h4{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:.98rem;margin-bottom:3px}
-.modal-option p{color:var(--ink-soft);font-size:.85rem;margin:0;line-height:1.5}
-.modal-mentor-select{margin-bottom:20px}
-.modal-mentor-select label{font-weight:700;font-size:.9rem;display:block;margin-bottom:10px;color:var(--ink)}
-.mentor-btns{display:flex;gap:10px}
-.mentor-btn{flex:1;padding:10px;border:2px solid rgba(11,31,23,.2);border-radius:14px;font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:.9rem;cursor:pointer;background:#fff;color:var(--ink);transition:all .18s;text-align:center}
-.mentor-btn:hover,.mentor-btn.selected{border-color:var(--green);background:rgba(46,204,113,.08);color:var(--green-deep)}
-.modal-price{background:var(--cream-2);border-radius:14px;padding:14px 18px;display:flex;justify-content:space-between;align-items:center;margin-bottom:20px}
-.modal-price span{font-size:.9rem;font-weight:600;color:var(--ink-soft)}
-.modal-price strong{font-family:'Fraunces',serif;font-size:1.5rem;font-weight:900;color:var(--ink)}
-.modal-confirm{width:100%;background:var(--green);color:#fff;border:2px solid var(--ink);padding:16px;border-radius:50px;font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:1.05rem;box-shadow:var(--shadow);cursor:pointer;transition:transform .15s}
+.modal{background:#fff;border:2.5px solid var(--ink);border-radius:24px;padding:32px;max-width:480px;width:100%;position:relative;box-shadow:8px 8px 0 var(--ink);max-height:90vh;overflow-y:auto}
+.modal-close{position:absolute;top:14px;right:16px;background:none;border:0;font-size:1.6rem;cursor:pointer;color:var(--ink-soft);line-height:1;width:32px;height:32px;display:grid;place-items:center;border-radius:50%}
+.modal-close:hover{background:var(--cream-2)}
+.modal-step{display:none}
+.modal-step.active{display:block}
+.modal-confirm{width:100%;background:var(--green);color:#fff;border:2px solid var(--ink);padding:14px;border-radius:50px;font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:1rem;box-shadow:var(--shadow);cursor:pointer;transition:transform .15s}
 .modal-confirm:hover{transform:translate(-2px,-2px)}
-.modal-confirm:disabled{opacity:.5;cursor:not-allowed;transform:none}
+.modal-confirm:disabled{opacity:.4;cursor:not-allowed;transform:none;box-shadow:none}
 
-/* PAYMENT STEP (inside modal) */
-.payment-step{display:none}
-.payment-step.active{display:block}
-.pay-qr-tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}
-.pay-tab{padding:7px 16px;border-radius:24px;border:2px solid rgba(11,31,23,.2);font-weight:700;font-size:.82rem;cursor:pointer;background:#fff;color:var(--ink-soft);transition:all .18s}
-.pay-tab:hover,.pay-tab.active{background:var(--ink);color:#fff;border-color:var(--ink)}
-.pay-qr-panels .pay-panel{display:none}
-.pay-qr-panels .pay-panel.active{display:block}
-.pay-qr-img{width:100%;max-width:220px;border-radius:14px;display:block;margin:0 auto 10px;border:2px solid rgba(11,31,23,.1)}
-.pay-bank-name{font-weight:800;font-size:1rem;text-align:center;margin-bottom:2px}
-.pay-bank-sub{color:var(--ink-soft);font-size:.82rem;text-align:center}
-.pay-reminder{background:rgba(255,201,60,.15);border:2px solid var(--gold);border-radius:14px;padding:16px;margin-top:16px}
-.pay-reminder p{font-size:.88rem;color:var(--ink-soft);line-height:1.55;margin-bottom:8px}
-.pay-reminder p:last-child{margin:0}
-.pay-reminder strong{color:var(--ink)}
-.pay-back{background:none;border:2px solid rgba(11,31,23,.2);padding:10px 20px;border-radius:30px;font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:.88rem;cursor:pointer;color:var(--ink-soft);margin-top:14px;display:inline-block}
+/* MENTOR BUTTONS */
+.m-btn{background:#fff;border:2px solid rgba(11,31,23,.15);border-radius:16px;padding:12px;cursor:pointer;transition:all .18s;display:flex;align-items:center;gap:10px;font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:.9rem;color:var(--ink)}
+.m-btn img{width:36px;height:36px;border-radius:50%;object-fit:cover;border:2px solid var(--ink);flex-shrink:0}
+.m-btn:hover,.m-btn.selected{border-color:var(--green);background:rgba(46,204,113,.06);box-shadow:3px 3px 0 var(--green)}
 
-/* CALENDLY STEP */
-.calendly-step{display:none}
-.calendly-step.active{display:block}
-.cal-info{background:rgba(46,204,113,.08);border:2px solid var(--green);border-radius:16px;padding:18px;margin-bottom:16px}
-.cal-info p{font-size:.9rem;color:var(--ink-soft);line-height:1.6;margin-bottom:8px}
-.cal-info p:last-child{margin:0}
-.cal-info strong{color:var(--ink)}
+/* FORMAT BUTTONS */
+.f-btn{background:#fff;border:2px solid rgba(11,31,23,.12);border-radius:16px;padding:14px 16px;cursor:pointer;transition:all .18s;display:flex;align-items:center;gap:12px;font-family:'Plus Jakarta Sans',sans-serif;width:100%;text-align:left}
+.f-btn:hover,.f-btn.selected{border-color:var(--green);background:rgba(46,204,113,.06);box-shadow:3px 3px 0 var(--green)}
+
+/* QR TABS */
+.q-tab{padding:7px 16px;border-radius:24px;border:2px solid rgba(11,31,23,.15);font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:.82rem;cursor:pointer;background:#fff;color:var(--ink-soft);transition:all .18s}
+.q-tab:hover,.q-tab.active{background:var(--ink);color:#fff;border-color:var(--ink)}
+.q-panel{display:none}
+.q-panel.active{display:block}
+
 
 /* FAQ */
 .faq{padding:80px 0;background:var(--cream)}
@@ -361,123 +338,128 @@ header{background:rgba(251,248,241,.95);border-bottom:2px solid rgba(11,31,23,.0
   <div class="modal">
     <button class="modal-close" onclick="closeModal()">×</button>
 
-    <!-- STEP 1: Choose format + mentor -->
-    <div class="payment-step active" id="step-choose">
-      <h2>Book your session</h2>
-      <p class="modal-sub">Choose your preferred format and mentor.</p>
+    <!-- STEP 1: Choose mentor + format -->
+    <div class="modal-step active" id="step-1">
+      <span style="display:block;font-size:.78rem;font-weight:800;text-transform:uppercase;letter-spacing:.15em;color:var(--green-deep);margin-bottom:16px">Book your session · ₱500</span>
+      <h2 style="font-size:1.6rem;margin-bottom:6px">Who would you like to coach you?</h2>
+      <p style="color:var(--ink-soft);font-size:.92rem;margin-bottom:22px">Pick your mentor and preferred format below.</p>
 
-      <div class="modal-options">
-        <div class="modal-option" id="opt-video" onclick="selectOption('video')">
-          <span class="modal-option-icon">🎥</span>
-          <div>
-            <h4>15-Minute Video Call</h4>
-            <p>Live session via Calendly. Real-time coaching with your mentor.</p>
-          </div>
-        </div>
-        <div class="modal-option" id="opt-audio" onclick="selectOption('audio')">
-          <span class="modal-option-icon">🎤</span>
-          <div>
-            <h4>Video Recording + Audio Feedback</h4>
-            <p>Send your video, receive personalised audio feedback within 24–48 hrs.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="modal-mentor-select">
-        <label>Choose your mentor:</label>
-        <div class="mentor-btns">
-          <button class="mentor-btn" id="mb-rochelle" onclick="selectMentor('Rochelle')">👩 Mentor Rochelle</button>
-          <button class="mentor-btn" id="mb-kathy" onclick="selectMentor('Kathy')">👩 Mentor Kathy</button>
+      <!-- MENTOR -->
+      <div style="margin-bottom:20px">
+        <p style="font-weight:700;font-size:.88rem;margin-bottom:10px;color:var(--ink)">Choose your mentor:</p>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+          <button class="m-btn" id="mb-rochelle" onclick="pickMentor(this,'Rochelle')">
+            <img src="https://www.speaki.co/rochelle.png" onerror="this.style.display='none'">
+            <span>Mentor Rochelle</span>
+          </button>
+          <button class="m-btn" id="mb-kathy" onclick="pickMentor(this,'Kathy')">
+            <img src="https://www.speaki.co/kathrine.png" onerror="this.style.display='none'">
+            <span>Mentor Kathy</span>
+          </button>
         </div>
       </div>
 
-      <div class="modal-price">
-        <span>Session fee</span>
-        <strong>₱500</strong>
+      <!-- FORMAT -->
+      <div style="margin-bottom:22px">
+        <p style="font-weight:700;font-size:.88rem;margin-bottom:10px;color:var(--ink)">Choose your format:</p>
+        <div style="display:flex;flex-direction:column;gap:10px">
+          <button class="f-btn" id="fb-video" onclick="pickFormat(this,'video')">
+            <span style="font-size:1.3rem">🎥</span>
+            <div style="text-align:left">
+              <strong style="display:block;font-size:.95rem">15-Minute Video Call</strong>
+              <span style="color:var(--ink-soft);font-size:.82rem">Live session via Calendly</span>
+            </div>
+          </button>
+          <button class="f-btn" id="fb-audio" onclick="pickFormat(this,'audio')">
+            <span style="font-size:1.3rem">🎤</span>
+            <div style="text-align:left">
+              <strong style="display:block;font-size:.95rem">Video + Audio Feedback</strong>
+              <span style="color:var(--ink-soft);font-size:.82rem">Send video, get audio feedback in 24–48hrs</span>
+            </div>
+          </button>
+        </div>
       </div>
 
-      <button class="modal-confirm" id="btn-confirm" onclick="goToPayment()" disabled>Continue to payment →</button>
+      <div style="background:var(--cream-2);border-radius:12px;padding:12px 16px;display:flex;justify-content:space-between;align-items:center;margin-bottom:18px">
+        <span style="font-size:.9rem;font-weight:600;color:var(--ink-soft)">Session fee</span>
+        <strong style="font-family:'Fraunces',serif;font-size:1.4rem">₱500</strong>
+      </div>
+
+      <button class="modal-confirm" id="btn-next" onclick="goStep2()" disabled>Continue to payment →</button>
     </div>
 
-    <!-- STEP 2: Payment -->
-    <div class="payment-step" id="step-payment">
-      <h2>Pay ₱500</h2>
-      <p class="modal-sub">Scan the QR code with your preferred app.</p>
+    <!-- STEP 2: Pay -->
+    <div class="modal-step" id="step-2">
+      <button onclick="goStep1()" style="background:none;border:0;font-weight:700;font-size:.88rem;color:var(--ink-soft);cursor:pointer;margin-bottom:18px;padding:0;display:flex;align-items:center;gap:6px">← Back</button>
+      <h2 style="font-size:1.5rem;margin-bottom:6px">Pay ₱500</h2>
+      <p style="color:var(--ink-soft);font-size:.88rem;margin-bottom:20px">Scan with your preferred payment app then send proof of payment.</p>
 
-      <div class="pay-qr-tabs">
-        <button class="pay-tab active" onclick="showPayQR('gcash',this)">GCash</button>
-        <button class="pay-tab" onclick="showPayQR('maya',this)">Maya</button>
-        <button class="pay-tab" onclick="showPayQR('bpi',this)">BPI</button>
-        <button class="pay-tab" onclick="showPayQR('maribank',this)">MariBank</button>
+      <!-- QR TABS -->
+      <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px">
+        <button class="q-tab active" onclick="showTab(this,'gc')">GCash</button>
+        <button class="q-tab" onclick="showTab(this,'my')">Maya</button>
+        <button class="q-tab" onclick="showTab(this,'bp')">BPI</button>
+        <button class="q-tab" onclick="showTab(this,'mb')">MariBank</button>
       </div>
 
-      <div class="pay-qr-panels">
-        <div class="pay-panel active" id="pqr-gcash">
-          <img src="https://www.speaki.co/qr-gcash.png" class="pay-qr-img" alt="GCash QR Code">
-          <div class="pay-bank-name">GCash</div>
-          <div class="pay-bank-sub">Speaki · Rochelle D. · 0947 890 ···· · Transfer fees may apply</div>
-        </div>
-          <div class="pay-bank-sub">Speaki · Rochelle D. · 0947 890 ····</div>
-        </div>
-        <div class="pay-panel" id="pqr-maya">
-          <img src="https://www.speaki.co/qr-maya.png" class="pay-qr-img" alt="Maya QR Code">
-          <div class="pay-bank-name">Maya</div>
-          <div class="pay-bank-sub">Rochelle de Leon · @rochelledeleon · Transfer fees may apply</div>
-        </div>
-          <div class="pay-bank-sub">Rochelle de Leon · @rochelledeleon</div>
-        </div>
-        <div class="pay-panel" id="pqr-bpi">
-          <img src="https://www.speaki.co/qr-bpi.png" class="pay-qr-img" alt="BPI QR Code">
-          <div class="pay-bank-name">BPI</div>
-          <div class="pay-bank-sub">Speaki · Account ············669 · Transfer fees may apply</div>
-        </div>
-          <div class="pay-bank-sub">Speaki · Account ············669</div>
-        </div>
-        <div class="pay-panel" id="pqr-maribank">
-          <img src="https://www.speaki.co/qr-maribank.png" class="pay-qr-img" alt="MariBank QR Code">
-          <div class="pay-bank-name">MariBank</div>
-          <div class="pay-bank-sub">Rochelle de Leon · ****3740 · Transfer fees may apply</div>
-        </div>
-          <div class="pay-bank-sub">Rochelle de Leon · ****3740</div>
-        </div>
+      <!-- QR PANELS -->
+      <div id="qp-gc" class="q-panel active">
+        <img src="https://www.speaki.co/qr-gcash.png" alt="GCash QR" style="width:180px;height:180px;object-fit:contain;display:block;margin:0 auto 10px;border-radius:12px;border:2px solid rgba(11,31,23,.1)">
+        <p style="text-align:center;font-weight:800;font-size:.95rem;margin-bottom:2px">GCash</p>
+        <p style="text-align:center;color:var(--ink-soft);font-size:.8rem">Speaki · Rochelle D. · 0947 890 ····</p>
+      </div>
+      <div id="qp-my" class="q-panel">
+        <img src="https://www.speaki.co/qr-maya.png" alt="Maya QR" style="width:180px;height:180px;object-fit:contain;display:block;margin:0 auto 10px;border-radius:12px;border:2px solid rgba(11,31,23,.1)">
+        <p style="text-align:center;font-weight:800;font-size:.95rem;margin-bottom:2px">Maya</p>
+        <p style="text-align:center;color:var(--ink-soft);font-size:.8rem">Rochelle de Leon · @rochelledeleon</p>
+      </div>
+      <div id="qp-bp" class="q-panel">
+        <img src="https://www.speaki.co/qr-bpi.png" alt="BPI QR" style="width:180px;height:180px;object-fit:contain;display:block;margin:0 auto 10px;border-radius:12px;border:2px solid rgba(11,31,23,.1)">
+        <p style="text-align:center;font-weight:800;font-size:.95rem;margin-bottom:2px">BPI</p>
+        <p style="text-align:center;color:var(--ink-soft);font-size:.8rem">Speaki · Account ············669</p>
+      </div>
+      <div id="qp-mb" class="q-panel">
+        <img src="https://www.speaki.co/qr-maribank.png" alt="MariBank QR" style="width:180px;height:180px;object-fit:contain;display:block;margin:0 auto 10px;border-radius:12px;border:2px solid rgba(11,31,23,.1)">
+        <p style="text-align:center;font-weight:800;font-size:.95rem;margin-bottom:2px">MariBank</p>
+        <p style="text-align:center;color:var(--ink-soft);font-size:.8rem">Rochelle de Leon · ****3740</p>
       </div>
 
-      <div class="pay-reminder">
-        <p>After paying, send your <strong>proof of payment</strong> to <a href="mailto:hello@speaki.co" style="color:var(--green-deep);font-weight:700">hello@speaki.co</a> or our <a href="https://www.facebook.com/speakiofficial" style="color:var(--green-deep);font-weight:700">Facebook page</a>.</p>
-        <p>Include your <strong>name</strong>, chosen <strong>mentor</strong>, and preferred <strong>session format</strong>. We confirm within <strong>1–2 hours</strong>.</p>
+      <div style="background:rgba(255,201,60,.12);border:1.5px solid var(--gold);border-radius:12px;padding:14px 16px;margin-top:16px">
+        <p style="font-size:.85rem;color:var(--ink-soft);line-height:1.6;margin-bottom:6px">After paying, send your <strong style="color:var(--ink)">proof of payment</strong> to <a href="mailto:hello@speaki.co" style="color:var(--green-deep);font-weight:700">hello@speaki.co</a> or our <a href="https://www.facebook.com/speakiofficial" style="color:var(--green-deep);font-weight:700">Facebook page</a>.</p>
+        <p style="font-size:.85rem;color:var(--ink-soft);line-height:1.6;margin:0">Include your <strong style="color:var(--ink)">name</strong>, chosen <strong style="color:var(--ink)">mentor</strong>, and <strong style="color:var(--ink)">session format</strong>. We confirm within <strong style="color:var(--ink)">1–2 hours</strong>.</p>
       </div>
 
-      <button class="modal-confirm" onclick="goToBooking()" id="btn-next">
-        I've paid — what's next? →
-      </button>
-      <button class="pay-back" onclick="goBack('step-choose')">← Back</button>
+      <button class="modal-confirm" onclick="goStep3()" style="margin-top:16px">I've paid — what's next? →</button>
     </div>
 
-    <!-- STEP 3A: Video call booking -->
-    <div class="payment-step" id="step-calendly">
-      <h2>Book your call 🎉</h2>
-      <p class="modal-sub">Once payment is confirmed (1–2 hours), book your slot.</p>
-      <div class="cal-info">
-        <p>You've chosen: <strong id="cal-mentor-name">Mentor Rochelle</strong> · <strong>15-min video call</strong></p>
-        <p>After we confirm your payment, click below to book your preferred time on Calendly.</p>
+    <!-- STEP 3: Next steps -->
+    <div class="modal-step" id="step-3">
+      <div style="text-align:center;margin-bottom:20px">
+        <span style="font-size:3rem">🎉</span>
+        <h2 style="font-size:1.5rem;margin-top:10px;margin-bottom:6px">You're almost in!</h2>
+        <p style="color:var(--ink-soft);font-size:.92rem">Once we confirm your payment (1–2 hours), here's what happens next:</p>
       </div>
-      <a href="https://calendly.com/rochellepdeleon/30min" target="_blank" class="btn btn-g" style="width:100%;margin-bottom:14px">Book on Calendly →</a>
-      <p style="text-align:center;font-size:.82rem;color:var(--ink-soft)">Link opens in a new tab. Confirm payment first before booking.</p>
-      <button class="pay-back" onclick="closeModal()">Done — close this</button>
-    </div>
 
-    <!-- STEP 3B: Audio feedback instructions -->
-    <div class="payment-step" id="step-audio">
-      <h2>Send your video 🎤</h2>
-      <p class="modal-sub">Once payment is confirmed, send us your recording.</p>
-      <div class="cal-info">
-        <p>You've chosen: <strong id="audio-mentor-name">Mentor Rochelle</strong> · <strong>Video + Audio Feedback</strong></p>
-        <p>After payment confirmation, send your video to:</p>
-        <p>📧 <a href="mailto:hello@speaki.co" style="color:var(--green-deep);font-weight:700">hello@speaki.co</a></p>
-        <p>💬 Or via <a href="https://m.me/speakiofficial" style="color:var(--green-deep);font-weight:700">Facebook Messenger</a> or <a href="https://wa.me/639478906823" style="color:var(--green-deep);font-weight:700">WhatsApp</a></p>
-        <p style="margin-top:8px">Mention your <strong>name</strong> and chosen <strong>mentor</strong>. Expect audio feedback within <strong>24–48 hours</strong>.</p>
+      <div id="next-video" style="display:none">
+        <div style="background:rgba(46,204,113,.08);border:2px solid var(--green);border-radius:16px;padding:20px;margin-bottom:16px">
+          <p style="font-weight:800;margin-bottom:6px">🎥 You chose: 15-Minute Video Call with <span id="conf-mentor-v"></span></p>
+          <p style="color:var(--ink-soft);font-size:.9rem;margin-bottom:14px">After payment confirmation, click below to book your preferred time.</p>
+          <a href="https://calendly.com/rochellepdeleon/30min" target="_blank" class="modal-confirm" style="display:block;text-align:center;text-decoration:none">Book on Calendly →</a>
+        </div>
       </div>
-      <button class="pay-back" onclick="closeModal()">Done — close this</button>
+
+      <div id="next-audio" style="display:none">
+        <div style="background:rgba(46,204,113,.08);border:2px solid var(--green);border-radius:16px;padding:20px;margin-bottom:16px">
+          <p style="font-weight:800;margin-bottom:10px">🎤 You chose: Video + Audio Feedback with <span id="conf-mentor-a"></span></p>
+          <p style="color:var(--ink-soft);font-size:.9rem;margin-bottom:8px">Send your video recording to:</p>
+          <p style="font-size:.92rem;margin-bottom:4px">📧 <a href="mailto:hello@speaki.co" style="color:var(--green-deep);font-weight:700">hello@speaki.co</a></p>
+          <p style="font-size:.92rem;margin-bottom:4px">💬 <a href="https://m.me/speakiofficial" style="color:var(--green-deep);font-weight:700">Facebook Messenger</a></p>
+          <p style="font-size:.92rem">📱 <a href="https://wa.me/639478906823" style="color:var(--green-deep);font-weight:700">WhatsApp</a></p>
+          <p style="color:var(--ink-soft);font-size:.85rem;margin-top:10px">Expect your audio feedback within <strong>24–48 hours</strong>.</p>
+        </div>
+      </div>
+
+      <button class="modal-confirm" onclick="closeModal()" style="background:var(--ink)">Done — close this ✓</button>
     </div>
 
   </div>
@@ -489,68 +471,58 @@ header{background:rgba(251,248,241,.95);border-bottom:2px solid rgba(11,31,23,.0
 </footer>
 
 <script>
-var selectedOption = null;
-var selectedMentor = null;
+var mentor = null, format = null;
 
-function openModal(type, mentor){
+function openModal(fmt, men){
   document.getElementById('modal-overlay').classList.add('open');
   document.body.style.overflow='hidden';
-  showStep('step-choose');
-  if(type) selectOption(type);
-  if(mentor) selectMentor(mentor);
+  showModalStep('step-1');
+  if(fmt) pickFormat(document.getElementById('fb-'+fmt), fmt);
+  if(men) pickMentor(document.getElementById('mb-'+men.toLowerCase()), men);
 }
 function closeModal(){
   document.getElementById('modal-overlay').classList.remove('open');
   document.body.style.overflow='';
-  selectedOption=null; selectedMentor=null;
-  document.querySelectorAll('.modal-option').forEach(el=>el.classList.remove('selected'));
-  document.querySelectorAll('.mentor-btn').forEach(el=>el.classList.remove('selected'));
-  document.getElementById('btn-confirm').disabled=true;
+  mentor=null; format=null;
+  document.querySelectorAll('.m-btn,.f-btn').forEach(el=>el.classList.remove('selected'));
+  document.getElementById('btn-next').disabled=true;
+  showModalStep('step-1');
 }
-function showStep(id){
-  document.querySelectorAll('.payment-step').forEach(el=>el.classList.remove('active'));
+function showModalStep(id){
+  document.querySelectorAll('.modal-step').forEach(el=>el.classList.remove('active'));
   document.getElementById(id).classList.add('active');
 }
-function selectOption(type){
-  selectedOption=type;
-  document.querySelectorAll('.modal-option').forEach(el=>el.classList.remove('selected'));
-  document.getElementById('opt-'+type).classList.add('selected');
-  updateConfirmBtn();
+function pickMentor(btn, name){
+  mentor=name;
+  document.querySelectorAll('.m-btn').forEach(el=>el.classList.remove('selected'));
+  btn.classList.add('selected');
+  checkReady();
 }
-function selectMentor(name){
-  selectedMentor=name;
-  document.querySelectorAll('.mentor-btn').forEach(el=>el.classList.remove('selected'));
-  document.getElementById('mb-'+name.toLowerCase()).classList.add('selected');
-  updateConfirmBtn();
+function pickFormat(btn, fmt){
+  format=fmt;
+  document.querySelectorAll('.f-btn').forEach(el=>el.classList.remove('selected'));
+  btn.classList.add('selected');
+  checkReady();
 }
-function updateConfirmBtn(){
-  document.getElementById('btn-confirm').disabled=!(selectedOption&&selectedMentor);
+function checkReady(){
+  document.getElementById('btn-next').disabled=!(mentor&&format);
 }
-function goToPayment(){
-  if(!selectedOption||!selectedMentor) return;
-  showStep('step-payment');
+function goStep2(){ showModalStep('step-2'); }
+function goStep1(){ showModalStep('step-1'); }
+function goStep3(){
+  document.getElementById('next-video').style.display = format==='video' ? 'block' : 'none';
+  document.getElementById('next-audio').style.display = format==='audio' ? 'block' : 'none';
+  document.getElementById('conf-mentor-v').textContent = 'Mentor '+mentor;
+  document.getElementById('conf-mentor-a').textContent = 'Mentor '+mentor;
+  showModalStep('step-3');
 }
-function goToBooking(){
-  if(selectedOption==='video'){
-    document.getElementById('cal-mentor-name').textContent='Mentor '+selectedMentor;
-    showStep('step-calendly');
-  } else {
-    document.getElementById('audio-mentor-name').textContent='Mentor '+selectedMentor;
-    showStep('step-audio');
-  }
-}
-function goBack(stepId){
-  showStep(stepId);
-}
-function showPayQR(tab,btn){
-  document.querySelectorAll('.pay-tab').forEach(b=>b.classList.remove('active'));
-  document.querySelectorAll('.pay-panel').forEach(p=>p.classList.remove('active'));
+function showTab(btn, id){
+  document.querySelectorAll('.q-tab').forEach(b=>b.classList.remove('active'));
+  document.querySelectorAll('.q-panel').forEach(p=>p.classList.remove('active'));
   btn.classList.add('active');
-  document.getElementById('pqr-'+tab).classList.add('active');
+  document.getElementById('qp-'+id).classList.add('active');
 }
-function toggleFaq(el){
-  el.parentElement.classList.toggle('open');
-}
+function toggleFaq(el){ el.parentElement.classList.toggle('open'); }
 document.addEventListener('keydown',function(e){if(e.key==='Escape')closeModal()});
 </script>
 </body>
