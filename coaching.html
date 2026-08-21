@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>1-on-1 Coaching | Speaki</title>
+<meta name="description" content="Book a personalised 1-on-1 English coaching session with Mentor Rochelle or Mentor Kathy. Choose a 15-min video call or send a video for audio feedback.">
+<link rel="icon" href="/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,900&family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --green:#2ECC71;--green-deep:#1FA85B;--ink:#0B1F17;--ink-soft:#33473E;
+  --cream:#FBF8F1;--cream-2:#F2EEE2;--navy:#161A2B;--gold:#FFC93C;
+  --coral:#FF6B5E;--shadow:6px 6px 0 #0B1F17;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--cream);color:var(--ink);line-height:1.6;overflow-x:hidden}
+h1,h2,h3,h4{font-family:'Fraunces',serif;line-height:1.05;letter-spacing:-.02em}
+a{text-decoration:none;color:inherit}
+.w{max-width:1100px;margin:0 auto;padding:0 24px}
+.ey{text-transform:uppercase;letter-spacing:.18em;font-weight:800;font-size:.78rem;color:var(--green-deep);margin-bottom:14px;display:block}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:1rem;padding:14px 28px;border-radius:50px;border:2px solid var(--ink);cursor:pointer;transition:transform .15s,box-shadow .15s;text-decoration:none}
+.btn-g{background:var(--green);color:#fff;box-shadow:var(--shadow)}.btn-g:hover{transform:translate(-3px,-3px);box-shadow:9px 9px 0 var(--ink);color:#fff}
+.btn-d{background:var(--ink);color:#fff;box-shadow:4px 4px 0 var(--green)}.btn-d:hover{transform:translate(-2px,-2px);color:#fff}
+.btn-w{background:#fff;color:var(--ink);box-shadow:4px 4px 0 var(--ink)}.btn-w:hover{transform:translate(-2px,-2px);color:var(--ink)}
+
+/* NAV */
+header{background:rgba(251,248,241,.95);border-bottom:2px solid rgba(11,31,23,.07);padding:14px 0;position:sticky;top:0;z-index:50;backdrop-filter:blur(14px)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;max-width:1100px;margin:0 auto;padding:0 24px}
+.logo{font-family:'Fraunces',serif;font-weight:900;font-size:1.4rem;color:var(--ink)}
+.logo em{color:var(--green);font-style:normal}
+.nav-back{font-weight:700;font-size:.9rem;color:var(--ink-soft)}
+.nav-back:hover{color:var(--green-deep)}
+
+/* HERO */
+.hero{background:var(--navy);padding:80px 0 72px;text-align:center;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;width:500px;height:500px;border-radius:50%;background:rgba(46,204,113,.12);top:-100px;right:-80px;filter:blur(60px)}
+.hero::after{content:'';position:absolute;width:400px;height:400px;border-radius:50%;background:rgba(255,201,60,.08);bottom:-80px;left:-60px;filter:blur(50px)}
+.hero .w{position:relative;z-index:1}
+.hero-pill{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.1);border:2px solid rgba(255,255,255,.2);padding:7px 16px;border-radius:40px;font-weight:700;font-size:.8rem;color:rgba(255,255,255,.85);margin-bottom:24px}
+.hero h1{font-size:clamp(2.4rem,5.5vw,4rem);font-weight:900;color:#fff;margin-bottom:18px}
+.hero h1 em{color:var(--green);font-style:normal}
+.hero-sub{color:rgba(255,255,255,.72);font-size:1.1rem;max-width:580px;margin:0 auto 36px;line-height:1.7}
+.hero-price{display:inline-block;background:rgba(46,204,113,.15);border:2px solid var(--green);border-radius:20px;padding:12px 28px;margin-bottom:32px}
+.hero-price span{font-family:'Fraunces',serif;font-size:3rem;font-weight:900;color:var(--green);display:block;line-height:1}
+.hero-price small{color:rgba(255,255,255,.65);font-size:.88rem;font-weight:600}
+.hero-badges{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.hb{display:flex;align-items:center;gap:6px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);padding:8px 14px;border-radius:30px;font-size:.85rem;font-weight:700;color:rgba(255,255,255,.8)}
+
+/* HOW IT WORKS */
+.hiw{padding:80px 0;background:var(--cream)}
+.hiw-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:44px}
+.step-card{background:#fff;border:2px solid var(--ink);border-radius:22px;padding:28px;box-shadow:var(--shadow);text-align:center;position:relative}
+.step-num{width:44px;height:44px;border-radius:50%;background:var(--green);color:#fff;display:grid;place-items:center;font-weight:900;font-size:1.1rem;font-family:'Fraunces',serif;margin:0 auto 16px;border:2px solid var(--ink)}
+.step-card h3{font-size:1.1rem;font-weight:700;margin-bottom:8px}
+.step-card p{color:var(--ink-soft);font-size:.9rem;line-height:1.6;margin:0}
+.step-arrow{position:absolute;right:-20px;top:50%;transform:translateY(-50%);font-size:1.4rem;z-index:1}
+
+/* DELIVERY OPTIONS */
+.delivery{padding:0 0 80px}
+.delivery-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:44px}
+.del-card{background:#fff;border:2px solid var(--ink);border-radius:24px;padding:32px;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:14px;transition:transform .15s}
+.del-card:hover{transform:translate(-3px,-3px)}
+.del-card.featured{border-color:var(--green);background:linear-gradient(160deg,rgba(46,204,113,.05),#fff)}
+.del-icon{width:56px;height:56px;border-radius:18px;display:grid;place-items:center;font-size:1.5rem;border:2px solid var(--ink)}
+.del-card h3{font-size:1.3rem;font-weight:700}
+.del-card p{color:var(--ink-soft);font-size:.95rem;line-height:1.65;flex:1}
+.del-steps{list-style:none;display:flex;flex-direction:column;gap:8px;margin:4px 0}
+.del-steps li{display:flex;gap:10px;font-size:.9rem;color:var(--ink-soft);align-items:flex-start}
+.del-steps li::before{content:'✓';width:20px;height:20px;border-radius:50%;background:var(--green);color:#fff;display:grid;place-items:center;font-size:.65rem;font-weight:800;flex-shrink:0;margin-top:2px}
+
+/* INSTRUCTORS */
+.instructors{padding:80px 0;background:var(--cream-2)}
+.inst-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:44px}
+.inst-card{background:#fff;border:2px solid var(--ink);border-radius:28px;overflow:hidden;box-shadow:var(--shadow)}
+.inst-photo{height:320px;overflow:hidden;border-bottom:2px solid var(--ink)}
+.inst-photo img{width:100%;height:100%;object-fit:cover;object-position:center 15%;display:block}
+.inst-body{padding:28px}
+.inst-badge{display:inline-block;border-radius:20px;padding:4px 12px;font-size:.72rem;font-weight:800;margin-bottom:12px}
+.inst-card h3{font-size:1.5rem;font-weight:900;margin-bottom:6px}
+.inst-title{font-size:.9rem;font-weight:700;color:var(--green-deep);margin-bottom:14px;display:block}
+.inst-card p{color:var(--ink-soft);font-size:.92rem;line-height:1.65;margin-bottom:20px}
+.inst-book-btn{display:block;width:100%;text-align:center;padding:14px;border-radius:50px;font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:1rem;border:2px solid var(--ink);cursor:pointer;transition:transform .15s,box-shadow .15s}
+
+/* BOOKING MODAL */
+.modal-overlay{display:none;position:fixed;inset:0;background:rgba(11,31,23,.75);z-index:1000;align-items:center;justify-content:center;padding:20px;backdrop-filter:blur(4px)}
+.modal-overlay.open{display:flex}
+.modal{background:#fff;border:2.5px solid var(--ink);border-radius:24px;padding:32px;max-width:480px;width:100%;position:relative;box-shadow:8px 8px 0 var(--ink);max-height:90vh;overflow-y:auto}
+.modal-close{position:absolute;top:14px;right:16px;background:none;border:0;font-size:1.6rem;cursor:pointer;color:var(--ink-soft);line-height:1;width:32px;height:32px;display:grid;place-items:center;border-radius:50%}
+.modal-close:hover{background:var(--cream-2)}
+.modal-step{display:none}
+.modal-step.active{display:block}
+.modal-confirm{width:100%;background:var(--green);color:#fff;border:2px solid var(--ink);padding:14px;border-radius:50px;font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:1rem;box-shadow:var(--shadow);cursor:pointer;transition:transform .15s}
+.modal-confirm:hover{transform:translate(-2px,-2px)}
+.modal-confirm:disabled{opacity:.4;cursor:not-allowed;transform:none;box-shadow:none}
+
+/* MENTOR BUTTONS */
+.m-btn{background:#fff;border:2px solid rgba(11,31,23,.15);border-radius:16px;padding:12px;cursor:pointer;transition:all .18s;display:flex;align-items:center;gap:10px;font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:.9rem;color:var(--ink)}
+.m-btn img{width:36px;height:36px;border-radius:50%;object-fit:cover;border:2px solid var(--ink);flex-shrink:0}
+.m-btn:hover,.m-btn.selected{border-color:var(--green);background:rgba(46,204,113,.06);box-shadow:3px 3px 0 var(--green)}
+
+/* FORMAT BUTTONS */
+.f-btn{background:#fff;border:2px solid rgba(11,31,23,.12);border-radius:16px;padding:14px 16px;cursor:pointer;transition:all .18s;display:flex;align-items:center;gap:12px;font-family:'Plus Jakarta Sans',sans-serif;width:100%;text-align:left}
+.f-btn:hover,.f-btn.selected{border-color:var(--green);background:rgba(46,204,113,.06);box-shadow:3px 3px 0 var(--green)}
+
+/* QR TABS */
+.q-tab{padding:7px 16px;border-radius:24px;border:2px solid rgba(11,31,23,.15);font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:.82rem;cursor:pointer;background:#fff;color:var(--ink-soft);transition:all .18s}
+.q-tab:hover,.q-tab.active{background:var(--ink);color:#fff;border-color:var(--ink)}
+.q-panel{display:none}
+.q-panel.active{display:block}
+
+
+/* FAQ */
+.faq{padding:80px 0;background:var(--cream)}
+.faq-list{margin-top:44px;display:flex;flex-direction:column;gap:12px}
+.faq-item{background:#fff;border:2px solid var(--ink);border-radius:18px;overflow:hidden;box-shadow:4px 4px 0 var(--ink)}
+.faq-q{padding:20px 22px;font-weight:800;font-size:.98rem;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px}
+.faq-q span{font-size:1.2rem;transition:transform .2s;flex-shrink:0}
+.faq-item.open .faq-q span{transform:rotate(45deg)}
+.faq-a{display:none;padding:0 22px 20px;color:var(--ink-soft);font-size:.92rem;line-height:1.65}
+.faq-item.open .faq-a{display:block}
+
+/* CTA BAND */
+.cta-band{padding:0 0 80px}
+.cta-inner{background:linear-gradient(150deg,#2ECC71,#1FA85B);border-radius:32px;padding:56px 40px;text-align:center;border:2px solid var(--ink);box-shadow:var(--shadow)}
+.cta-inner h2{color:#fff;font-size:clamp(1.8rem,4vw,2.6rem);font-weight:900;margin-bottom:14px}
+.cta-inner p{color:rgba(255,255,255,.9);font-size:1rem;margin-bottom:28px;max-width:460px;margin-left:auto;margin-right:auto}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .hiw-steps{grid-template-columns:1fr!important}
+  .delivery-grid,.inst-grid{grid-template-columns:1fr!important}
+  .step-arrow{display:none}
+}
+@media(max-width:560px){
+  .w{padding:0 16px!important}
+  .hero{padding:52px 0 56px!important}
+  .hero h1{font-size:2.4rem!important}
+  .hero-badges{gap:8px}
+  .cta-inner{padding:40px 20px!important;border-radius:24px!important}
+  .modal{padding:28px 20px!important;border-radius:22px!important}
+  .mentor-btns{flex-direction:column}
+  .cta-band{padding:0 0 50px!important}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<header>
+  <div class="nav-inner">
+    <a href="/" class="logo">Speak<em>i</em>.co</a>
+    <a href="/" class="nav-back">← Back to Speaki</a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="w">
+    <div class="hero-pill">👥 1-on-1 Coaching</div>
+    <h1>Personal coaching.<br><em>Real results.</em></h1>
+    <p class="hero-sub">Get personalised, focused attention from Mentor Rochelle or Mentor Kathy — designed to pinpoint exactly what's holding you back and give you tools to move forward.</p>
+    <div class="hero-price">
+      <span>₱500</span>
+      <small>per session · 2 delivery options</small>
+    </div>
+    <div class="hero-badges">
+      <span class="hb">🎥 15-min video call</span>
+      <span class="hb">🎤 Video + audio feedback</span>
+      <span class="hb">💚 Safe, no-judgment space</span>
+      <span class="hb">👩‍🏫 Choose your mentor</span>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="hiw">
+  <div class="w">
+    <div style="text-align:center">
+      <span class="ey">Simple process</span>
+      <h2 style="font-size:clamp(2rem,4vw,3rem);font-weight:900;margin-bottom:12px">How it works</h2>
+      <p style="color:var(--ink-soft);font-size:1.05rem;max-width:500px;margin:0 auto">Three simple steps to your personalised coaching session.</p>
+    </div>
+    <div class="hiw-steps">
+      <div class="step-card">
+        <div class="step-num">1</div>
+        <h3>Choose &amp; Pay</h3>
+        <p>Pick your mentor and delivery option, then complete payment of ₱500 via GCash, Maya, BPI, or MariBank.</p>
+        <div class="step-arrow">→</div>
+      </div>
+      <div class="step-card">
+        <div class="step-num">2</div>
+        <h3>Confirm Payment</h3>
+        <p>Send your proof of payment to <strong>hello@speaki.co</strong> or our Facebook page. We verify within 1–2 hours.</p>
+        <div class="step-arrow">→</div>
+      </div>
+      <div class="step-card">
+        <div class="step-num">3</div>
+        <h3>Get Your Session</h3>
+        <p>Book your video call via Calendly, or send your video and receive personalised audio feedback from your mentor.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DELIVERY OPTIONS -->
+<section class="delivery">
+  <div class="w">
+    <div style="text-align:center;margin-bottom:44px">
+      <span class="ey">Choose your format</span>
+      <h2 style="font-size:clamp(2rem,4vw,3rem);font-weight:900;margin-bottom:12px">Two ways to get coached.</h2>
+      <p style="color:var(--ink-soft);font-size:1.05rem;max-width:500px;margin:0 auto">Same price, same quality — pick what works best for your schedule.</p>
+    </div>
+    <div class="delivery-grid">
+      <div class="del-card featured">
+        <div class="del-icon" style="background:rgba(46,204,113,.15)">🎥</div>
+        <h3>15-Minute Video Call</h3>
+        <p>A live, face-to-face session with your chosen mentor via Calendly. Real-time conversation, instant feedback, and focused guidance on your speaking.</p>
+        <ul class="del-steps">
+          <li>Pay ₱500 and confirm payment</li>
+          <li>Choose your mentor (Rochelle or Kathy)</li>
+          <li>Book your preferred time on Calendly</li>
+          <li>Show up and speak — we'll coach you live</li>
+        </ul>
+        <button class="btn btn-g" style="width:100%;margin-top:8px" onclick="openModal('video')">Book a video call →</button>
+      </div>
+      <div class="del-card">
+        <div class="del-icon" style="background:var(--cream-2)">🎤</div>
+        <h3>Video Recording + Audio Feedback</h3>
+        <p>Record yourself speaking on a topic, send it to us, and receive a personalised audio message or personal call with detailed feedback from your mentor.</p>
+        <ul class="del-steps">
+          <li>Pay ₱500 and confirm payment</li>
+          <li>Choose your mentor (Rochelle or Kathy)</li>
+          <li>Send your video recording via email or WhatsApp</li>
+          <li>Receive detailed audio feedback within 24–48 hrs</li>
+        </ul>
+        <button class="btn btn-w" style="width:100%;margin-top:8px" onclick="openModal('audio')">Get video feedback →</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INSTRUCTORS -->
+<section class="instructors">
+  <div class="w">
+    <div style="text-align:center">
+      <span class="ey">Your mentors</span>
+      <h2 style="font-size:clamp(2rem,4vw,3rem);font-weight:900;margin-bottom:12px">Choose your coach.</h2>
+      <p style="color:var(--ink-soft);font-size:1.05rem;max-width:500px;margin:0 auto">Both mentors bring warmth, expertise, and a genuine belief that your voice deserves to be heard.</p>
+    </div>
+    <div class="inst-grid">
+
+      <!-- ROCHELLE -->
+      <div class="inst-card">
+        <div class="inst-photo">
+          <img src="https://www.speaki.co/rochelle.png" alt="Mentor Rochelle de Leon" onerror="this.parentElement.style.background='#2ECC71';this.style.display='none'">
+        </div>
+        <div class="inst-body">
+          <span class="inst-badge" style="background:#2ECC71;color:#fff">Communication Mentor</span>
+          <h3>Rochelle de Leon</h3>
+          <span class="inst-title">Co-founder · Head Coach</span>
+          <p>9 years in corporate + 4 years teaching English communication. Rochelle specialises in helping non-native speakers overcome the fear of speaking and find their authentic voice.</p>
+          <button class="inst-book-btn btn-g" onclick="openModal('video','Rochelle')">Book with Rochelle →</button>
+        </div>
+      </div>
+
+      <!-- KATHERINE -->
+      <div class="inst-card">
+        <div class="inst-photo">
+          <img src="https://www.speaki.co/kathrine.png" alt="Mentor Katherine" onerror="this.parentElement.style.background='#FFC93C';this.style.display='none'">
+        </div>
+        <div class="inst-body">
+          <span class="inst-badge" style="background:#FFC93C;color:#0B1F17">Communication Trainer</span>
+          <h3>Katherine</h3>
+          <span class="inst-title">Co-founder · Communication Trainer</span>
+          <p>Former BPO Communication Trainer and Training Supervisor. Kathy helps learners bridge the gap between knowing what to say and having the confidence to say it out loud.</p>
+          <button class="inst-book-btn btn-d" onclick="openModal('video','Kathy')">Book with Kathy →</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq">
+  <div class="w">
+    <div style="text-align:center;margin-bottom:0">
+      <span class="ey">Questions</span>
+      <h2 style="font-size:clamp(2rem,4vw,3rem);font-weight:900;margin-bottom:12px">Common questions</h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">How long is a session? <span>+</span></div>
+        <div class="faq-a">Each 1-on-1 session is 15 minutes for the video call option. For the video + audio feedback option, you send a recording of any length and receive a personalised audio response.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">How do I choose between Rochelle and Kathy? <span>+</span></div>
+        <div class="faq-a">Both mentors are excellent — it really comes down to personal preference. Rochelle focuses on identity shift and overcoming speaking fear. Kathy specialises in communication training and workplace English. You can try both over time!</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">What do I talk about in the session? <span>+</span></div>
+        <div class="faq-a">Your mentor will guide you — but you can also come prepared with a specific topic, scenario (e.g. job interview, meeting, presentation), or question you want to work on. The session is entirely focused on you.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">How long does audio feedback take? <span>+</span></div>
+        <div class="faq-a">After you send your payment confirmation and video, expect your audio feedback within 24–48 hours on business days.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Where do I send my video recording? <span>+</span></div>
+        <div class="faq-a">Send your proof of payment and video recording to hello@speaki.co or via our Facebook Messenger page. We'll confirm receipt and send your feedback within 24–48 hours.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Can I get a refund? <span>+</span></div>
+        <div class="faq-a">Refunds are available within 24 hours of purchase if you haven't yet sent your video or booked your call. Please email hello@speaki.co to request one.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BAND -->
+<section class="cta-band">
+  <div class="w">
+    <div class="cta-inner">
+      <h2>Ready to speak with confidence?</h2>
+      <p>₱500 for a personalised session with Mentor Rochelle or Mentor Kathy. Choose your format and book today.</p>
+      <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap">
+        <button class="btn btn-w" onclick="openModal('video')">Book a video call →</button>
+        <button class="btn" style="background:rgba(255,255,255,.15);color:#fff;border-color:rgba(255,255,255,.4)" onclick="openModal('audio')">Get video feedback →</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BOOKING MODAL -->
+<div class="modal-overlay" id="modal-overlay" onclick="if(event.target===this)closeModal()">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal()">×</button>
+
+    <!-- STEP 1: Choose mentor + format -->
+    <div class="modal-step active" id="step-1">
+      <span style="display:block;font-size:.78rem;font-weight:800;text-transform:uppercase;letter-spacing:.15em;color:var(--green-deep);margin-bottom:16px">Book your session · ₱500</span>
+      <h2 style="font-size:1.6rem;margin-bottom:6px">Who would you like to coach you?</h2>
+      <p style="color:var(--ink-soft);font-size:.92rem;margin-bottom:22px">Pick your mentor and preferred format below.</p>
+
+      <!-- MENTOR -->
+      <div style="margin-bottom:20px">
+        <p style="font-weight:700;font-size:.88rem;margin-bottom:10px;color:var(--ink)">Choose your mentor:</p>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+          <button class="m-btn" id="mb-rochelle" onclick="pickMentor(this,'Rochelle')">
+            <img src="https://www.speaki.co/rochelle.png" onerror="this.style.display='none'">
+            <span>Mentor Rochelle</span>
+          </button>
+          <button class="m-btn" id="mb-kathy" onclick="pickMentor(this,'Kathy')">
+            <img src="https://www.speaki.co/kathrine.png" onerror="this.style.display='none'">
+            <span>Mentor Kathy</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- FORMAT -->
+      <div style="margin-bottom:22px">
+        <p style="font-weight:700;font-size:.88rem;margin-bottom:10px;color:var(--ink)">Choose your format:</p>
+        <div style="display:flex;flex-direction:column;gap:10px">
+          <button class="f-btn" id="fb-video" onclick="pickFormat(this,'video')">
+            <span style="font-size:1.3rem">🎥</span>
+            <div style="text-align:left">
+              <strong style="display:block;font-size:.95rem">15-Minute Video Call</strong>
+              <span style="color:var(--ink-soft);font-size:.82rem">Live session via Calendly</span>
+            </div>
+          </button>
+          <button class="f-btn" id="fb-audio" onclick="pickFormat(this,'audio')">
+            <span style="font-size:1.3rem">🎤</span>
+            <div style="text-align:left">
+              <strong style="display:block;font-size:.95rem">Video + Audio Feedback</strong>
+              <span style="color:var(--ink-soft);font-size:.82rem">Send video, get audio feedback in 24–48hrs</span>
+            </div>
+          </button>
+        </div>
+      </div>
+
+      <div style="background:var(--cream-2);border-radius:12px;padding:12px 16px;display:flex;justify-content:space-between;align-items:center;margin-bottom:18px">
+        <span style="font-size:.9rem;font-weight:600;color:var(--ink-soft)">Session fee</span>
+        <strong style="font-family:'Fraunces',serif;font-size:1.4rem">₱500</strong>
+      </div>
+
+      <button class="modal-confirm" id="btn-next" onclick="goStep2()" disabled>Continue to payment →</button>
+    </div>
+
+    <!-- STEP 2: Pay -->
+    <div class="modal-step" id="step-2">
+      <button onclick="goStep1()" style="background:none;border:0;font-weight:700;font-size:.88rem;color:var(--ink-soft);cursor:pointer;margin-bottom:18px;padding:0;display:flex;align-items:center;gap:6px">← Back</button>
+      <h2 style="font-size:1.5rem;margin-bottom:6px">Pay ₱500</h2>
+      <p style="color:var(--ink-soft);font-size:.88rem;margin-bottom:20px">Scan with your preferred payment app then send proof of payment.</p>
+
+      <!-- QR TABS -->
+      <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px">
+        <button class="q-tab active" onclick="showTab(this,'gc')">GCash</button>
+        <button class="q-tab" onclick="showTab(this,'my')">Maya</button>
+        <button class="q-tab" onclick="showTab(this,'bp')">BPI</button>
+        <button class="q-tab" onclick="showTab(this,'mb')">MariBank</button>
+      </div>
+
+      <!-- QR PANELS -->
+      <div id="qp-gc" class="q-panel active">
+        <img src="https://www.speaki.co/qr-gcash.png" alt="GCash QR" style="width:180px;height:180px;object-fit:contain;display:block;margin:0 auto 10px;border-radius:12px;border:2px solid rgba(11,31,23,.1)">
+        <p style="text-align:center;font-weight:800;font-size:.95rem;margin-bottom:2px">GCash</p>
+        <p style="text-align:center;color:var(--ink-soft);font-size:.8rem">Speaki · Rochelle D. · 0947 890 ····</p>
+      </div>
+      <div id="qp-my" class="q-panel">
+        <img src="https://www.speaki.co/qr-maya.png" alt="Maya QR" style="width:180px;height:180px;object-fit:contain;display:block;margin:0 auto 10px;border-radius:12px;border:2px solid rgba(11,31,23,.1)">
+        <p style="text-align:center;font-weight:800;font-size:.95rem;margin-bottom:2px">Maya</p>
+        <p style="text-align:center;color:var(--ink-soft);font-size:.8rem">Rochelle de Leon · @rochelledeleon</p>
+      </div>
+      <div id="qp-bp" class="q-panel">
+        <img src="https://www.speaki.co/qr-bpi.png" alt="BPI QR" style="width:180px;height:180px;object-fit:contain;display:block;margin:0 auto 10px;border-radius:12px;border:2px solid rgba(11,31,23,.1)">
+        <p style="text-align:center;font-weight:800;font-size:.95rem;margin-bottom:2px">BPI</p>
+        <p style="text-align:center;color:var(--ink-soft);font-size:.8rem">Speaki · Account ············669</p>
+      </div>
+      <div id="qp-mb" class="q-panel">
+        <img src="https://www.speaki.co/qr-maribank.png" alt="MariBank QR" style="width:180px;height:180px;object-fit:contain;display:block;margin:0 auto 10px;border-radius:12px;border:2px solid rgba(11,31,23,.1)">
+        <p style="text-align:center;font-weight:800;font-size:.95rem;margin-bottom:2px">MariBank</p>
+        <p style="text-align:center;color:var(--ink-soft);font-size:.8rem">Rochelle de Leon · ****3740</p>
+      </div>
+
+      <div style="background:rgba(255,201,60,.12);border:1.5px solid var(--gold);border-radius:12px;padding:14px 16px;margin-top:16px">
+        <p style="font-size:.85rem;color:var(--ink-soft);line-height:1.6;margin-bottom:6px">After paying, send your <strong style="color:var(--ink)">proof of payment</strong> to <a href="mailto:hello@speaki.co" style="color:var(--green-deep);font-weight:700">hello@speaki.co</a> or our <a href="https://www.facebook.com/speakiofficial" style="color:var(--green-deep);font-weight:700">Facebook page</a>.</p>
+        <p style="font-size:.85rem;color:var(--ink-soft);line-height:1.6;margin:0">Include your <strong style="color:var(--ink)">name</strong>, chosen <strong style="color:var(--ink)">mentor</strong>, and <strong style="color:var(--ink)">session format</strong>. We confirm within <strong style="color:var(--ink)">1–2 hours</strong>.</p>
+      </div>
+
+      <button class="modal-confirm" onclick="goStep3()" style="margin-top:16px">I've paid — what's next? →</button>
+    </div>
+
+    <!-- STEP 3: Next steps -->
+    <div class="modal-step" id="step-3">
+      <div style="text-align:center;margin-bottom:20px">
+        <span style="font-size:3rem">🎉</span>
+        <h2 style="font-size:1.5rem;margin-top:10px;margin-bottom:6px">You're almost in!</h2>
+        <p style="color:var(--ink-soft);font-size:.92rem">Once we confirm your payment (1–2 hours), here's what happens next:</p>
+      </div>
+
+      <div id="next-video" style="display:none">
+        <div style="background:rgba(46,204,113,.08);border:2px solid var(--green);border-radius:16px;padding:20px;margin-bottom:16px">
+          <p style="font-weight:800;margin-bottom:6px">🎥 15-Minute Video Call with <span id="conf-mentor-v"></span></p>
+          <p style="color:var(--ink-soft);font-size:.9rem;margin-bottom:14px">Send your proof of payment with the message below — then book your slot on Calendly.</p>
+          <a id="wa-link-video" href="#" target="_blank" style="display:flex;align-items:center;gap:10px;background:#25D366;color:#fff;border:2px solid var(--ink);padding:12px 18px;border-radius:14px;font-weight:800;font-size:.9rem;margin-bottom:10px;text-decoration:none;box-shadow:3px 3px 0 var(--ink)">
+            <span style="font-size:1.2rem">💬</span> Send via WhatsApp (pre-filled)
+          </a>
+          <a id="email-link-video" href="#" style="display:flex;align-items:center;gap:10px;background:#fff;color:var(--ink);border:2px solid var(--ink);padding:12px 18px;border-radius:14px;font-weight:800;font-size:.9rem;margin-bottom:14px;text-decoration:none;box-shadow:3px 3px 0 var(--ink)">
+            <span style="font-size:1.2rem">📧</span> Send via Email (pre-filled)
+          </a>
+          <a href="https://calendly.com/rochellepdeleon/30min" target="_blank" class="modal-confirm" style="display:block;text-align:center;text-decoration:none">Book your slot on Calendly →</a>
+        </div>
+      </div>
+
+      <div id="next-audio" style="display:none">
+        <div style="background:rgba(46,204,113,.08);border:2px solid var(--green);border-radius:16px;padding:20px;margin-bottom:16px">
+          <p style="font-weight:800;margin-bottom:10px">🎤 Video + Audio Feedback with <span id="conf-mentor-a"></span></p>
+          <p style="color:var(--ink-soft);font-size:.9rem;margin-bottom:14px">Send your proof of payment + video recording using the pre-filled links below.</p>
+          <a id="wa-link-audio" href="#" target="_blank" style="display:flex;align-items:center;gap:10px;background:#25D366;color:#fff;border:2px solid var(--ink);padding:12px 18px;border-radius:14px;font-weight:800;font-size:.9rem;margin-bottom:10px;text-decoration:none;box-shadow:3px 3px 0 var(--ink)">
+            <span style="font-size:1.2rem">💬</span> Send via WhatsApp (pre-filled)
+          </a>
+          <a id="email-link-audio" href="#" style="display:flex;align-items:center;gap:10px;background:#fff;color:var(--ink);border:2px solid var(--ink);padding:12px 18px;border-radius:14px;font-weight:800;font-size:.9rem;margin-bottom:4px;text-decoration:none;box-shadow:3px 3px 0 var(--ink)">
+            <span style="font-size:1.2rem">📧</span> Send via Email (pre-filled)
+          </a>
+          <div style="background:#fff;border:2px solid var(--ink);border-radius:12px;padding:14px 16px;margin-top:12px;display:flex;align-items:center;gap:12px">
+            <span style="font-size:1.4rem;flex-shrink:0">📱</span>
+            <div>
+              <p style="font-weight:800;font-size:.9rem;margin-bottom:2px">WhatsApp number</p>
+              <p style="font-family:'Fraunces',serif;font-size:1.2rem;font-weight:700;color:var(--green-deep);margin-bottom:2px">+63 947 890 6823</p>
+              <p style="color:var(--ink-soft);font-size:.78rem">Save this number then send your video directly on WhatsApp</p>
+            </div>
+          </div>
+          <p style="color:var(--ink-soft);font-size:.82rem;margin-top:10px">Attach your proof of payment + video in the same message. Feedback arrives in <strong>24–48 hours</strong>.</p>
+        </div>
+      </div>
+
+      <button class="modal-confirm" onclick="closeModal()" style="background:var(--ink)">Done — close this ✓</button>
+    </div>
+
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer style="background:var(--ink);color:rgba(255,255,255,.6);padding:28px 24px;text-align:center;font-size:.85rem">
+  <p>© 2026 Speaki · <a href="/" style="color:rgba(255,255,255,.6)">speaki.co</a> · <a href="mailto:hello@speaki.co" style="color:rgba(255,255,255,.6)">hello@speaki.co</a></p>
+</footer>
+
+<script>
+var mentor = null, format = null;
+
+function openModal(fmt, men){
+  document.getElementById('modal-overlay').classList.add('open');
+  document.body.style.overflow='hidden';
+  showModalStep('step-1');
+  if(fmt) pickFormat(document.getElementById('fb-'+fmt), fmt);
+  if(men) pickMentor(document.getElementById('mb-'+men.toLowerCase()), men);
+}
+function closeModal(){
+  document.getElementById('modal-overlay').classList.remove('open');
+  document.body.style.overflow='';
+  mentor=null; format=null;
+  document.querySelectorAll('.m-btn,.f-btn').forEach(el=>el.classList.remove('selected'));
+  document.getElementById('btn-next').disabled=true;
+  showModalStep('step-1');
+}
+function showModalStep(id){
+  document.querySelectorAll('.modal-step').forEach(el=>el.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+}
+function pickMentor(btn, name){
+  mentor=name;
+  document.querySelectorAll('.m-btn').forEach(el=>el.classList.remove('selected'));
+  btn.classList.add('selected');
+  checkReady();
+}
+function pickFormat(btn, fmt){
+  format=fmt;
+  document.querySelectorAll('.f-btn').forEach(el=>el.classList.remove('selected'));
+  btn.classList.add('selected');
+  checkReady();
+}
+function checkReady(){
+  document.getElementById('btn-next').disabled=!(mentor&&format);
+}
+function goStep2(){ showModalStep('step-2'); }
+function goStep1(){ showModalStep('step-1'); }
+function goStep3(){
+  document.getElementById('next-video').style.display = format==='video' ? 'block' : 'none';
+  document.getElementById('next-audio').style.display = format==='audio' ? 'block' : 'none';
+  document.getElementById('conf-mentor-v').textContent = 'Mentor '+mentor;
+  document.getElementById('conf-mentor-a').textContent = 'Mentor '+mentor;
+
+  // Build pre-filled messages
+  var videoMsg = "Hi Speaki! I've paid ₱500 for a 15-minute video call with Mentor "+mentor+". Here's my proof of payment. Please confirm so I can book on Calendly. Thank you!";
+  var audioMsg = "Hi Speaki! I've paid ₱500 for video + audio feedback with Mentor "+mentor+". Here's my proof of payment and video recording. Please send me feedback. Thank you!";
+
+  var waBase = 'https://wa.me/639478906823?text=';
+  var emailBase = 'mailto:hello@speaki.co?subject=';
+
+  // Video links
+  document.getElementById('wa-link-video').href = waBase + encodeURIComponent(videoMsg);
+  document.getElementById('email-link-video').href = emailBase + encodeURIComponent('1-on-1 Video Call Payment — Mentor '+mentor) + '&body=' + encodeURIComponent(videoMsg);
+
+  // Audio links
+  document.getElementById('wa-link-audio').href = waBase + encodeURIComponent(audioMsg);
+  document.getElementById('email-link-audio').href = emailBase + encodeURIComponent('1-on-1 Audio Feedback Payment — Mentor '+mentor) + '&body=' + encodeURIComponent(audioMsg);
+
+  showModalStep('step-3');
+}
+function showTab(btn, id){
+  document.querySelectorAll('.q-tab').forEach(b=>b.classList.remove('active'));
+  document.querySelectorAll('.q-panel').forEach(p=>p.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById('qp-'+id).classList.add('active');
+}
+function toggleFaq(el){ el.parentElement.classList.toggle('open'); }
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeModal()});
+</script>
+</body>
+</html>

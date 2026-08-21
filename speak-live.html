@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Speak Live — Masterclass Special Offer | Speaki</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,900&family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --green:#2ECC71;--green-deep:#1FA85B;--ink:#0B1F17;--ink-soft:#33473E;
+  --cream:#FBF8F1;--cream-2:#F2EEE2;--navy:#161A2B;--gold:#FFC93C;
+  --coral:#FF6B5E;--shadow:6px 6px 0 #0B1F17;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--navy);color:#fff;line-height:1.6;overflow-x:hidden}
+h1,h2,h3,h4{font-family:'Fraunces',serif;line-height:1.05;letter-spacing:-.02em}
+a{text-decoration:none;color:inherit}
+.w{max-width:680px;margin:0 auto;padding:0 20px}
+
+/* HERO */
+.hero{background:linear-gradient(160deg,#0B1F17,#161A2B);padding:56px 0 44px;text-align:center;border-bottom:2px solid rgba(255,255,255,.08);position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;width:400px;height:400px;border-radius:50%;background:rgba(46,204,113,.12);top:-100px;right:-80px;filter:blur(60px)}
+.hero::after{content:'';position:absolute;width:300px;height:300px;border-radius:50%;background:rgba(255,201,60,.08);bottom:-60px;left:-60px;filter:blur(50px)}
+.hero .w{position:relative;z-index:1}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,201,60,.15);border:2px solid var(--gold);border-radius:30px;padding:7px 16px;font-weight:800;font-size:.82rem;color:var(--gold);margin-bottom:22px;letter-spacing:.05em}
+.hero h1{font-size:clamp(2rem,6vw,3.2rem);font-weight:900;margin-bottom:16px;color:#fff}
+.hero h1 em{color:var(--green);font-style:normal}
+.hero-sub{color:rgba(255,255,255,.78);font-size:1.05rem;line-height:1.7;max-width:520px;margin:0 auto}
+
+/* URGENCY BAR */
+.urgency{background:var(--coral);padding:14px 20px;text-align:center;font-weight:800;font-size:1rem;letter-spacing:.02em;border-bottom:2px solid rgba(0,0,0,.2)}
+.urgency span{font-size:1.3rem;margin-right:6px}
+
+/* COUNTDOWN */
+.countdown-wrap{background:rgba(255,107,94,.1);border:2px solid var(--coral);border-radius:20px;padding:20px;text-align:center;margin:28px 0}
+.countdown-label{font-size:.82rem;font-weight:700;color:rgba(255,255,255,.65);text-transform:uppercase;letter-spacing:.12em;margin-bottom:12px}
+.countdown{display:flex;gap:12px;justify-content:center}
+.cd-unit{background:var(--ink);border:2px solid rgba(255,107,94,.4);border-radius:14px;padding:14px 18px;min-width:72px;text-align:center}
+.cd-num{font-family:'Fraunces',serif;font-size:2.2rem;font-weight:900;color:var(--coral);display:block;line-height:1}
+.cd-label{font-size:.72rem;font-weight:700;color:rgba(255,255,255,.5);text-transform:uppercase;letter-spacing:.1em}
+.cd-sep{font-family:'Fraunces',serif;font-size:2rem;font-weight:900;color:var(--coral);display:flex;align-items:center;margin-top:-6px}
+
+/* PRICING CARDS */
+.pricing{padding:36px 0}
+.pricing-title{text-align:center;font-size:1rem;font-weight:800;text-transform:uppercase;letter-spacing:.15em;color:var(--gold);margin-bottom:20px}
+.plans{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}
+.plan{background:rgba(255,255,255,.06);border:2px solid rgba(255,255,255,.15);border-radius:22px;padding:26px 22px;text-align:center;position:relative;transition:transform .15s}
+.plan:hover{transform:translateY(-4px)}
+.plan.featured{background:rgba(46,204,113,.12);border-color:var(--green);box-shadow:0 0 30px rgba(46,204,113,.2)}
+.plan-badge{position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--green);color:#fff;border:2px solid var(--ink);border-radius:20px;padding:3px 14px;font-size:.72rem;font-weight:800;white-space:nowrap}
+.plan-duration{font-size:.85rem;font-weight:700;color:rgba(255,255,255,.6);text-transform:uppercase;letter-spacing:.1em;margin-bottom:10px}
+.plan-price{font-family:'Fraunces',serif;font-size:2.6rem;font-weight:900;color:#fff;line-height:1;margin-bottom:4px}
+.plan-price sup{font-size:1.2rem;vertical-align:super}
+.plan-regular{font-size:.82rem;color:rgba(255,255,255,.45);text-decoration:line-through;margin-bottom:16px}
+.plan-btn{display:block;width:100%;background:var(--green);color:#fff;border:2px solid var(--ink);padding:13px;border-radius:40px;font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:.95rem;cursor:pointer;transition:transform .15s,box-shadow .15s;box-shadow:var(--shadow)}
+.plan-btn:hover{transform:translate(-2px,-2px);box-shadow:8px 8px 0 var(--ink)}
+.plan.featured .plan-btn{background:#fff;color:var(--green-deep)}
+.plan-note{font-size:.78rem;color:rgba(255,255,255,.4);margin-top:10px}
+
+/* WHAT YOU GET */
+.wyg{padding:8px 0 36px}
+.wyg-title{text-align:center;font-size:1rem;font-weight:800;text-transform:uppercase;letter-spacing:.15em;color:rgba(255,255,255,.5);margin-bottom:20px}
+.wyg-list{display:flex;flex-direction:column;gap:12px}
+.wyg-item{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:18px 20px;display:flex;gap:14px;align-items:flex-start}
+.wyg-icon{font-size:1.5rem;flex-shrink:0;margin-top:2px}
+.wyg-item h4{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:.98rem;color:#fff;margin-bottom:4px}
+.wyg-item p{color:rgba(255,255,255,.65);font-size:.88rem;line-height:1.55;margin:0}
+
+/* DIVIDER */
+.divider{border:0;border-top:1px solid rgba(255,255,255,.1);margin:32px 0}
+
+/* PAYMENT SECTION */
+.payment{padding:0 0 48px}
+.payment-title{text-align:center;margin-bottom:28px}
+.payment-title h2{font-size:clamp(1.6rem,4vw,2.2rem);font-weight:900;color:#fff;margin-bottom:8px}
+.payment-title p{color:rgba(255,255,255,.65);font-size:.95rem}
+
+/* QR TABS */
+.qr-tabs{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-bottom:24px}
+.qr-tab{padding:8px 18px;border-radius:30px;border:2px solid rgba(255,255,255,.2);font-weight:700;font-size:.85rem;cursor:pointer;background:transparent;color:rgba(255,255,255,.65);transition:all .18s}
+.qr-tab:hover,.qr-tab.active{background:#fff;color:var(--ink);border-color:#fff}
+.qr-panels .qr-panel{display:none}
+.qr-panels .qr-panel.active{display:block}
+.qr-card{background:#fff;border-radius:20px;padding:24px;text-align:center;border:2px solid rgba(255,255,255,.1)}
+.qr-card img{max-width:280px;width:100%;border-radius:12px;margin:0 auto;display:block}
+.qr-bank{font-weight:800;font-size:1.1rem;color:var(--ink);margin-bottom:4px;margin-top:14px}
+.qr-name{color:var(--ink-soft);font-size:.9rem}
+.qr-note{color:var(--ink-soft);font-size:.8rem;margin-top:8px}
+
+/* REMINDER */
+.reminder{background:rgba(255,201,60,.1);border:2px solid var(--gold);border-radius:20px;padding:24px;margin:28px 0}
+.reminder h3{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;color:var(--gold);margin-bottom:14px;font-size:1rem}
+.reminder ol{margin-left:18px;display:flex;flex-direction:column;gap:10px}
+.reminder li{color:rgba(255,255,255,.8);font-size:.95rem;line-height:1.55}
+.reminder a{color:var(--green);font-weight:700}
+
+/* BOTTOM CTA */
+.bottom-cta{background:linear-gradient(150deg,var(--green),var(--green-deep));border-radius:24px;padding:36px 28px;text-align:center;border:2px solid var(--ink);box-shadow:var(--shadow);margin-bottom:48px}
+.bottom-cta h3{font-size:clamp(1.4rem,3.5vw,2rem);font-weight:900;color:#fff;margin-bottom:10px}
+.bottom-cta p{color:rgba(255,255,255,.88);font-size:.95rem;margin-bottom:20px}
+.cta-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.cta-btn{display:inline-flex;align-items:center;gap:8px;padding:13px 22px;border-radius:40px;font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:.95rem;border:2px solid var(--ink);cursor:pointer;transition:transform .15s,box-shadow .15s}
+.cta-btn-white{background:#fff;color:var(--green-deep);box-shadow:var(--shadow)}
+.cta-btn-white:hover{transform:translate(-2px,-2px);box-shadow:8px 8px 0 var(--ink)}
+.cta-btn-dark{background:var(--ink);color:#fff;box-shadow:3px 3px 0 rgba(255,255,255,.3)}
+
+/* FOOTER */
+.pg-footer{text-align:center;padding:28px 20px;border-top:1px solid rgba(255,255,255,.08);color:rgba(255,255,255,.4);font-size:.83rem}
+.pg-footer a{color:rgba(255,255,255,.4)}
+
+/* RESPONSIVE */
+@media(max-width:560px){
+  .plans{grid-template-columns:1fr!important}
+  .cta-btns{flex-direction:column;align-items:center}
+  .cta-btn{width:100%;justify-content:center}
+  .countdown{gap:8px}
+  .cd-unit{min-width:58px;padding:10px 12px}
+  .cd-num{font-size:1.8rem}
+}
+</style>
+</head>
+<body>
+
+<!-- URGENCY BAR -->
+<div style="background:var(--navy);padding:12px 20px;text-align:center"><a href="/" style="color:rgba(255,255,255,.6);font-weight:700;font-size:.85rem;text-decoration:none">← Back to Speaki.co</a></div>
+<div class="urgency"><span>⏰</span>OFFER ENDS AT 12 MIDNIGHT TONIGHT</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="w">
+    <div class="hero-badge">🎤 MASTERCLASS-ONLY SPECIAL OFFER</div>
+    <h1>Join <em>Speak Live</em><br>at an exclusive price.</h1>
+    <p style="display:inline-block;background:rgba(255,201,60,.15);border:2px solid var(--gold);border-radius:30px;padding:8px 20px;font-weight:800;font-size:.92rem;color:var(--gold);margin-bottom:0">📅 Next Masterclass: September 4, 2026</p>
+    <p class="hero-sub">Your confidence grows when you practice speaking — not just when you study it. You've learned the tools. Now it's time to use them.</p>
+  </div>
+</section>
+
+<!-- MAIN CONTENT -->
+<div style="padding:32px 0 0">
+  <div class="w">
+
+    <!-- COUNTDOWN -->
+    <div class="countdown-wrap">
+      <div class="countdown-label">⏰ Offer expires at midnight</div>
+      <div class="countdown">
+        <div class="cd-unit"><span class="cd-num" id="cd-h">00</span><span class="cd-label">Hours</span></div>
+        <div class="cd-sep">:</div>
+        <div class="cd-unit"><span class="cd-num" id="cd-m">00</span><span class="cd-label">Mins</span></div>
+        <div class="cd-sep">:</div>
+        <div class="cd-unit"><span class="cd-num" id="cd-s">00</span><span class="cd-label">Secs</span></div>
+      </div>
+    </div>
+
+    <!-- PRICING -->
+    <div class="pricing">
+      <div class="pricing-title">🔥 Masterclass Special Pricing</div>
+      <div class="plans">
+        <div class="plan">
+          <div class="plan-duration">6 Months</div>
+          <div class="plan-price"><sup>₱</sup>3,999</div>
+          <div class="plan-regular">&nbsp;</div>
+          <button class="plan-btn" onclick="scrollToPayment()">Get 6 Months →</button>
+          <div class="plan-note">Pay once, speak for 6 months</div>
+        </div>
+        <div class="plan featured">
+          <div class="plan-badge">Best Value</div>
+          <div class="plan-duration">1 Year</div>
+          <div class="plan-price"><sup>₱</sup>4,999</div>
+          <div class="plan-regular">Regular ₱7,888</div>
+          <button class="plan-btn" onclick="scrollToPayment()">Get 1 Year →</button>
+          <div class="plan-note">Save ₱2,889 tonight only</div>
+        </div>
+      </div>
+      <p style="text-align:center;color:rgba(255,255,255,.45);font-size:.82rem">After midnight, the 1-Year Membership returns to ₱7,888.</p>
+    </div>
+
+    <hr class="divider">
+
+    <!-- WHAT YOU GET -->
+    <div class="wyg">
+      <div class="wyg-title">What you get with Speak Live</div>
+      <div class="wyg-list">
+        <div class="wyg-item">
+          <span class="wyg-icon">🎤</span>
+          <div><h4>Live Speaking Practice Sessions</h4><p>Practice speaking English in a safe, supportive environment so you can build real confidence — not just knowledge.</p></div>
+        </div>
+        <div class="wyg-item">
+          <span class="wyg-icon">💬</span>
+          <div><h4>Live Feedback</h4><p>Get guidance and corrections while you practice so you know exactly what to improve.</p></div>
+        </div>
+        <div class="wyg-item">
+          <span class="wyg-icon">🎓</span>
+          <div><h4>FREE Pass to All Masterclasses for 1 Year</h4><p>Join all our masterclasses throughout the year at no additional cost.</p></div>
+        </div>
+        <div class="wyg-item">
+          <span class="wyg-icon">👥</span>
+          <div><h4>15-Minute 1-on-1 Assessment</h4><p>Get a personalized assessment session with Mentor Kathy or Mentor Rochelle to identify your speaking strengths and areas for growth.</p></div>
+        </div>
+        <div class="wyg-item">
+          <span class="wyg-icon">📚</span>
+          <div><h4>Lots of Free Resources</h4><p>Get access to practical resources designed to help you continue improving your English communication skills.</p></div>
+        </div>
+      </div>
+    </div>
+
+    <hr class="divider">
+
+    <!-- PAYMENT SECTION -->
+    <div class="payment" id="payment-section">
+      <div class="payment-title">
+        <h2>Choose your plan &amp; pay</h2>
+        <p>Select your preferred payment method below and scan the QR code.</p>
+      </div>
+
+      <!-- PLAN REMINDER -->
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:24px">
+        <div style="background:rgba(255,255,255,.06);border:2px solid rgba(255,255,255,.15);border-radius:16px;padding:18px;text-align:center">
+          <div style="font-size:.8rem;font-weight:700;color:rgba(255,255,255,.55);text-transform:uppercase;letter-spacing:.1em;margin-bottom:6px">6 Months</div>
+          <div style="font-family:'Fraunces',serif;font-size:2rem;font-weight:900;color:#fff">₱3,999</div>
+        </div>
+        <div style="background:rgba(46,204,113,.12);border:2px solid var(--green);border-radius:16px;padding:18px;text-align:center;position:relative">
+          <div style="position:absolute;top:-10px;left:50%;transform:translateX(-50%);background:var(--green);color:#fff;border-radius:20px;padding:2px 12px;font-size:.7rem;font-weight:800;white-space:nowrap;border:1px solid var(--ink)">Best Value</div>
+          <div style="font-size:.8rem;font-weight:700;color:rgba(255,255,255,.55);text-transform:uppercase;letter-spacing:.1em;margin-bottom:6px">1 Year</div>
+          <div style="font-family:'Fraunces',serif;font-size:2rem;font-weight:900;color:#fff">₱4,999</div>
+        </div>
+      </div>
+
+      <!-- QR TABS -->
+      <div class="qr-tabs">
+        <button class="qr-tab active" onclick="showQR('gcash',this)">GCash</button>
+        <button class="qr-tab" onclick="showQR('maya',this)">Maya</button>
+        <button class="qr-tab" onclick="showQR('bpi',this)">BPI</button>
+        <button class="qr-tab" onclick="showQR('maribank',this)">MariBank</button>
+      </div>
+
+      <div class="qr-panels">
+        <div class="qr-panel active" id="qr-gcash">
+          <div class="qr-card">
+            <img src="https://www.speaki.co/qr-gcash.png" alt="GCash QR Code">
+            <div class="qr-bank">GCash</div>
+            <div class="qr-name">Speaki · Rochelle D.</div>
+            <div class="qr-note">Mobile: 0947 890 ····  ·  Transfer fees may apply</div>
+          </div>
+        </div>
+        <div class="qr-panel" id="qr-maya">
+          <div class="qr-card">
+            <img src="https://www.speaki.co/qr-maya.png" alt="Maya QR Code">
+            <div class="qr-bank">Maya</div>
+            <div class="qr-name">Rochelle de Leon · @rochelledeleon</div>
+            <div class="qr-note">+63 *** *** 6823  ·  Transfer fees may apply</div>
+          </div>
+        </div>
+        <div class="qr-panel" id="qr-bpi">
+          <div class="qr-card">
+            <img src="https://www.speaki.co/qr-bpi.png" alt="BPI QR Code">
+            <div class="qr-bank">BPI</div>
+            <div class="qr-name">Speaki · Rochelle de Leon</div>
+            <div class="qr-note">Account ············669  ·  Transfer fees may apply</div>
+          </div>
+        </div>
+        <div class="qr-panel" id="qr-maribank">
+          <div class="qr-card">
+            <img src="https://www.speaki.co/qr-maribank.png" alt="MariBank QR Code">
+            <div class="qr-bank">MariBank</div>
+            <div class="qr-name">Rochelle de Leon · ****3740</div>
+            <div class="qr-note">Transfer fees may apply</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- REMINDER -->
+      <div class="reminder">
+        <h3>⚠️ Important Reminder</h3>
+        <ol>
+          <li>Once payment is made, email your <strong>proof of payment</strong> to <a href="mailto:hello@speaki.co">hello@speaki.co</a> or send it to our <a href="https://www.facebook.com/speakiofficial" target="_blank">Facebook page</a>.</li>
+          <li>Please give us <strong>1–2 hours</strong> to verify your payment and send you confirmation.</li>
+        </ol>
+      </div>
+
+    </div>
+
+    <!-- BOTTOM CTA -->
+    <div class="bottom-cta">
+      <h3>⏰ Offer ends at midnight tonight.</h3>
+      <p>After midnight, the 1-Year Membership returns to ₱7,888. Lock in your special rate now.</p>
+      <div class="cta-btns">
+        <button class="cta-btn cta-btn-dark" onclick="scrollToPayment()">Get Speak Live — 6 Months (₱3,999)</button>
+        <button class="cta-btn cta-btn-white" onclick="scrollToPayment()">Get Speak Live — 1 Year (₱4,999)</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="pg-footer">
+  <p>© 2026 Speaki · <a href="https://speaki.co">speaki.co</a> · <a href="mailto:hello@speaki.co">hello@speaki.co</a></p>
+  <p style="margin-top:6px">This special pricing is exclusively available to masterclass participants until 12 midnight.</p>
+</div>
+
+<script>
+// Countdown to midnight
+function updateCountdown(){
+  var now = new Date();
+  var target = new Date('2026-09-04T23:59:59');
+  var diff = target - now;
+  if(diff <= 0){
+    document.getElementById('cd-h').textContent = '00';
+    document.getElementById('cd-m').textContent = '00';
+    document.getElementById('cd-s').textContent = '00';
+    return;
+  }
+  var h = Math.floor(diff/3600000);
+  var m = Math.floor((diff%3600000)/60000);
+  var s = Math.floor((diff%60000)/1000);
+  document.getElementById('cd-h').textContent = String(h).padStart(2,'0');
+  document.getElementById('cd-m').textContent = String(m).padStart(2,'0');
+  document.getElementById('cd-s').textContent = String(s).padStart(2,'0');
+}
+updateCountdown();
+setInterval(updateCountdown, 1000);
+
+// QR tab switching
+function showQR(tab, btn){
+  document.querySelectorAll('.qr-tab').forEach(b => b.classList.remove('active'));
+  document.querySelectorAll('.qr-panel').forEach(p => p.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById('qr-' + tab).classList.add('active');
+}
+
+// Scroll to payment
+function scrollToPayment(){
+  document.getElementById('payment-section').scrollIntoView({behavior:'smooth',block:'start'});
+}
+</script>
+</body>
+</html>

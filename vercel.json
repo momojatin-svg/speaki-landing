@@ -1,70 +1,21 @@
 {
   "cleanUrls": true,
   "trailingSlash": false,
-  "routes": [
-    {
-      "src": "/about",
-      "dest": "/about.html"
-    },
-    {
-      "src": "/faq",
-      "dest": "/faq.html"
-    },
-    {
-      "src": "/try-ai",
-      "dest": "/try-ai.html"
-    },
-    {
-      "src": "/overcome-english-speaking-anxiety",
-      "dest": "/overcome-english-speaking-anxiety.html"
-    },
-    {
-      "src": "/overcome-shyness-speaking-english",
-      "dest": "/overcome-shyness-speaking-english.html"
-    },
-    {
-      "src": "/english-for-bpo-call-center-philippines",
-      "dest": "/english-for-bpo-call-center-philippines.html"
-    },
-    {
-      "src": "/english-for-job-interviews-philippines",
-      "dest": "/english-for-job-interviews-philippines.html"
-    },
-    {
-      "src": "/english-for-professionals-philippines",
-      "dest": "/english-for-professionals-philippines.html"
-    },
-    {
-      "src": "/english-for-students-fresh-graduates-philippines",
-      "dest": "/english-for-students-fresh-graduates-philippines.html"
-    },
-    {
-      "src": "/english-for-ofw-working-abroad",
-      "dest": "/english-for-ofw-working-abroad.html"
-    },
-    {
-      "src": "/privacy-policy",
-      "dest": "/privacy-policy.html"
-    },
-    {
-      "src": "/terms",
-      "dest": "/terms.html"
-    },
-    {
-      "src": "/refund-policy",
-      "dest": "/refund-policy.html"
-    },
-    {
-      "src": "/coaching",
-      "dest": "/coaching-1on1.html"
-    },
-    {
-      "src": "/speak-live",
-      "dest": "/speak-live-offer.html"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/index.html"
-    }
+  "rewrites": [
+    { "source": "/about", "destination": "/about.html" },
+    { "source": "/faq", "destination": "/faq.html" },
+    { "source": "/try-ai", "destination": "/try-ai.html" },
+    { "source": "/coaching", "destination": "/coaching.html" },
+    { "source": "/speak-live", "destination": "/speak-live.html" },
+    { "source": "/privacy-policy", "destination": "/privacy-policy.html" },
+    { "source": "/terms", "destination": "/terms.html" },
+    { "source": "/refund-policy", "destination": "/refund-policy.html" },
+    { "source": "/overcome-english-speaking-anxiety", "destination": "/overcome-english-speaking-anxiety.html" },
+    { "source": "/overcome-shyness-speaking-english", "destination": "/overcome-shyness-speaking-english.html" },
+    { "source": "/english-for-bpo-call-center-philippines", "destination": "/english-for-bpo-call-center-philippines.html" },
+    { "source": "/english-for-job-interviews-philippines", "destination": "/english-for-job-interviews-philippines.html" },
+    { "source": "/english-for-professionals-philippines", "destination": "/english-for-professionals-philippines.html" },
+    { "source": "/english-for-students-fresh-graduates-philippines", "destination": "/english-for-students-fresh-graduates-philippines.html" },
+    { "source": "/english-for-ofw-working-abroad", "destination": "/english-for-ofw-working-abroad.html" }
   ]
 }
