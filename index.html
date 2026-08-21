@@ -354,6 +354,7 @@
     table[style*="border-spacing"] td{display:block!important;width:100%!important;margin-bottom:20px!important;box-sizing:border-box!important}
     /* for-you two column */
     #for-you .wrap > div{grid-template-columns:1fr!important}
+  #services .wrap > div:last-child{grid-template-columns:1fr!important}
     /* hero buttons */
     .hero-ctas{flex-direction:column;gap:12px}
     .hero-ctas .btn{width:100%;justify-content:center;text-align:center}
@@ -859,6 +860,52 @@
 </section>
 
 
+<!-- SERVICES -->
+<section class="pad" id="services" style="background:var(--navy);border-radius:48px;margin:0 14px 80px;border:2px solid rgba(255,255,255,.06)">
+  <div class="wrap">
+    <div style="text-align:center;margin-bottom:44px">
+      <span class="eyebrow" style="color:var(--gold)">Work with us</span>
+      <h2 style="font-size:clamp(2rem,4vw,3rem);font-weight:900;color:#fff;margin-bottom:12px">More ways to speak with confidence.</h2>
+      <p style="color:rgba(255,255,255,.7);font-size:1.05rem;max-width:520px;margin:0 auto">From masterclass special offers to personal 1-on-1 coaching — pick what works best for where you are right now.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:22px">
+
+      <!-- 1-on-1 Coaching -->
+      <div style="background:rgba(255,255,255,.06);border:2px solid rgba(255,255,255,.15);border-radius:24px;padding:32px;display:flex;flex-direction:column;gap:14px;transition:transform .18s" onmouseover="this.style.transform='translate(-3px,-3px)'" onmouseout="this.style.transform=''">
+        <div style="width:56px;height:56px;border-radius:18px;background:rgba(46,204,113,.2);display:grid;place-items:center;font-size:1.5rem;border:2px solid rgba(255,255,255,.15)">👥</div>
+        <div>
+          <span style="display:inline-block;background:var(--green);color:#fff;border-radius:20px;padding:3px 12px;font-size:.72rem;font-weight:800;margin-bottom:10px">₱500 per session</span>
+          <h3 style="font-family:'Fraunces',serif;font-size:1.4rem;font-weight:700;color:#fff;margin-bottom:8px">1-on-1 Coaching</h3>
+          <p style="color:rgba(255,255,255,.7);font-size:.92rem;line-height:1.65;margin-bottom:16px">Personal, focused attention from Mentor Rochelle or Mentor Kathy. Choose a live 15-minute video call or send a video and get audio feedback.</p>
+          <div style="display:flex;flex-direction:column;gap:8px;margin-bottom:20px">
+            <div style="display:flex;gap:8px;align-items:center;font-size:.88rem;color:rgba(255,255,255,.75);font-weight:600"><span style="color:var(--green)">✓</span>15-min live video call via Calendly</div>
+            <div style="display:flex;gap:8px;align-items:center;font-size:.88rem;color:rgba(255,255,255,.75);font-weight:600"><span style="color:var(--green)">✓</span>Send video → get audio feedback</div>
+            <div style="display:flex;gap:8px;align-items:center;font-size:.88rem;color:rgba(255,255,255,.75);font-weight:600"><span style="color:var(--green)">✓</span>Choose Mentor Rochelle or Mentor Kathy</div>
+          </div>
+        </div>
+        <a href="/coaching" style="display:block;text-align:center;background:var(--green);color:#fff;border:2px solid var(--ink);padding:14px;border-radius:50px;font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:1rem;box-shadow:5px 5px 0 rgba(255,255,255,.15);text-decoration:none;transition:transform .15s" onmouseover="this.style.transform='translate(-2px,-2px)'" onmouseout="this.style.transform=''">Book a session →</a>
+      </div>
+
+      <!-- Masterclass / Speak Live Offer -->
+      <div style="background:rgba(255,255,255,.06);border:2px solid rgba(255,255,255,.15);border-radius:24px;padding:32px;display:flex;flex-direction:column;gap:14px;transition:transform .18s" onmouseover="this.style.transform='translate(-3px,-3px)'" onmouseout="this.style.transform=''">
+        <div style="width:56px;height:56px;border-radius:18px;background:rgba(255,201,60,.2);display:grid;place-items:center;font-size:1.5rem;border:2px solid rgba(255,255,255,.15)">🎤</div>
+        <div>
+          <span style="display:inline-block;background:var(--gold);color:var(--ink);border-radius:20px;padding:3px 12px;font-size:.72rem;font-weight:800;margin-bottom:10px">From ₱3,999</span>
+          <h3 style="font-family:'Fraunces',serif;font-size:1.4rem;font-weight:700;color:#fff;margin-bottom:8px">Speak Live Membership</h3>
+          <p style="color:rgba(255,255,255,.7);font-size:.92rem;line-height:1.65;margin-bottom:16px">Join Speak Live and get months of live speaking practice, feedback, community, and free masterclass access at a special price.</p>
+          <div style="display:flex;flex-direction:column;gap:8px;margin-bottom:20px">
+            <div style="display:flex;gap:8px;align-items:center;font-size:.88rem;color:rgba(255,255,255,.75);font-weight:600"><span style="color:var(--gold)">✓</span>6-Month Membership — ₱3,999</div>
+            <div style="display:flex;gap:8px;align-items:center;font-size:.88rem;color:rgba(255,255,255,.75);font-weight:600"><span style="color:var(--gold)">✓</span>1-Year Membership — ₱4,999</div>
+            <div style="display:flex;gap:8px;align-items:center;font-size:.88rem;color:rgba(255,255,255,.75);font-weight:600"><span style="color:var(--gold)">✓</span>FREE pass to all masterclasses for 1 year</div>
+          </div>
+        </div>
+        <a href="/speak-live" style="display:block;text-align:center;background:var(--gold);color:var(--ink);border:2px solid var(--ink);padding:14px;border-radius:50px;font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:1rem;box-shadow:5px 5px 0 rgba(255,255,255,.15);text-decoration:none;transition:transform .15s" onmouseover="this.style.transform='translate(-2px,-2px)'" onmouseout="this.style.transform=''">View offer →</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 <!-- CONTACT -->
 <section class="pad" id="contact">
   <div class="wrap">
@@ -917,6 +964,8 @@
       <div class="foot-col">
         <h5>Explore</h5>
         <a href="/about">About Us</a>
+        <a href="/coaching">1-on-1 Coaching</a>
+        <a href="/speak-live">Speak Live Offer</a>
         <a href="/faq">FAQ</a>
         <a href="#get-started">Join a Live Session</a>
         <a href="#get-started">AI Coach Waitlist</a>
