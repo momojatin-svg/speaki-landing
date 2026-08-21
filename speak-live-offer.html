@@ -124,6 +124,7 @@ a{text-decoration:none;color:inherit}
 <body>
 
 <!-- URGENCY BAR -->
+<div style="background:var(--navy);padding:12px 20px;text-align:center"><a href="/" style="color:rgba(255,255,255,.6);font-weight:700;font-size:.85rem;text-decoration:none">← Back to Speaki.co</a></div>
 <div class="urgency"><span>⏰</span>OFFER ENDS AT 12 MIDNIGHT TONIGHT</div>
 
 <!-- HERO -->
@@ -131,6 +132,7 @@ a{text-decoration:none;color:inherit}
   <div class="w">
     <div class="hero-badge">🎤 MASTERCLASS-ONLY SPECIAL OFFER</div>
     <h1>Join <em>Speak Live</em><br>at an exclusive price.</h1>
+    <p style="display:inline-block;background:rgba(255,201,60,.15);border:2px solid var(--gold);border-radius:30px;padding:8px 20px;font-weight:800;font-size:.92rem;color:var(--gold);margin-bottom:0">📅 Next Masterclass: September 4, 2026</p>
     <p class="hero-sub">Your confidence grows when you practice speaking — not just when you study it. You've learned the tools. Now it's time to use them.</p>
   </div>
 </section>
@@ -301,9 +303,8 @@ a{text-decoration:none;color:inherit}
 // Countdown to midnight
 function updateCountdown(){
   var now = new Date();
-  var midnight = new Date(now);
-  midnight.setHours(24,0,0,0);
-  var diff = midnight - now;
+  var target = new Date('2026-09-04T23:59:59');
+  var diff = target - now;
   if(diff <= 0){
     document.getElementById('cd-h').textContent = '00';
     document.getElementById('cd-m').textContent = '00';
