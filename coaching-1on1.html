@@ -442,20 +442,37 @@ header{background:rgba(251,248,241,.95);border-bottom:2px solid rgba(11,31,23,.0
 
       <div id="next-video" style="display:none">
         <div style="background:rgba(46,204,113,.08);border:2px solid var(--green);border-radius:16px;padding:20px;margin-bottom:16px">
-          <p style="font-weight:800;margin-bottom:6px">🎥 You chose: 15-Minute Video Call with <span id="conf-mentor-v"></span></p>
-          <p style="color:var(--ink-soft);font-size:.9rem;margin-bottom:14px">After payment confirmation, click below to book your preferred time.</p>
-          <a href="https://calendly.com/rochellepdeleon/30min" target="_blank" class="modal-confirm" style="display:block;text-align:center;text-decoration:none">Book on Calendly →</a>
+          <p style="font-weight:800;margin-bottom:6px">🎥 15-Minute Video Call with <span id="conf-mentor-v"></span></p>
+          <p style="color:var(--ink-soft);font-size:.9rem;margin-bottom:14px">Send your proof of payment with the message below — then book your slot on Calendly.</p>
+          <a id="wa-link-video" href="#" target="_blank" style="display:flex;align-items:center;gap:10px;background:#25D366;color:#fff;border:2px solid var(--ink);padding:12px 18px;border-radius:14px;font-weight:800;font-size:.9rem;margin-bottom:10px;text-decoration:none;box-shadow:3px 3px 0 var(--ink)">
+            <span style="font-size:1.2rem">💬</span> Send via WhatsApp (pre-filled)
+          </a>
+          <a id="email-link-video" href="#" style="display:flex;align-items:center;gap:10px;background:#fff;color:var(--ink);border:2px solid var(--ink);padding:12px 18px;border-radius:14px;font-weight:800;font-size:.9rem;margin-bottom:14px;text-decoration:none;box-shadow:3px 3px 0 var(--ink)">
+            <span style="font-size:1.2rem">📧</span> Send via Email (pre-filled)
+          </a>
+          <a href="https://calendly.com/rochellepdeleon/30min" target="_blank" class="modal-confirm" style="display:block;text-align:center;text-decoration:none">Book your slot on Calendly →</a>
         </div>
       </div>
 
       <div id="next-audio" style="display:none">
         <div style="background:rgba(46,204,113,.08);border:2px solid var(--green);border-radius:16px;padding:20px;margin-bottom:16px">
-          <p style="font-weight:800;margin-bottom:10px">🎤 You chose: Video + Audio Feedback with <span id="conf-mentor-a"></span></p>
-          <p style="color:var(--ink-soft);font-size:.9rem;margin-bottom:8px">Send your video recording to:</p>
-          <p style="font-size:.92rem;margin-bottom:4px">📧 <a href="mailto:hello@speaki.co" style="color:var(--green-deep);font-weight:700">hello@speaki.co</a></p>
-          <p style="font-size:.92rem;margin-bottom:4px">💬 <a href="https://m.me/speakiofficial" style="color:var(--green-deep);font-weight:700">Facebook Messenger</a></p>
-          <p style="font-size:.92rem">📱 <a href="https://wa.me/639478906823" style="color:var(--green-deep);font-weight:700">WhatsApp</a></p>
-          <p style="color:var(--ink-soft);font-size:.85rem;margin-top:10px">Expect your audio feedback within <strong>24–48 hours</strong>.</p>
+          <p style="font-weight:800;margin-bottom:10px">🎤 Video + Audio Feedback with <span id="conf-mentor-a"></span></p>
+          <p style="color:var(--ink-soft);font-size:.9rem;margin-bottom:14px">Send your proof of payment + video recording using the pre-filled links below.</p>
+          <a id="wa-link-audio" href="#" target="_blank" style="display:flex;align-items:center;gap:10px;background:#25D366;color:#fff;border:2px solid var(--ink);padding:12px 18px;border-radius:14px;font-weight:800;font-size:.9rem;margin-bottom:10px;text-decoration:none;box-shadow:3px 3px 0 var(--ink)">
+            <span style="font-size:1.2rem">💬</span> Send via WhatsApp (pre-filled)
+          </a>
+          <a id="email-link-audio" href="#" style="display:flex;align-items:center;gap:10px;background:#fff;color:var(--ink);border:2px solid var(--ink);padding:12px 18px;border-radius:14px;font-weight:800;font-size:.9rem;margin-bottom:4px;text-decoration:none;box-shadow:3px 3px 0 var(--ink)">
+            <span style="font-size:1.2rem">📧</span> Send via Email (pre-filled)
+          </a>
+          <div style="background:#fff;border:2px solid var(--ink);border-radius:12px;padding:14px 16px;margin-top:12px;display:flex;align-items:center;gap:12px">
+            <span style="font-size:1.4rem;flex-shrink:0">📱</span>
+            <div>
+              <p style="font-weight:800;font-size:.9rem;margin-bottom:2px">WhatsApp number</p>
+              <p style="font-family:'Fraunces',serif;font-size:1.2rem;font-weight:700;color:var(--green-deep);margin-bottom:2px">+63 947 890 6823</p>
+              <p style="color:var(--ink-soft);font-size:.78rem">Save this number then send your video directly on WhatsApp</p>
+            </div>
+          </div>
+          <p style="color:var(--ink-soft);font-size:.82rem;margin-top:10px">Attach your proof of payment + video in the same message. Feedback arrives in <strong>24–48 hours</strong>.</p>
         </div>
       </div>
 
@@ -514,6 +531,22 @@ function goStep3(){
   document.getElementById('next-audio').style.display = format==='audio' ? 'block' : 'none';
   document.getElementById('conf-mentor-v').textContent = 'Mentor '+mentor;
   document.getElementById('conf-mentor-a').textContent = 'Mentor '+mentor;
+
+  // Build pre-filled messages
+  var videoMsg = "Hi Speaki! I've paid ₱500 for a 15-minute video call with Mentor "+mentor+". Here's my proof of payment. Please confirm so I can book on Calendly. Thank you!";
+  var audioMsg = "Hi Speaki! I've paid ₱500 for video + audio feedback with Mentor "+mentor+". Here's my proof of payment and video recording. Please send me feedback. Thank you!";
+
+  var waBase = 'https://wa.me/639478906823?text=';
+  var emailBase = 'mailto:hello@speaki.co?subject=';
+
+  // Video links
+  document.getElementById('wa-link-video').href = waBase + encodeURIComponent(videoMsg);
+  document.getElementById('email-link-video').href = emailBase + encodeURIComponent('1-on-1 Video Call Payment — Mentor '+mentor) + '&body=' + encodeURIComponent(videoMsg);
+
+  // Audio links
+  document.getElementById('wa-link-audio').href = waBase + encodeURIComponent(audioMsg);
+  document.getElementById('email-link-audio').href = emailBase + encodeURIComponent('1-on-1 Audio Feedback Payment — Mentor '+mentor) + '&body=' + encodeURIComponent(audioMsg);
+
   showModalStep('step-3');
 }
 function showTab(btn, id){
