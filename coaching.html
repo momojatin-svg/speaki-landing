@@ -216,36 +216,41 @@ header{background:rgba(251,248,241,.95);border-bottom:2px solid rgba(11,31,23,.0
   <div class="w">
     <div style="text-align:center;margin-bottom:44px">
       <span class="ey">Choose your format</span>
-      <h2 style="font-size:clamp(2rem,4vw,3rem);font-weight:900;margin-bottom:12px">Two ways to get coached.</h2>
-      <p style="color:var(--ink-soft);font-size:1.05rem;max-width:500px;margin:0 auto">Same price, same quality — pick what works best for your schedule.</p>
+      <h2 style="font-size:clamp(2rem,4vw,3rem);font-weight:900;margin-bottom:12px">Free call or paid feedback.</h2>
+      <p style="color:var(--ink-soft);font-size:1.05rem;max-width:500px;margin:0 auto">Two different options — one free, one paid. Pick what works best for you.</p>
     </div>
     <div class="delivery-grid">
+
+      <!-- FREE DISCOVERY CALL -->
       <div class="del-card featured">
         <div class="del-icon" style="background:rgba(46,204,113,.15)">🎥</div>
-        <div style="display:inline-flex;align-items:center;gap:6px;background:var(--green);color:#fff;border-radius:20px;padding:3px 12px;font-size:.75rem;font-weight:800;margin-bottom:6px">FREE</div>
+        <span style="display:inline-flex;align-items:center;background:var(--green);color:#fff;border-radius:20px;padding:4px 14px;font-size:.78rem;font-weight:800;margin-bottom:8px">FREE</span>
         <h3>15-Minute Discovery Call</h3>
-        <p>A free, no-obligation call with your chosen mentor via Calendly. Get to know each other, understand your goals, and see if Speaki is the right fit for you — no payment needed.</p>
+        <p>A free, no-obligation call with your chosen mentor via Calendly. Get to know each other, understand your goals, and see if Speaki is the right fit — no payment needed.</p>
         <ul class="del-steps">
-          <li>Pay ₱500 and confirm payment</li>
-          <li>Choose your mentor (Rochelle or Kathy)</li>
-          <li>Book your preferred time on Calendly</li>
-          <li>Show up and speak — we'll coach you live</li>
+          <li>Choose your mentor — Rochelle or Kathy</li>
+          <li>Book your preferred time on Calendly — it's free</li>
+          <li>Show up and your mentor will guide you live</li>
         </ul>
-        <button class="btn btn-g" style="width:100%;margin-top:8px" onclick="openModal('video')">Book a video call →</button>
+        <a href="https://calendly.com/rochellepdeleon/30min" target="_blank" class="btn btn-g" style="width:100%;margin-top:8px;text-align:center;display:block">Book a free discovery call →</a>
       </div>
+
+      <!-- PAID AUDIO FEEDBACK -->
       <div class="del-card">
         <div class="del-icon" style="background:var(--cream-2)">🎤</div>
+        <span style="display:inline-flex;align-items:center;background:var(--ink);color:#fff;border-radius:20px;padding:4px 14px;font-size:.78rem;font-weight:800;margin-bottom:8px">₱500</span>
         <h3>Video Recording + Audio Feedback</h3>
-        <p>Record yourself speaking on a topic, send it to us, and receive a personalised audio message or personal call with detailed feedback from your mentor.</p>
+        <p>Record yourself speaking on a topic, send it to us, and receive personalised audio feedback from your mentor within 24–48 hours.</p>
         <ul class="del-steps">
-          <li>Pay ₱500 and confirm payment</li>
-          <li>Choose your mentor (Rochelle or Kathy)</li>
-          <li>Send your video recording via email or WhatsApp</li>
-          <li>Receive detailed audio feedback within 24–48 hrs</li>
+          <li>Pay ₱500 via GCash, Maya, BPI, or MariBank</li>
+          <li>Choose your mentor — Rochelle or Kathy</li>
+          <li>Send your video via email or WhatsApp</li>
+          <li>Get detailed audio feedback within 24–48 hrs</li>
         </ul>
         <button class="btn btn-w" style="width:100%;margin-top:8px" onclick="openModal('audio')">Get video feedback →</button>
       </div>
-    </div>
+
+    </div></div>
   </div>
 </section>
 
@@ -534,7 +539,7 @@ function checkReady(){
   if(format==='video'){
     document.getElementById('fee-amount').textContent='FREE';
     document.getElementById('fee-amount').style.color='var(--green-deep)';
-    document.getElementById('btn-next').textContent='Book on Calendly →';
+    document.getElementById('btn-next').textContent='Book on Calendly → (opens new tab)';
   } else if(format==='audio'){
     document.getElementById('fee-amount').textContent='₱500';
     document.getElementById('fee-amount').style.color='var(--ink)';
@@ -543,10 +548,9 @@ function checkReady(){
 }
 function goStep2(){
   if(format==='video'){
-    // Skip payment — go direct to Calendly
     window.open('https://calendly.com/rochellepdeleon/30min','_blank');
     closeModal();
-  } else {
+  } else if(format==='audio'){
     showModalStep('step-2');
   }
 }
