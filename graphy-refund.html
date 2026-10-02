@@ -1,0 +1,161 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,900&family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+:root{--green:#2ECC71;--green-deep:#1FA85B;--ink:#0B1F17;--ink-soft:#33473E;--cream:#FBF8F1;--cream-2:#F2EEE2;--navy:#161A2B;--gold:#FFC93C;--shadow:6px 6px 0 #0B1F17}
+.rp{font-family:'Plus Jakarta Sans',sans-serif;background:var(--cream);color:var(--ink);overflow-x:hidden}
+.rp *{box-sizing:border-box;margin:0;padding:0}
+.rp h1,.rp h2,.rp h3{font-family:'Fraunces',serif;line-height:1.05;letter-spacing:-.02em}
+.rp a{color:var(--green-deep);text-decoration:underline}
+.w{max-width:820px;margin:0 auto;padding:0 24px}
+.ey{text-transform:uppercase;letter-spacing:.18em;font-weight:800;font-size:.78rem;color:var(--green-deep);margin-bottom:14px;display:block}
+
+/* HERO */
+.rp-hero{background:linear-gradient(150deg,#2ECC71,#1FA85B);padding:72px 0 60px;text-align:center;position:relative;overflow:hidden;border-bottom:2px solid var(--ink)}
+.rp-hero::before{content:'';position:absolute;width:400px;height:400px;border-radius:50%;background:rgba(255,255,255,.08);top:-80px;right:-60px;filter:blur(40px)}
+.rp-hero .w{position:relative;z-index:1}
+.rp-hero h1{font-size:clamp(2.2rem,5vw,3.4rem);font-weight:900;color:#fff;margin-bottom:12px}
+.rp-hero p{color:rgba(255,255,255,.85);font-size:.95rem}
+
+/* BODY */
+.rp-body{padding:60px 0 80px}
+.rp-body p{color:var(--ink-soft);font-size:1rem;line-height:1.75;margin-bottom:14px}
+.rp-body strong{color:var(--ink)}
+
+/* BIG CARD */
+.rp-big{background:#fff;border:2px solid var(--ink);border-radius:24px;padding:40px;text-align:center;box-shadow:var(--shadow);margin:0 0 40px}
+.rp-big .num{font-family:'Fraunces',serif;font-size:5rem;font-weight:900;color:var(--green-deep);display:block;line-height:1;margin-bottom:6px}
+.rp-big .label{font-family:'Fraunces',serif;font-weight:700;font-size:1.5rem;color:var(--ink);display:block;margin-bottom:10px}
+.rp-big p{color:var(--ink-soft);font-size:1rem;margin:0}
+
+/* STEPS */
+.rp-steps{display:flex;flex-direction:column;gap:14px;margin:28px 0}
+.rp-step{background:#fff;border:2px solid var(--ink);border-radius:18px;padding:20px 22px;box-shadow:4px 4px 0 var(--ink);display:flex;gap:16px;align-items:flex-start}
+.rp-step-num{width:38px;height:38px;border-radius:50%;background:var(--green);color:#fff;display:grid;place-items:center;font-weight:800;font-size:1rem;flex-shrink:0;border:2px solid var(--ink)}
+.rp-step h4{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:1rem;color:var(--ink);margin-bottom:4px}
+.rp-step p{color:var(--ink-soft);font-size:.9rem;margin:0;line-height:1.55}
+
+/* SECTION HEADING */
+.rp-h2{font-size:1.4rem;font-weight:700;color:var(--ink);margin:40px 0 16px;padding-bottom:10px;border-bottom:2px solid rgba(11,31,23,.1)}
+.rp-list{color:var(--ink-soft);margin:10px 0 14px 20px;font-size:1rem}
+.rp-list li{margin-bottom:8px;line-height:1.65}
+
+/* CONTACT CARD */
+.rp-contact{background:var(--navy);border-radius:20px;padding:28px;margin:28px 0;border:2px solid rgba(255,255,255,.1);display:flex;gap:16px;align-items:center}
+.rp-contact .e{font-size:2rem;flex-shrink:0}
+.rp-contact h4{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;color:#fff;margin-bottom:4px}
+.rp-contact p{color:rgba(255,255,255,.75);font-size:.92rem;margin:0}
+.rp-contact a{color:var(--green);font-weight:700}
+
+/* NOTE */
+.rp-note{background:var(--cream-2);border-left:4px solid var(--green);border-radius:0 14px 14px 0;padding:16px 20px;margin:20px 0}
+.rp-note p{margin:0;font-size:.95rem;color:var(--ink-soft)}
+
+/* BACK */
+.rp-back{text-align:center;margin-top:48px;padding-top:32px;border-top:2px solid rgba(11,31,23,.08)}
+.rp-back a{display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:.92rem;color:var(--ink-soft);text-decoration:none;border:2px solid var(--ink);padding:10px 20px;border-radius:30px;box-shadow:3px 3px 0 var(--ink);transition:transform .15s}
+.rp-back a:hover{transform:translate(-2px,-2px);color:var(--ink)}
+
+@media(max-width:560px){
+  .w{padding:0 16px!important}
+  .rp-hero{padding:50px 0 44px!important}
+  .rp-body{padding:40px 0 60px!important}
+  .rp-big .num{font-size:4rem!important}
+  .rp-contact{flex-direction:column!important;gap:10px!important}
+}
+</style>
+
+<div class="rp" data-section-type="custom" data-ai-id="sec-refund-main">
+
+  <!-- HERO -->
+  <div class="rp-hero">
+    <div class="w">
+      <span class="ey" style="color:rgba(255,255,255,.8)">Legal · Section 8</span>
+      <h1>Refund Policy</h1>
+      <p>We want you to feel confident when you invest in your speaking journey.</p>
+    </div>
+  </div>
+
+  <div class="rp-body">
+    <div class="w">
+
+      <!-- BIG 24H CARD -->
+      <div class="rp-big">
+        <span class="num">24</span>
+        <span class="label">Hour Refund Window</span>
+        <p>Refunds are available within <strong>24 hours of purchase</strong> — no complicated process, no long wait.</p>
+      </div>
+
+      <!-- THE POLICY -->
+      <p>Speaki is committed to your satisfaction. If for any reason you are not happy with your purchase, we make it easy to request a refund within 24 hours.</p>
+
+      <!-- HOW TO REQUEST -->
+      <h2 class="rp-h2">How to Request a Refund</h2>
+      <div class="rp-steps">
+        <div class="rp-step">
+          <div class="rp-step-num">1</div>
+          <div>
+            <h4>Email us within 24 hours</h4>
+            <p>Send your refund request to <a href="mailto:hello@speaki.co">hello@speaki.co</a> within 24 hours of your original purchase.</p>
+          </div>
+        </div>
+        <div class="rp-step">
+          <div class="rp-step-num">2</div>
+          <div>
+            <h4>Include your purchase details</h4>
+            <p>Include your name, the email address used for purchase, and the course or membership you would like refunded.</p>
+          </div>
+        </div>
+        <div class="rp-step">
+          <div class="rp-step-num">3</div>
+          <div>
+            <h4>We process your refund</h4>
+            <p>We will process your refund promptly. Refunds typically appear within 3–7 business days depending on your payment method and provider.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ELIGIBLE -->
+      <h2 class="rp-h2">What's Eligible for a Refund</h2>
+      <ul class="rp-list">
+        <li>All course purchases requested within 24 hours of the original transaction</li>
+        <li>Membership purchases requested within 24 hours of the original transaction</li>
+        <li>Webinar or masterclass purchases within 24 hours, if the event has not yet taken place</li>
+      </ul>
+
+      <!-- NOT ELIGIBLE -->
+      <h2 class="rp-h2">What's Not Eligible</h2>
+      <ul class="rp-list">
+        <li>Refund requests made more than 24 hours after purchase</li>
+        <li>Webinars or masterclasses that have already taken place</li>
+        <li>Partial refunds for partially completed courses</li>
+      </ul>
+
+      <!-- MEMBERSHIP CANCELLATION -->
+      <h2 class="rp-h2">Cancelling Your Membership</h2>
+      <p>You may cancel your Speaki membership at any time. Cancellations take effect at the end of your current billing period — you will retain full access until then.</p>
+      <div class="rp-note">
+        <p>To cancel, log in to your account settings or contact us at <a href="mailto:hello@speaki.co">hello@speaki.co</a>.</p>
+      </div>
+
+      <!-- CONTACT -->
+      <div class="rp-contact">
+        <span class="e">📧</span>
+        <div>
+          <h4>Questions about a refund?</h4>
+          <p>Email us at <a href="mailto:hello@speaki.co">hello@speaki.co</a> and we'll get back to you as soon as possible.</p>
+        </div>
+      </div>
+
+      <p style="font-size:.88rem;color:var(--ink-soft)">This Refund Policy forms part of our <a href="/terms-of-use">Terms of Use</a>. Speaki reserves the right to update this policy at any time.</p>
+
+      <!-- BACK -->
+      <div class="rp-back">
+        <a href="#" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">↑ Back to top</a>
+      </div>
+
+    </div>
+  </div>
+
+</div>

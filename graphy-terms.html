@@ -1,0 +1,202 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,900&family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --green:#2ECC71;--green-deep:#1FA85B;--ink:#0B1F17;--ink-soft:#33473E;
+  --cream:#FBF8F1;--cream-2:#F2EEE2;--navy:#161A2B;--gold:#FFC93C;--shadow:6px 6px 0 #0B1F17;
+}
+.tp{font-family:'Plus Jakarta Sans',sans-serif;background:var(--cream);color:var(--ink);overflow-x:hidden}
+.tp *{box-sizing:border-box;margin:0;padding:0}
+.tp h1,.tp h2,.tp h3{font-family:'Fraunces',serif;line-height:1.05;letter-spacing:-.02em}
+.tp a{color:var(--green-deep);text-decoration:underline}
+.w{max-width:820px;margin:0 auto;padding:0 24px}
+.ey{text-transform:uppercase;letter-spacing:.18em;font-weight:800;font-size:.78rem;color:var(--green-deep);margin-bottom:14px;display:block}
+
+/* HERO */
+.tp-hero{background:var(--navy);padding:72px 0 60px;text-align:center;position:relative;overflow:hidden}
+.tp-hero::before{content:'';position:absolute;width:400px;height:400px;border-radius:50%;background:rgba(46,204,113,.1);top:-80px;right:-60px;filter:blur(50px)}
+.tp-hero .w{position:relative;z-index:1}
+.tp-hero h1{font-size:clamp(2.2rem,5vw,3.4rem);font-weight:900;color:#fff;margin-bottom:12px}
+.tp-hero p{color:rgba(255,255,255,.65);font-size:.95rem}
+
+/* TOC */
+.tp-toc{background:#fff;border:2px solid var(--ink);border-radius:20px;padding:24px 28px;margin:40px 0;box-shadow:var(--shadow)}
+.tp-toc h3{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:.9rem;text-transform:uppercase;letter-spacing:.1em;color:var(--ink-soft);margin-bottom:14px}
+.tp-toc ol{margin-left:18px;display:flex;flex-direction:column;gap:6px}
+.tp-toc li a{color:var(--green-deep);font-weight:600;font-size:.95rem;text-decoration:none}
+.tp-toc li a:hover{text-decoration:underline}
+
+/* BODY */
+.tp-body{padding:60px 0 80px}
+.tp-section{margin-bottom:48px;scroll-margin-top:20px}
+.tp-section h2{font-size:1.5rem;font-weight:700;color:var(--ink);margin-bottom:16px;padding-bottom:10px;border-bottom:2px solid rgba(11,31,23,.1);display:flex;align-items:center;gap:10px}
+.tp-section h2 .sec-num{background:var(--ink);color:#fff;width:32px;height:32px;border-radius:50%;display:grid;place-items:center;font-size:.8rem;font-weight:800;flex-shrink:0;font-family:'Plus Jakarta Sans',sans-serif}
+.tp-section p{color:var(--ink-soft);font-size:1rem;line-height:1.75;margin-bottom:12px}
+.tp-section ul{color:var(--ink-soft);margin:10px 0 12px 20px;font-size:1rem}
+.tp-section ul li{margin-bottom:8px;line-height:1.65}
+.tp-section strong{color:var(--ink)}
+
+/* SPECIAL CARDS */
+.tp-box{background:#fff;border:2px solid var(--ink);border-radius:16px;padding:22px 24px;margin:16px 0;box-shadow:4px 4px 0 var(--ink)}
+.tp-box p{margin:0;font-size:.97rem}
+
+.tp-safe{background:var(--navy);border-radius:22px;padding:28px;margin:16px 0;border:2px solid rgba(255,255,255,.1)}
+.tp-safe h3{font-family:'Fraunces',serif;color:#fff;font-size:1.15rem;font-weight:700;margin-bottom:14px;display:flex;align-items:center;gap:8px}
+.tp-safe p{color:rgba(255,255,255,.78);font-size:.95rem;margin-bottom:8px}
+.tp-safe ul{color:rgba(255,255,255,.75);margin-left:18px;font-size:.95rem}
+.tp-safe ul li{margin-bottom:8px;line-height:1.6}
+
+.tp-refund{background:linear-gradient(135deg,#2ECC71,#1FA85B);border-radius:22px;padding:28px;margin:16px 0;border:2px solid var(--ink);box-shadow:var(--shadow)}
+.tp-refund h3{font-family:'Fraunces',serif;color:#fff;font-size:1.15rem;font-weight:700;margin-bottom:10px;display:flex;align-items:center;gap:8px}
+.tp-refund p{color:rgba(255,255,255,.92);font-size:.95rem;margin-bottom:6px}
+.tp-refund a{color:#fff;font-weight:700}
+
+.tp-contact-card{background:var(--cream-2);border:2px solid var(--ink);border-radius:16px;padding:22px 24px;margin:16px 0;display:flex;gap:16px;align-items:center}
+.tp-contact-card .e{font-size:2rem;flex-shrink:0}
+.tp-contact-card p{margin:0;font-size:.97rem;color:var(--ink-soft)}
+.tp-contact-card a{font-weight:700;color:var(--green-deep)}
+
+/* BACK TO TOP */
+.tp-back{text-align:center;margin-top:48px;padding-top:32px;border-top:2px solid rgba(11,31,23,.08)}
+.tp-back a{display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:.92rem;color:var(--ink-soft);text-decoration:none;border:2px solid var(--ink);padding:10px 20px;border-radius:30px;box-shadow:3px 3px 0 var(--ink);transition:transform .15s}
+.tp-back a:hover{transform:translate(-2px,-2px);color:var(--ink)}
+
+@media(max-width:560px){
+  .w{padding:0 16px!important}
+  .tp-hero{padding:50px 0 44px!important}
+  .tp-body{padding:40px 0 60px!important}
+  .tp-section h2{font-size:1.25rem!important}
+}
+</style>
+
+<div class="tp" data-section-type="custom" data-ai-id="sec-terms-main">
+
+  <!-- HERO -->
+  <div class="tp-hero">
+    <div class="w">
+      <span class="ey" style="color:var(--gold)">Legal</span>
+      <h1>Terms of Use</h1>
+      <p>Terms and Conditions of Use for Speaki · Effective June 2026</p>
+    </div>
+  </div>
+
+  <!-- BODY -->
+  <div class="tp-body">
+    <div class="w">
+
+      <!-- TABLE OF CONTENTS -->
+      <div class="tp-toc">
+        <h3>Contents</h3>
+        <ol>
+          <li><a href="#sec1">Introduction</a></li>
+          <li><a href="#sec2">User Responsibilities</a></li>
+          <li><a href="#sec3">Intellectual Property Rights</a></li>
+          <li><a href="#sec4">Privacy Policy</a></li>
+          <li><a href="#sec5">Limitation of Liability</a></li>
+          <li><a href="#sec6">Governing Law</a></li>
+          <li><a href="#sec7">Changes to Terms and Conditions</a></li>
+          <li><a href="#sec8">Refund Policy</a></li>
+          <li><a href="#sec9">Safe Space Policy</a></li>
+          <li><a href="#sec10">Contact Us</a></li>
+        </ol>
+      </div>
+
+      <!-- 1. INTRODUCTION -->
+      <div class="tp-section" id="sec1">
+        <h2><span class="sec-num">1</span>Introduction</h2>
+        <div class="tp-box">
+          <p>Welcome to <strong>Speaki</strong> (hereinafter referred to as "the Website and App"). These terms and conditions govern your use of the Website and App.</p>
+        </div>
+        <p>By accessing or using the Website and App, you agree to be bound by these terms and conditions. If you do not agree with any part of these terms, you may not use the Website or App.</p>
+      </div>
+
+      <!-- 2. USER RESPONSIBILITIES -->
+      <div class="tp-section" id="sec2">
+        <h2><span class="sec-num">2</span>User Responsibilities</h2>
+        <ul>
+          <li>You agree to use the Website and App only for <strong>lawful purposes</strong> and in a manner consistent with all applicable laws and regulations.</li>
+          <li>You must not use the Website and App in any way that causes, or may cause, damage to the Website and App or impairment of the availability or accessibility of the Website and App.</li>
+        </ul>
+      </div>
+
+      <!-- 3. INTELLECTUAL PROPERTY -->
+      <div class="tp-section" id="sec3">
+        <h2><span class="sec-num">3</span>Intellectual Property Rights</h2>
+        <ul>
+          <li>The content on the Website and App — including but not limited to text, graphics, logos, images, and software — is owned by or licensed to Speaki and is protected by copyright and other intellectual property rights.</li>
+          <li>You may not reproduce, modify, distribute, or republish any content from the Website and App <strong>without our prior written consent</strong>.</li>
+        </ul>
+      </div>
+
+      <!-- 4. PRIVACY POLICY -->
+      <div class="tp-section" id="sec4">
+        <h2><span class="sec-num">4</span>Privacy Policy</h2>
+        <p>Your use of the Website and App is also governed by our <a href="/privacy-policy">Privacy Policy</a>, which outlines how we collect, use, and disclose your personal information.</p>
+        <div class="tp-box">
+          <p>By using the Website and App, you consent to the collection and use of your personal information as described in the Privacy Policy.</p>
+        </div>
+      </div>
+
+      <!-- 5. LIMITATION OF LIABILITY -->
+      <div class="tp-section" id="sec5">
+        <h2><span class="sec-num">5</span>Limitation of Liability</h2>
+        <p>To the fullest extent permitted by law, Speaki shall not be liable for any direct, indirect, incidental, special, consequential, or punitive damages arising out of or in connection with your use or inability to use the Website and App.</p>
+      </div>
+
+      <!-- 6. GOVERNING LAW -->
+      <div class="tp-section" id="sec6">
+        <h2><span class="sec-num">6</span>Governing Law</h2>
+        <p>These terms and conditions are governed by and construed in accordance with the <strong>laws of the Philippines</strong>.</p>
+      </div>
+
+      <!-- 7. CHANGES -->
+      <div class="tp-section" id="sec7">
+        <h2><span class="sec-num">7</span>Changes to Terms and Conditions</h2>
+        <p>Speaki reserves the right to modify or replace these terms and conditions at any time. It is your responsibility to check this page periodically for changes. Continued use of the Website and App after changes are posted constitutes your acceptance of the revised terms.</p>
+      </div>
+
+      <!-- 8. REFUND POLICY -->
+      <div class="tp-section" id="sec8">
+        <h2><span class="sec-num">8</span>Refund Policy</h2>
+        <div class="tp-refund">
+          <h3>💚 Our Refund Commitment</h3>
+          <p>Refunds are available within <strong>24 hours of purchase</strong>.</p>
+          <p>To request a refund, please contact us at <a href="mailto:hello@speaki.co">hello@speaki.co</a> with your name, email used for purchase, and the course or membership you purchased. We will process your request promptly.</p>
+        </div>
+      </div>
+
+      <!-- 9. SAFE SPACE POLICY -->
+      <div class="tp-section" id="sec9">
+        <h2><span class="sec-num">9</span>Safe Space Policy</h2>
+        <div class="tp-safe">
+          <h3>💚 Our Safe Space Commitment</h3>
+          <p>Speaki is committed to providing a <strong style="color:#fff">safe and respectful environment</strong> for all users. We believe every learner deserves a space free from judgment, harassment, and discrimination.</p>
+          <ul>
+            <li>Any form of harassment, discrimination, or abusive behavior will not be tolerated.</li>
+            <li>Users are expected to conduct themselves in a manner that promotes inclusivity and respect for others.</li>
+            <li>Speaki reserves the right to take appropriate action — including suspending or terminating access to the Website and App — for any violation of this Safe Space Policy.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 10. CONTACT -->
+      <div class="tp-section" id="sec10">
+        <h2><span class="sec-num">10</span>Contact Us</h2>
+        <p>If you have any questions about these terms and conditions, please contact us:</p>
+        <div class="tp-contact-card">
+          <span class="e">📧</span>
+          <p>Email us at <a href="mailto:hello@speaki.co">hello@speaki.co</a> or use the <a href="/contact-us">contact form on our website</a>.</p>
+        </div>
+      </div>
+
+      <!-- BACK TO TOP -->
+      <div class="tp-back">
+        <a href="#" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">↑ Back to top</a>
+      </div>
+
+    </div>
+  </div>
+
+</div>
